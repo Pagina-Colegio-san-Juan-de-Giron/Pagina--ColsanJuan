@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  .pause {
+    animation-play-state: paused;
+  }
+
+.btn{
+  padding-top: 20vh;
+  z-index: 1;
+}
+
+.contenedor-boton{
+  display: flex;
+  cursor: pointer;
+  width: 3rem;
+  height: 12rem; 
+  background-color: #023E87;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  user-select: none;
+}
+
+.BotonA{
+
+transform: translateX(0); 
+
+}
+
+.IconoM{
+  transform: translateX(-10rem);
+  transition: all 0.3s ease;
+}
+
+.IconoNM{
+  transform: translateX(-10rem);
+  transition: all 0.3s ease;
+}
+
+.IconoMenu{
+  animation: AnimacionIcono 2s infinite;
+}
+
+@keyframes AnimacionIcono{
+  0%, 20%{
+    transform: translateX(0%);
+  }
+
+  50%{
+    transform: translateX(20%);
+  }
+
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+@media (max-width: 600px){
+  .IconoNM{
+    transform: translateX(-100vw);
+    transition: all 0.3s ease;
+  }
+}
