@@ -12,17 +12,51 @@
 }
 
 .NombreColegio{
+    display: flex;
+    justify-content: center;
+    color:white;
     background-color: aqua;
-    width: 15rem;
+    min-width: 7rem;
+    width: 10vw;
+    font-size: 100%;
+}
+
+.contenedor-letras{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    white-space: nowrap;
+    height: 100%;
+    background-color: black;
+}
+
+
+span{
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+    line-height: 95%;
+}
+
+.TextoMedio{
+    font-size: max(1.7vw, 1vw) ;
+}
+
+.Texto{
+    font-size: max(1.7vw, 1vw);
 }
 
 .Lema-Años{
+    display: flex;
+    flex-basis: 0;
     background-color: green;
-    width: 1rem;
-    flex-grow: 1;
+    flex-grow: 1000;
 }
 
 .Escudo{
+    display: flex;
+    min-width: 7rem;
+    width: 10vw;
     background-color: blueviolet;
-    width: 10rem;
 }
