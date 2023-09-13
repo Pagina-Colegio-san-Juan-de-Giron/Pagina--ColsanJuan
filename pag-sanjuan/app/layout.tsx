@@ -1,4 +1,5 @@
 import Menu from "./Componentes/Menu"
+import Header from "./Componentes/Header"
 import "./layout.css"
 
 export const metadata = {
@@ -10,7 +11,7 @@ export default function RootLayout({children}) {
   return(
       <html lang="es">
         <body className="grid-container">
-            <header className="Header">Header</header>
+            <Header/>
             <Menu/>
             <section className="Section">Section{children}</section>
             <footer className="Footer">Footer</footer>
