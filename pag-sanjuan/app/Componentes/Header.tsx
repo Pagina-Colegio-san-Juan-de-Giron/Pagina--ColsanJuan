@@ -1,6 +1,6 @@
 import "./Header.css";
 import Image from 'next/image';
-import escudo from "./Imágenes/escudo_auth.jpg";
+import escudo from "./Imágenes/Escudo.svg";
 import { Alice } from 'next/font/google'
 
 const alice = Alice({ 
