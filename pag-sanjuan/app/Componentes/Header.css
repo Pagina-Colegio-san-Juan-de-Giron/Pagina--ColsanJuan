@@ -6,7 +6,6 @@
 
 .container-header{
     display: flex;
-    background-color: greenyellow;
     width: 100%;
     height: 95%;
 }
@@ -15,7 +14,6 @@
     display: flex;
     justify-content: center;
     color:white;
-    background-color: aqua;
     min-width: 7rem;
     width: 10vw;
     font-size: 100%;
@@ -28,7 +26,6 @@
     flex-direction: column;
     white-space: nowrap;
     height: 100%;
-    background-color: black;
 }
 
 
@@ -36,21 +33,20 @@ span{
     display: flex;
     justify-content: center;
     padding-right: 0;
-    line-height: 95%;
+    line-height: clamp(1.5rem, 2.2vw, 2.2vw) ;
 }
 
 .TextoMedio{
-    font-size: max(1.7vw, 1vw) ;
+    font-size: clamp(1.5rem, 2.2vw, 2.2vw) ;
 }
 
 .Texto{
-    font-size: max(1.7vw, 1vw);
+    font-size: clamp(1.3rem, 2vw, 2vw);
 }
 
 .Lema-Años{
     display: flex;
     flex-basis: 0;
-    background-color: green;
     flex-grow: 1000;
 }
 
@@ -58,5 +54,4 @@ span{
     display: flex;
     min-width: 7rem;
     width: 10vw;
-    background-color: blueviolet;
 }

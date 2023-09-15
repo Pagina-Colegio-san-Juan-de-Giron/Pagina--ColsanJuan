@@ -18,7 +18,7 @@ return (
 
 
 <nav className="Nav flex h-full">
-  <ul className={` ${cerrado ? '' : 'translate-x-0'} flex flex-col bg-F-blue min-h-full select-none`} onMouseLeave={HandleClick}>
+  <ul className={` ${cerrado ? '' : 'translate-x-0'} bg-F-blue min-h-full select-none`} onMouseLeave={HandleClick}>
    <BotonCerrar cerrado={cerrado} HandleClick={HandleClick}/>
       <li className="flex justify-center">Inicio</li>
         <li className="flex justify-center">Institucional

@@ -8,7 +8,7 @@ import "./Boton.css"
 const BotonHamburguesa = ({ cerrado, HandleClick }: { cerrado: boolean; HandleClick: () => void }) => {
   return (
     <>
-  <div className='flex btn w-0'>  
+  <div className='flex btn'>  
     <div className={` ${cerrado ? 'IconoNM' : 'IconoM'} contenedor-boton`} onClick={HandleClick}>
         <Cbarras className={` ${cerrado ? 'IconoMenu' : ''}`}>
             <Barra1 className='justify-start'/>

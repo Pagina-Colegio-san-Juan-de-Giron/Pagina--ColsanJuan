@@ -25,6 +25,7 @@ body{
     z-index: 10;
     grid-area: header;
     width: 100%;
+    min-height: 5rem;
     height: 15vh;
     background-color: #023E87;
 }

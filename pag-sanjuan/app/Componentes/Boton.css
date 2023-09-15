@@ -10,6 +10,9 @@
 .btn{
   padding-top: 20vh;
   z-index: 1;
+  position: absolute;
+  transform: translateX(0);
+  transition: all 0.3s ease;
 }
 
 .contenedor-boton{
@@ -26,21 +29,6 @@
   user-select: none;
 }
 
-.BotonA{
-
-transform: translateX(0); 
-
-}
-
-.IconoM{
-  transform: translateX(-10rem);
-  transition: all 0.3s ease;
-}
-
-.IconoNM{
-  transform: translateX(-10rem);
-  transition: all 0.3s ease;
-}
 
 .IconoMenu{
   animation: AnimacionIcono 2s infinite;
@@ -62,7 +50,7 @@ transform: translateX(0);
 
 @media (max-width: 600px){
   .IconoNM{
-    transform: translateX(-100vw);
+    
     transition: all 0.3s ease;
   }
 }

@@ -17,6 +17,7 @@ ul{
     transition: all 300ms ease;
     transform: translateX(-100%);
     width: 10rem;
+    min-width: 10rem;
     z-index: 10;
     position: relative;
 }
@@ -27,7 +28,7 @@ li{
   padding-bottom: 1.5vh;
   color: white;
   font-weight: bold;
-  font-size: 3vh;
+  font-size: 100%;
   position: relative;
 }
 
