@@ -2,8 +2,14 @@ import "./Header.css";
 import Image from 'next/image';
 import escudo from "./Imágenes/Escudo.svg";
 import { Alice } from 'next/font/google'
+import { Pacifico } from 'next/font/google'
 
 const alice = Alice({ 
+  subsets: ['latin-ext'],
+  weight: ['400']
+})
+
+const pacifico = Pacifico({ 
   subsets: ['latin-ext'],
   weight: ['400']
 })
@@ -14,7 +20,7 @@ export default function Header() {
 
             <div className="container-header">
 
-                <Image className="Escudo" src={escudo} alt="Escudo"/>
+                <span className="Escudo"><Image className="imagen" src={escudo} alt="Escudo" height={undefined} layout="responsive"/></span>
 
                     <div className="NombreColegio" >
 
@@ -29,7 +35,8 @@ export default function Header() {
                     </div>
 
                     <div className="Lema-Años">
-
+                          <span className="pacifico"><span className={pacifico.className}>Educando mente y corazón</span></span>
+                          <span className="años"><span className={alice.className}>47 años de tradición</span></span>
                     </div>
                   
             </div>
