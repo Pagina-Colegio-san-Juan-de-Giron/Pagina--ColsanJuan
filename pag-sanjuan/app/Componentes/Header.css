@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     color:white;
-    min-width: 7rem;
+    min-width: 4rem;
     width: 10vw;
     font-size: 100%;
 }
@@ -33,45 +33,61 @@ span{
     display: flex;
     justify-content: center;
     padding-right: 0;
-    line-height: clamp(1.5rem, 2.2vw, 2.2vw) ;
+    line-height: clamp(.8rem, 2.2vw, 2.2vw);
 }
 
 .TextoMedio{
-    font-size: clamp(1.5rem, 2.2vw, 2.2vw) ;
+    font-size: clamp(.8rem, 2.2vw, 2.2vw);
 }
 
 .Texto{
-    font-size: clamp(1.3rem, 2vw, 2vw);
+    font-size: clamp(.7rem, 2vw, 2vw);
 }
 
 .Lema-Años{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 2rem;
+    justify-content: center;
     flex-basis: 0;
     flex-grow: 1000;
 }
 
-.Escudo{
+.container-lema{
+    height: 100%;
     display: flex;
-    min-width: 7rem;
-    width: 10vw;
+    width: 99%;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+    padding-left: 1vh;
+    padding-right: 1vh;
 }
 
-.imagen{
-    margin-left: .5rem;
+.Escudo{
+    display: flex;
+    min-width: 10rem;
+    padding-left: 1vw;
 }
 
 .pacifico{
     color: white;
     font-weight: bold;
+    font-size: clamp(.8rem, 2.2vw, 2.2vw) ;
+    padding-bottom: 1%;
 }
 
 .años{
-    color: gold;
+    color: #e3b76a;
     font-weight: bold;
     text-shadow: 0 0 10px gold;
     display: flex;
     align-items: center;
+    font-size: clamp(.8rem, 2vw, 2vw);
+}
+
+@media (max-width: 600px){
+    .Escudo{
+        min-width: 2.5rem;
+    }
 }

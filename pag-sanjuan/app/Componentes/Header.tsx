@@ -20,7 +20,7 @@ export default function Header() {
 
             <div className="container-header">
 
-                <span className="Escudo"><Image className="imagen" src={escudo} alt="Escudo" height={undefined} layout="responsive"/></span>
+                <span className="Escudo"><Image className="imagen" src={escudo} alt="Escudo" height={100}/></span>
 
                     <div className="NombreColegio" >
 
@@ -35,8 +35,10 @@ export default function Header() {
                     </div>
 
                     <div className="Lema-Años">
+                      <div className="container-lema">
                           <span className="pacifico"><span className={pacifico.className}>Educando mente y corazón</span></span>
                           <span className="años"><span className={alice.className}>47 años de tradición</span></span>
+                      </div>
                     </div>
                   
             </div>
