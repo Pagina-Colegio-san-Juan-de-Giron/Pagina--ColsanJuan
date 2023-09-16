@@ -47,6 +47,18 @@ li:hover{
             width: 100vw;
         }
 
+        .submenu{
+          left: 0%;
+          top: 100%;
+          z-index: 55555555;
+        }
+
+        .centrado .submenu{
+          left: 0%;
+          top: 100%;
+          z-index: 55555555;
+        }
+
   }
 
   li:hover .submenu{

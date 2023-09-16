@@ -6,6 +6,7 @@ i{
     font-size: 2rem;
     justify-content: flex-end;
     cursor: pointer;
+    padding: 1rem;
 }
 
 span{
