@@ -33,6 +33,8 @@ nav{
         ul{
           width: 100vw;
           z-index: 10;
+          background-color: #023E87;
+          transform: translateX(-100%);
         }
 
         li{
@@ -94,11 +96,12 @@ nav{
     width: 10rem;
     min-width: 10rem;
     z-index: 10;
+    background-color: #023E87;
   }
 
   .submenu{
     position: absolute;
-    left: 200%;
+    left: 100%;
     top: 0;
   }
 

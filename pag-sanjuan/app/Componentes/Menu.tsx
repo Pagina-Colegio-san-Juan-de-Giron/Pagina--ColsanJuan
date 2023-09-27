@@ -8,22 +8,6 @@ import BotonCerrar from "./BotonCerrar";
 
 export default function Menu() {
   const [cerrado, setcerrado] = useState(true)
-  let celular = false
-
-  const definirancho = () =>{
-  let ancho = window.innerWidth
-
-    if(ancho < 600){
-      celular = true;
-    }
-    else{
-      celular = false;
-    }
-  }
-
-  window.addEventListener('load', definirancho);
-  window.addEventListener('load', definirancho);
-
   const HandleClick = () => {
    setcerrado(!cerrado);
   }
@@ -40,7 +24,7 @@ return (
       <li className="justify-center">Inicio</li>
         <li className="justify-center">Institucional
         
-        <ul className="submenu">
+        <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
           <span><span className="linea"></span></span>
               <li>Reseña Histórica</li>
               <li>Misión</li>
@@ -55,7 +39,7 @@ return (
 
       <li className="justify-center">Normativas
         
-        <ul className="submenu">
+        <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
         <span><span className="linea"></span></span>
               <li>PEI</li>
               <li>Manual<br/>de<br/>convivencia</li>
@@ -67,7 +51,7 @@ return (
 
       <li className="justify-center">Gobierno<br/>Escolar
 
-        <ul className="submenu">
+        <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
         <span><span className="linea"></span></span>
               <li>Consejo<br/>Directivo</li>
               <li>Consejo<br/>Académico</li>
@@ -79,7 +63,7 @@ return (
       
       <li className="justify-center centrado">Personal
       
-        <ul className="submenu">
+        <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
         <span><span className="linea"></span></span>
               <li>Directivos<br/>Docente</li>
               <li>Docentes</li>
@@ -95,7 +79,7 @@ return (
 
       <li className="justify-center">Inscripciones
         
-        <ul className="submenu">
+        <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
         <span><span className="linea"></span></span>
           <li>Documentos<br/>requeridos</li>
           <li>Formulario<br/>inscripcion</li>
