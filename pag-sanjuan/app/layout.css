@@ -16,7 +16,7 @@ body{
     grid-template:
     "header header" 15vh
     "section section"  auto
-    "footer footer" 15vh/
+    "footer footer" 30vh/
     auto   auto;
 }
 
@@ -43,7 +43,7 @@ body{
 
 .Footer{
     grid-area: footer;
-    background-color: paleturquoise;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 @media (max-width: 600px){

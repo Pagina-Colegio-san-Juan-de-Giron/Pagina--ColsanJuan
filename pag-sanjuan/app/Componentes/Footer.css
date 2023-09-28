@@ -1,0 +1,47 @@
+.container-footer{
+    background-color: #ACB4D6;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    display: flex;
+}
+
+
+.escudo{
+    background-color: aqua;
+    width: 20%;
+}
+
+.Scol{
+    background-color: darkgreen;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactanos{
+    background-color: blue;
+    width: 100%;
+}
+
+.contactos{
+    background-color: beige;
+    width: 100%;
+}
+
+.lema{
+    background-color: blueviolet;
+    width: 100%;
+}
+
+.mapa{
+    background-color: chartreuse;
+    width: auto;
+    display: flex;
+    flex-grow: 1;
+}
+
+.numero{
+    background-color: coral;
+}

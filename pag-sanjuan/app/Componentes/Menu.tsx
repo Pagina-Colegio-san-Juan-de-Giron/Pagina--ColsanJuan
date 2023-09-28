@@ -12,6 +12,17 @@ export default function Menu() {
    setcerrado(!cerrado);
   }
 
+  let ancho = window.innerWidth
+
+  const Cel = () => {
+    if(ancho > 600){
+       HandleClick();
+    }
+    else{
+      setcerrado(cerrado);
+    }
+  }
+
 
 
 return (
@@ -19,7 +30,7 @@ return (
 
 
 <nav className="Nav flex h-full">
-  <ul className={` ${cerrado ? 'menu' : 'translate-x-0 menu'}bg-F-blue min-h-full select-none`} onMouseLeave={HandleClick}>
+  <ul className={` ${cerrado ? 'menu' : 'translate-x-0 menu'}bg-F-blue min-h-full select-none`} onMouseLeave={Cel}>
    <BotonCerrar cerrado={cerrado} HandleClick={HandleClick}/>
       <li className="justify-center">Inicio</li>
         <li className="justify-center">Institucional

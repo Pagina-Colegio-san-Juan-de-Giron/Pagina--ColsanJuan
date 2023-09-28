@@ -1,10 +1,11 @@
 import Menu from "./Componentes/Menu"
 import Header from "./Componentes/Header"
+import Footer from "./Componentes/footer"
 import "./layout.css"
 
 export const metadata = {
   title: 'Página Colegio San Juan de Girón',
-  description: 'Idk mfkr'
+  description: 'Idk'
 }
 
 export default function RootLayout({children}) {
@@ -14,7 +15,7 @@ export default function RootLayout({children}) {
             <Header/>
             <Menu/>
             <section className="Section">Section{children}</section>
-            <footer className="Footer">Footer</footer>
+            <Footer/>
           </body>
       </html>
   )
