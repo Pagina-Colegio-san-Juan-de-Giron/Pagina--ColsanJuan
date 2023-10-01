@@ -9,39 +9,60 @@
 
 
 .escudo{
-    background-color: aqua;
-    width: 20%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen{
+    min-width: 2rem;
 }
 
 .Scol{
-    background-color: darkgreen;
-    height: 60%;
+    width: 60%;
     display: flex;
     flex-direction: column;
 }
 
 .contactanos{
-    background-color: blue;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
 }
 
 .contactos{
-    background-color: beige;
     width: 100%;
 }
 
 .lema{
-    background-color: blueviolet;
     width: 100%;
 }
 
 .mapa{
-    background-color: chartreuse;
     width: auto;
     display: flex;
     flex-grow: 1;
 }
 
 .numero{
-    background-color: coral;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.correo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.ubicacion{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
 }
