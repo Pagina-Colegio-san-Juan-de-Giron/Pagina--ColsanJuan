@@ -53,7 +53,7 @@ return (
         <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
         <span><span className="linea"></span></span>
               <li>PEI</li>
-              <li>Manual<br/>de<br/>convivencia</li>
+              <li>Manual de<br/>convivencia</li>
               <li>SIE</li>
               <li>Otros</li>
         </ul>
@@ -81,7 +81,7 @@ return (
               <li>Personero</li>
               <li>Contralor</li>
               <li>Administrativos</li>
-              <li>Personal<br/>de<br/>apoyo</li>
+              <li>Personal de<br/>apoyo</li>
         </ul>
       
       </li>

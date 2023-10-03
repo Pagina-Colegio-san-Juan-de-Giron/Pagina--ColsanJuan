@@ -25,11 +25,9 @@ export default function Header() {
                     <div className="NombreColegio" >
 
                       <div className="contenedor-letras">
-                        <div className="contenedor-span">
                           <span className="Texto"><span className={alice.className}>Colegio</span></span>
                           <span className="TextoMedio"><span className={alice.className}>SAN JUAN</span></span>
                           <span className="Texto"><span className={alice.className}>De Girón</span></span>
-                        </div>
                       </div>
 
                     </div>

@@ -1,39 +1,46 @@
 .container-footer{
     background-color: #ACB4D6;
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    border-top-right-radius: 2rem;
-    border-top-left-radius: 2rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
     display: flex;
 }
 
 
 .escudo{
-    width: 10%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .imagen{
-    min-width: 2rem;
+    min-width: 1rem;
+    width: 5vw;
 }
 
 .Scol{
     width: 60%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .contactanos{
     width: 100%;
     display: flex;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 2.5vw;
+    font-weight: bold;
 }
 
 .contactos{
     width: 100%;
+    font-weight: bold;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .lema{
@@ -50,19 +57,45 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.5vw;
+    gap: .5rem;
+    font-weight: bold;
 }
 
 .correo{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.5vw;
+    gap: .5rem;
+    font-weight: bold;
 }
 
 .ubicacion{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.5vw;
+    gap: .5rem;
+    font-weight: bold;
+}
+
+h1{
+    font-weight: bold;
+}
+
+.mapa-contenedor{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.icono{
+    width: 3.5vw; 
+}
+
+.fotomap{
+    width: 1%;
 }
