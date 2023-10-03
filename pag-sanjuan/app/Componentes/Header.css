@@ -89,9 +89,14 @@ span{
     font-size: clamp(.8rem, 2vw, 2vw);
 }
 
+.imagen{
+    min-width: 3rem;
+    width: 50%;
+}
+
 @media (max-width: 600px){
     .Escudo{
-        min-width: 2.5rem;
+        min-width: 5rem;
     }
 
     .NombreColegio{

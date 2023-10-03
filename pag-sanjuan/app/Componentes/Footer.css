@@ -15,7 +15,7 @@
     align-items: center;
 }
 
-.imagen{
+.Imagen{
     min-width: 1rem;
     width: 5vw;
 }
@@ -39,8 +39,10 @@
     width: 100%;
     font-weight: bold;
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .lema{

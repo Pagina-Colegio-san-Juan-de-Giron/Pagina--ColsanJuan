@@ -1,0 +1,13 @@
+container-slider{
+    border: 1px solid black;
+}
+
+button{
+    width: 20px;
+    border: 1px solid black;
+}
+
+.container-pagina{
+    display: flex;
+    justify-content: center;
+}
