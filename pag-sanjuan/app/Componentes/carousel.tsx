@@ -1,42 +1,70 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import "@/app/PaginaPrincipal.css"
 
+interface Props{
+  images: string[];
+  AutoPlay?: boolean;
+}
+
+const carousel = (props: Props) => {
 
 
-const carousel = () => {
-
-  const images = ["1.png", "2.png", "3.png", "4.png"]
   const [SelectedIndex, SetSelectedIndex] = useState(0);
-  const [SelectedImage, SetSelectedImage] = useState(images[0]);
+  const [SelectedImage, SetSelectedImage] = useState(props.images[0]);
+  const [cargado, setcargado] = useState(false);
+
+
+  useEffect(() => {
+    if (props.AutoPlay)
+    {
+      const interval = setInterval(() => {
+        Next();
+      }, 7000);
+      return() => clearInterval(interval);
+    }
+  });
 
     const SelectNextImage = (index: number, images: string[], next = true) => {
-
-      const condition = next ? SelectedIndex < images.length - 1 : SelectedIndex > 0;
-      const NextIndex = next ? condition ? SelectedIndex + 1 : 0 : condition ? SelectedIndex - 1 : images.length - 1;
-      SetSelectedImage(images[NextIndex]);
-      SetSelectedIndex(NextIndex);
+      setcargado(false);
+      setTimeout(() => {
+        const condition = next ? SelectedIndex < images.length - 1 : SelectedIndex > 0;
+        const NextIndex = next ? condition ? SelectedIndex + 1 : 0 : condition ? SelectedIndex - 1 : images.length - 1;
+        SetSelectedImage(images[NextIndex]);
+        SetSelectedIndex(NextIndex);
+      }, 1500)
     }
 
     const Previous = () => {
 
-      SelectNextImage(SelectedIndex, images, false);  
+      SelectNextImage(SelectedIndex, props.images, false);  
 
     }
 
     const Next = () => {
 
-      SelectNextImage(SelectedIndex, images); 
+      SelectNextImage(SelectedIndex, props.images); 
 
     }
 
+    const 
+
+
   return (
     <div className="container-slider">
-      <Image className="container-slider" src={require(`./Imágenes/${SelectedImage}`)} alt='imagen'/>
-      <button onClick={Previous}>{"<"}</button>
-      <button onClick={Next}>{">"}</button>
+      <Image className={`${cargado ? "cargado" : ""} sliderImg`} src={require(`./Imágenes/${SelectedImage}`)} alt='imagen' onLoad={() => setcargado(true)}>
+      </Image>
+     
+     <div className="container-botones">
+      <div className="container-circulos">
+          <span className="circulo" onClick={}></span>
+          <span className="circulo" onClick={}></span>
+          <span className="circulo" onClick={}></span>
+          <span className="circulo" onClick={}></span>
+      </div>
+     </div>
     </div>
   )
 }

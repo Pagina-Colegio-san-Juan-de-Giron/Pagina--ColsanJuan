@@ -1,13 +1,59 @@
 container-slider{
     border: 1px solid black;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: #B9BFDB;
 }
 
 button{
     width: 20px;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-pagina{
     display: flex;
     justify-content: center;
+}
+
+.sliderImg{
+    width: 100vw;
+    height: 40vh;
+    opacity: 0;
+    transition: 3s;
+    background-color: #B9BFDB;
+}
+
+.cargado{
+    opacity: 1;
+}
+
+.container-circulos{
+    width: 12rem;
+    height: 2rem;
+    display: flex;
+    gap: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.container-botones{
+    width: 100%;
+    height: auto;
+    background-color: #B9BFDB;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.circulo{
+    background-color: white;
+    border-radius: 50%;
+    width: 25%;
+    height: 80%;
 }

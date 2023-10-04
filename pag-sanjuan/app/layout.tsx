@@ -14,7 +14,7 @@ export default function RootLayout({children}) {
         <body className="grid-container">
             <Header/>
             <Menu/>
-            <section className="Section">Section{children}</section>
+            <section className="Section">{children}</section>
             <Footer/>
           </body>
       </html>
