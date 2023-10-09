@@ -8,6 +8,7 @@ container-slider{
     background-color: #B9BFDB;
 }
 
+
 button{
     width: 20px;
     border: 1px solid black;
@@ -56,4 +57,10 @@ button{
     border-radius: 50%;
     width: 25%;
     height: 80%;
+}
+
+.container-Sslider{
+    background-color: #B9BFDB;
+    width: 100vw;
+    height: 40vh;
 }

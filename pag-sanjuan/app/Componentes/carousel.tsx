@@ -23,7 +23,9 @@ const carousel = (props: Props) => {
     if (props.AutoPlay)
     {
       const interval = setInterval(() => {
-        Next();
+        console.log(props.images)
+        Random();
+  
       }, 7000);
       return() => clearInterval(interval);
     }
@@ -32,8 +34,7 @@ const carousel = (props: Props) => {
     const SelectNextImage = (index: number, images: string[], next = true) => {
       setcargado(false);
       setTimeout(() => {
-        const condition = next ? SelectedIndex < images.length - 1 : SelectedIndex > 0;
-        const NextIndex = next ? condition ? SelectedIndex + 1 : 0 : condition ? SelectedIndex - 1 : images.length - 1;
+        const NextIndex = Math.floor(Math.random() * images.length);
         SetSelectedImage(images[NextIndex]);
         SetSelectedIndex(NextIndex);
         console.log('props.images', props.images);
@@ -41,13 +42,8 @@ const carousel = (props: Props) => {
       }, 1500)
     }
 
-    const Previous = () => {
 
-      SelectNextImage(SelectedIndex, props.images, false);  
-
-    }
-
-    const Next = () => {
+    const Random = () => {
 
       SelectNextImage(SelectedIndex, props.images); 
 
@@ -56,7 +52,9 @@ const carousel = (props: Props) => {
 
   return (
     <div className="container-slider">
-      <Image className={`${cargado ? "cargado" : ""} sliderImg`} src={require(`../../public/img/${SelectedImage}`)} alt='imagen' onLoad={() => setcargado(true)}/>
+      <span className='container-Sslider'>
+        <Image className={`${cargado ? "cargado" : ""} sliderImg`} src={require(`../../public/img/${SelectedImage}`)} alt='imagen' onLoad={() => setcargado(true)}/>
+      </span>
     </div>
   )
 

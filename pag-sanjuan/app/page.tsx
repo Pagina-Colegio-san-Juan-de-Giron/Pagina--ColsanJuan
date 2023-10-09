@@ -35,7 +35,7 @@ export default function Home() {
   leer();
   return (
     <div className="container-pagina">
-      <Slider images={images}></Slider>
+      <Slider images={images} AutoPlay={true}></Slider>
     </div>
   )
 
