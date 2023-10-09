@@ -20,6 +20,7 @@ button{
 .container-pagina{
     display: flex;
     justify-content: center;
+    max-width: 100vw;
 }
 
 .sliderImg{
@@ -44,13 +45,6 @@ button{
     align-items: center;
 }
 
-.container-botones{
-    width: 100%;
-    height: auto;
-    background-color: #B9BFDB;
-    display: flex;
-    justify-content: flex-end;
-}
 
 .circulo{
     background-color: white;
@@ -61,6 +55,6 @@ button{
 
 .container-Sslider{
     background-color: #B9BFDB;
-    width: 100vw;
+    width: 100%;
     height: 40vh;
 }

@@ -16,8 +16,8 @@ body{
     grid-template:
     "header header" 15vh
     "section section"  auto
-    "footer footer" 30vh/
-    auto   auto;
+    "footer footer" 50vh/
+    auto    auto;
 }
 
 .Header{
