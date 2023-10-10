@@ -29,6 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
 }
 
 .mapa-contenedor{
@@ -50,7 +51,6 @@
 .contactos{
     width: 100%;
     font-weight: bold;
-    white-space: nowrap;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -78,8 +78,9 @@
     display: flex;
     justify-content: flex-start;
     height: 33.3%;
+    width: 100%;
     align-items: center;
-    font-size: 1.5vw;
+    font-size: 90%;
     gap: .5rem;
     font-weight: bold;
 }
@@ -88,8 +89,10 @@
     display: flex;
     justify-content: flex-start;
     height: 33.3%;
+    width: 100%;
+    white-space: normal;
     align-items: center;
-    font-size: 1.5vw;
+    font-size: 80%;
     gap: .5rem;
     font-weight: bold;
 }
@@ -98,8 +101,9 @@
     display: flex;
     justify-content: flex-start;
     height: 33.3%;
+    width: 100%;
     align-items: center;
-    font-size: 1.5vw;
+    font-size: 90%;
     gap: .5rem;
     font-weight: bold;
 }
@@ -108,6 +112,10 @@ h1{
     font-weight: bold;
 }
 
+.columns{
+    display: flex;
+    width: 80%;
+}
 
 
 .icono{
@@ -117,4 +125,24 @@ h1{
 .container-mapa{
     width: 90%;
     height: 90%;
+}
+
+
+
+
+@media (max-width: 600px){
+    .columns{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Scol{
+        flex-grow: 0;
+        width: 100%;
+    }
+
+    .mapa-contenedor{
+        width: 100%;
+        flex-grow: 1;
+    }
 }

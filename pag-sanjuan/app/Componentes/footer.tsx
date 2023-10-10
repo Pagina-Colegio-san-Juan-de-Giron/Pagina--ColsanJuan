@@ -22,7 +22,7 @@ const footer = () => {
                 <div className='escudo'>
                   <Image className="Imagen" src={escudo} alt="Escudo" height={100}/>
                 </div>
-
+              <div className='columns'>
                 <div className='Scol'>
                    <div className='contactanos'><h1 className={alice.className}>Contáctanos</h1></div>
                      
@@ -51,6 +51,7 @@ const footer = () => {
                 <div className='mapa-contenedor'>
                   <Mapa/>
                 </div>
+              </div>
             </div>
     </footer>
   )
