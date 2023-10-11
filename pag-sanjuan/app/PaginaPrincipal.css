@@ -2,6 +2,7 @@ container-slider{
     border: 1px solid black;
     height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -19,8 +20,10 @@ button{
 
 .container-pagina{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     max-width: 100vw;
+    row-gap: 1rem;
 }
 
 .sliderImg{
@@ -57,4 +60,9 @@ button{
     background-color: #B9BFDB;
     width: 100%;
     height: 40vh;
+}
+
+.container-video{
+    display: flex;
+    justify-content: center;
 }

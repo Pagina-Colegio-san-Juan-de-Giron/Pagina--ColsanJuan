@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@react-google-maps/api": "^2.19.2",
+    "react-youtube": "^10.1.0",
     "swr": "^2.2.4"
   }
 }

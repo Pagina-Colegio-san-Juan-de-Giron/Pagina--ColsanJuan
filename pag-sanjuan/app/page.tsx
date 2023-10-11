@@ -2,6 +2,7 @@
 
 import "./PaginaPrincipal.css"
 import Slider from "./Componentes/carousel"
+import Video from "./Componentes/VideoYT"
 import { useState, useEffect } from "react";
 import { get } from "http";
 import useSWR from 'swr';
@@ -36,6 +37,7 @@ export default function Home() {
   return (
     <div className="container-pagina">
       <Slider images={images} AutoPlay={true}></Slider>
+      <Video/>
     </div>
   )
 
