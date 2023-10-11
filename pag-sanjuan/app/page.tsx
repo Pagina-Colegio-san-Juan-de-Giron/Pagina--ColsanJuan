@@ -3,12 +3,16 @@
 import "./PaginaPrincipal.css"
 import Slider from "./Componentes/carousel"
 import Video from "./Componentes/VideoYT"
+import Image from "next/image"
 import { useState, useEffect } from "react";
-import { get } from "http";
-import useSWR from 'swr';
+import { Alice } from 'next/font/google'
+import juanchos from "./Componentes/Imágenes/juanchos.jpg"
 
         
-
+const alice = Alice({ 
+  subsets: ['latin-ext'],
+  weight: ['400']
+})
 
 
 export default function Home() {
@@ -35,10 +39,17 @@ export default function Home() {
 
   leer();
   return (
-    <div className="container-pagina">
+    <section className="container-pagina">
       <Slider images={images} AutoPlay={true}></Slider>
+        <article>
+          <h1 className={alice.className}>Somos el Colegio san Juan de Girón</h1>
+          <div className="container-articulo">
+              <Image classname="juanchos" src={juanchos} alt="juanchos"/>
+          </div>
+
+        </article>
       <Video/>
-    </div>
+    </section>
   )
 
 }
