@@ -22,9 +22,13 @@ const footer = () => {
                 <div className='escudo'>
                   <Image className="Imagen" src={escudo} alt="Escudo" height={100}/>
                 </div>
+             <div className='paralema'>   
               <div className='columns'>
                 <div className='Scol'>
-                   <div className='contactanos'><h1 className={alice.className}>Contáctanos</h1></div>
+                   <div className='contactanos'>
+                    <Image className="Imagen cel" src={escudo} alt="Escudo" height={100}/>
+                    <h1 className={alice.className}>Contáctanos</h1>
+                   </div>
                      
                      <div className='contactos'>
 
@@ -43,15 +47,16 @@ const footer = () => {
                         <h1 className={alice.className}>Parque principal de Girón, parque Peralta, sede Corviandis</h1>
                       </div> 
                      </div>
-                  <div className='lema'>
-                      <h1 className={alice.className}>¡Creemos en la excelencia como el camino para lograr los sueños!</h1>
-                  </div> 
                 </div>
 
                 <div className='mapa-contenedor'>
                   <Mapa/>
                 </div>
               </div>
+              <div className='lema'>
+                      <h1 className={alice.className}>¡Creemos en la excelencia como el camino para lograr los sueños!</h1>
+              </div> 
+             </div>
             </div>
     </footer>
   )
