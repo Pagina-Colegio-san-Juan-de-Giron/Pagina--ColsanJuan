@@ -41,7 +41,7 @@ return (
               <li>Misión</li>
               <li>Visión</li>
               <li>Filosofía<br/>Institucional</li>
-              <li>Simbolos</li>
+              <li><a href="/Institucional/Simbolos">Simbolos</a></li>
               <li>Uniformes</li>
         </ul>
         

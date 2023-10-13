@@ -47,7 +47,7 @@ export default function Home() {
       <article>
           <h1 className={alice.className}>Somos el Colegio san Juan de Girón</h1>
           <div className="container-articulo">
-            <Image classname="juanchos" src={juanchos} alt="juanchos"/>
+            <Image src={juanchos} alt="juanchos"/>
             <div className="logros">
                 <span>
                   <h2>Uno de los mejores<br/> ICFES del año 2022</h2>
