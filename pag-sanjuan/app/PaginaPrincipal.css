@@ -61,7 +61,7 @@ button{
 .container-Sslider{
     background-color: #B9BFDB;
     width: 100%;
-    height: 30vw;
+    height: 50vw;
 }
 
 .container-video{
@@ -69,7 +69,7 @@ button{
     justify-content: center;
     align-items: center;
     min-width: 100%;
-    height: 40vw;
+    height: 50vw;
     padding: 5vw;
 }
 
@@ -109,19 +109,23 @@ article h1{
 .logros{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     flex-grow: 1;
 }
 
 h2{
     font-size: 2vw;
+    width: 70%;
     font-weight: bold;
     padding: 3vw;
-    text-align: center;
+    text-align: right;
     line-height: normal;
 }
 
 .logros span{
     display: flex;
+    width: 100%;
+    flex-grow: 1;
     align-items: center;
 }
 
@@ -129,13 +133,34 @@ h2{
     width: 7vw;
     height: 7vw;
     border-radius: 50%;
-    border:5px solid #e3b76a;
+    border:1vw solid #e3b76a;
     box-shadow: gold;
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-right: 2rem;
 }
 
 .Icono img{
     width: 70%;
+}
+
+@media (max-width: 600px){
+    .container-articulo{
+        height: 40vh;
+    }
+
+    .Icono{
+        width: 14vw;
+        height: 14vw;
+    }
+
+    h2{
+        font-size: 2.5vw;
+        width: 70%;
+        font-weight: bold;
+        padding: 3vw;
+        text-align: right;
+        line-height: normal;
+    }
 }
