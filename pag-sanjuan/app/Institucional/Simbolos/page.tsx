@@ -1,6 +1,7 @@
 import React from 'react'
 import "./simbolos.scss"
 import Image from 'next/image'
+import Escudo from '@/app/Componentes/Imágenes/Escudo.svg'
 
 const Simbolos = () => {
   return (
@@ -18,7 +19,18 @@ const Simbolos = () => {
         </div>
 
         <div className='EscudoS'>
-
+        <article className='art-escudo'>
+              <header><h2>Escudo</h2></header>
+              <p>
+                Primer campo superior izquierdo. Claustro colonial junto a él, el puente del Moro El Puente: Estructura sólida significa la unión entre el pueblo y el colegio; entre el colegio y la vida; el paso de la ignorancia al saber; el paso moderado entre los principios tradicionales enseñados a través de generaciones y las libertades que se pregonan en el mundo actual, buscando conservar la sensatez de la juventud, sin perder los valores arraigados en nuestra raza.<br/>
+                <br/>
+                Segundo campo superior derecho. La antorcha: Simboliza la fe en Dios, en sí mismo y en la patria.<br/>
+                <br/>
+                Tercer campo inferior. Libro abierto: El libro significa la búsqueda intelectual a la luz y protección de cristo, luz de luz.
+              </p>
+              <Image className='Eescudo' src={Escudo}></Image>
+              <h3>sabias que el escudo del colegio<br/>fue re diseñado en el año 2019</h3>
+            </article>
         </div>
 
         <div className='HimnoS'>
@@ -41,7 +53,7 @@ const Simbolos = () => {
               Por la ruta que el mismo marcó. <br/>
               <br/>
               Mi colegio es la sacra colmena <br/>
-              Do el trabajo mi fe purifica <br/>
+              De el trabajo mi fe purifica <br/>
               Ya ese Cristo que mi vida llena <br/>
               Por doquiera mi voz lo predica.<br/>
 

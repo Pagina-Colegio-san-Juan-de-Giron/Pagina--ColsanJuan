@@ -17,35 +17,34 @@ main{
     width: 100%;
     height: auto;
     display: grid;
-    grid-template:
-    "Bandera Bandera" 30vh
-    "Escudo   Himno"  70vh/
-     60%      40%;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto; 
+    grid-template-areas: 
+    "Bandera  Bandera"
+    "Escudo   Himno";
 
 }
 
 
 .BanderaS{
     grid-area: Bandera;
-    background-color: aqua;
 }
 
 .EscudoS{
     grid-area: Escudo;
-    background-color: blue;
+    padding: 1vw;
 }
 
 .HimnoS{
     grid-area: Himno;
-    background-color: aquamarine;
 }
 
 .art-bandera{
     display: block;
-    width: 60%;
+    width: 80%;
     height: 100%;
     background-color: #E1E1FF;
-    border-radius: 2rem;
+    border-radius: 20px;
 
     header{
         display: flex;
@@ -63,6 +62,7 @@ main{
     p{
         padding: 1vw;
         font-size: 1.7vw;
+        text-align: justify;
     }
 }
 
@@ -72,9 +72,9 @@ main{
 .art-himno{
     display: block;
     width: 100%;
-    height: 100%;
-    background-color: #E1E1FF;
-    border-radius: 2rem;
+    height: auto;
+    background-color: #EDF0FF;
+    border-radius: 20px;
 
     header{
         display: flex;
@@ -91,9 +91,48 @@ main{
 
     p{
         width: 100%;
+        text-align: justify;
         display: flex;
         justify-content: center;
         padding: 1vw;
         font-size: 1vw;
+        font-weight: bold;
     }
+}
+
+.art-escudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    header{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+
+        h2{
+            color: #E3B76B;
+            font-weight: bold;
+            font-size: 150%;
+        }
+    }
+
+    p{
+        font-size: 1.7vw;
+        text-align: justify;
+    }
+
+    h3{
+        font-size: 2vw;
+        border: 1rem solid #4142C6;
+        padding: 1rem;
+    }
+}
+
+.Eescudo{
+    width: 15vw;
+    padding: 1rem;
 }
