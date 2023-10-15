@@ -32,17 +32,17 @@ return (
 <nav className="Nav flex h-full">
   <ul className={` ${cerrado ? 'menu' : 'translate-x-0 menu'}bg-F-blue min-h-full select-none`} onMouseLeave={Cel}>
    <BotonCerrar cerrado={cerrado} HandleClick={HandleClick}/>
-      <li className="justify-center">Inicio</li>
+   <a href="/"><li className="justify-center">Inicio</li></a>
         <li className="justify-center">Institucional
         
         <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
           <span><span className="linea"></span></span>
               <li>Reseña Histórica</li>
-              <li>Misión</li>
-              <li>Visión</li>
+              <a href="/Institucional/Mision"><li>Misión</li></a>
+              <a href="/Institucional/Vision"><li>Visión</li></a>
               <li>Filosofía<br/>Institucional</li>
-              <li><a href="/Institucional/Simbolos">Simbolos</a></li>
-              <li>Uniformes</li>
+              <a href="/Institucional/Simbolos"><li>Simbolos</li></a>
+              <a href="/Institucional/Uniforme"><li>Uniformes</li></a>
         </ul>
         
       </li>
