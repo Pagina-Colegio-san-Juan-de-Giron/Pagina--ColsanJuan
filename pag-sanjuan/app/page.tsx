@@ -43,7 +43,7 @@ export default function Home() {
   leer();
   return (
     <section className="container-pagina">
-      <Slider images={images} AutoPlay={true}></Slider>
+      <Slider images={images} ></Slider>
       <article>
           <h1 className={alice.className}>Somos el Colegio san Juan de Girón</h1>
           <div className="container-articulo">
