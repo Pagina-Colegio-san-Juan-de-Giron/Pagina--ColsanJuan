@@ -28,7 +28,7 @@ const Simbolos = () => {
 
         <div className='EscudoS'>
         <article className='art-escudo'>
-              <header><h2 className={alice.className}>Escudo</h2></header>
+              <header><h2 className={alice.className}>Escudos</h2></header>
               <p>
                 Primer campo superior izquierdo. Claustro colonial junto a él, el puente del Moro El Puente: Estructura sólida significa la unión entre el pueblo y el colegio; entre el colegio y la vida; el paso de la ignorancia al saber; el paso moderado entre los principios tradicionales enseñados a través de generaciones y las libertades que se pregonan en el mundo actual, buscando conservar la sensatez de la juventud, sin perder los valores arraigados en nuestra raza.<br/>
                 <br/>
