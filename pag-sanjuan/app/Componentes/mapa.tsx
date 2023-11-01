@@ -1,15 +1,11 @@
 import React, {useMemo} from 'react';
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
-
-
-
 const mapa = () => {
-
   const coords = {lat: 7.06758469443197,lng: -73.16940446273308};
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-})
+    })
 
 function Mapa() {
     return <div className='container-mapa'>

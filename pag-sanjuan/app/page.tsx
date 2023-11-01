@@ -21,7 +21,7 @@ const alice = Alice({
 export default function Home() {
 
   
-  const [images, setimages] = useState(["3.png"]);
+  const [images, setimages] = useState(["IMG-20230929-WA0048.jpg"]);
 
   useEffect(() => {
     async function obtenerImagenes() {

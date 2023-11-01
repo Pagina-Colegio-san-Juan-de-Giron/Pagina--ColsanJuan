@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import "./Boton.css"
+import "./scss/Boton.css"
 
 
 
@@ -39,6 +39,7 @@ const Barra2 = styled.div`
   transition: all 300ms ease;
   background-color: white;
 `
+
 
 const Cbarras = styled.div`
 transition: all 0.3s ease;
