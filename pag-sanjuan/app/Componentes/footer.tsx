@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image';
-import "./Footer.css";
+import "./scss/Footer.css";
 import escudo from "./Imágenes/Escudo.svg";
 import { Alice } from 'next/font/google'
 import telefono from "./Imágenes/phone-svgrepo-com.svg"
@@ -54,7 +54,7 @@ const footer = () => {
                 </div>
               </div>
               <div className='lema'>
-                                                                                                                                                                                                                                                        <                                                                   h1 className={alice.className}>¡Creemos en la excelencia como el camino para lograr los sueños!</h1>
+              <h1 className={alice.className}>¡Creemos en la excelencia como el camino para lograr los sueños!</h1>
               </div> 
              </div>
             </div>

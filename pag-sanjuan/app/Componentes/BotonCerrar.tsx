@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Botoncerrado.css"
+import "./scss/Botoncerrado.css"
 
 const BotonCerrar = ({ cerrado, HandleClick }: { cerrado: boolean; HandleClick: () => void }) => {
   return (

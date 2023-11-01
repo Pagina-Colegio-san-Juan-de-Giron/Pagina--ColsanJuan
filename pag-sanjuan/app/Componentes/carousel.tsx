@@ -34,7 +34,7 @@ const carousel = (props: Props) => {
   return (
     <div className="container-slider">
       <span className='container-Sslider'>
-        <Image className={ "cargado" } src={require(`../../public/img/${SelectedImage}`)}e alt='imagen' onLoad={() =>(`../../public/img/10.PNG`)}/>
+        <Image className={ "cargado" } src={require(`../../public/img/${SelectedImage}`)} alt='imagen' onLoad={() =>(setcargado(true))}/>
       </span>
     </div>
     )
