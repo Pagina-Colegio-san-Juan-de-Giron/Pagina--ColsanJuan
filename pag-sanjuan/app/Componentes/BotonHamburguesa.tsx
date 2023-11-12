@@ -11,9 +11,9 @@ const BotonHamburguesa = ({ cerrado, HandleClick }: { cerrado: boolean; HandleCl
   <div className='flex btn'>  
     <div className={` ${cerrado ? 'IconoNM' : 'IconoM'} contenedor-boton`} onClick={HandleClick}>
         <Cbarras className={` ${cerrado ? 'IconoMenu' : ''}`}>
-            <Barra1 className='justify-start'/>
-            
             <Barra2 className='justify-end'/>
+            
+            <Barra1 className='justify-start'/>
         </Cbarras>
     </div>
   </div>      
@@ -24,20 +24,22 @@ const BotonHamburguesa = ({ cerrado, HandleClick }: { cerrado: boolean; HandleCl
 export default BotonHamburguesa
 
 const Barra1 = styled.div`
-  width: 1.5rem;
-  height: .5rem;
-  z-index: 1;
-  transform: rotate(45deg);
-  transition: all 300ms ease;
-  background-color: white;
-`
-const Barra2 = styled.div`
-  width: 1.5rem;
-  height: .5rem;
+  width: 2.5rem;
+  height: 1rem;
   z-index: 1;
   transform: rotate(-45deg);
   transition: all 300ms ease;
   background-color: white;
+  border: blue .2rem solid;
+`
+const Barra2 = styled.div`
+  width: 2.5rem;
+  height: 1rem;
+  z-index: 1;
+  transform: rotate(45deg);
+  transition: all 300ms ease;
+  background-color: white;
+  border: blue .2rem solid;
 `
 
 

@@ -1,20 +1,22 @@
+'use client'
+
 import "./scss/Header.css";
 import Image from 'next/image';
 import escudo from "./Imágenes/Escudo.svg";
 import { Alice } from 'next/font/google'
-import { Pacifico } from 'next/font/google'
+import { Dancing_Script } from 'next/font/google'
 
 const alice = Alice({ 
   subsets: ['latin-ext'],
   weight: ['400']
 })
 
-const pacifico = Pacifico({ 
+const pacifico = Dancing_Script({ 
   subsets: ['latin-ext'],
-  weight: ['400']
+  weight: ['500']
 })
 
-export default function Header() {
+const Header = () => {
     return (
       <header className="Header">
 
@@ -25,9 +27,9 @@ export default function Header() {
                     <div className="NombreColegio" >
 
                       <div className="contenedor-letras">
-                          <span className="Texto"><span className={alice.className}>Colegio</span></span>
-                          <span className="TextoMedio"><span className={alice.className}>SAN JUAN</span></span>
-                          <span className="Texto"><span className={alice.className}>De Girón</span></span>
+                          <span className={`${alice.className} Texto`}>Colegio</span>
+                          <span className={`${alice.className} TextoMedio`}>SAN JUAN</span>
+                          <span className={`${alice.className} Texto`}>De Girón</span>
                       </div>
 
                     </div>
@@ -44,3 +46,5 @@ export default function Header() {
       </header>
     )
   }
+
+  export default Header
