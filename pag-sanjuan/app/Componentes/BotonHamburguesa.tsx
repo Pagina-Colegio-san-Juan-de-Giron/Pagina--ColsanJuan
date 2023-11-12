@@ -30,7 +30,7 @@ const Barra1 = styled.div`
   transform: rotate(-45deg);
   transition: all 300ms ease;
   background-color: white;
-  border: blue .2rem solid;
+  border: #023E87 .2rem solid;
 `
 const Barra2 = styled.div`
   width: 2.5rem;
@@ -39,7 +39,7 @@ const Barra2 = styled.div`
   transform: rotate(45deg);
   transition: all 300ms ease;
   background-color: white;
-  border: blue .2rem solid;
+  border: #023E87 .2rem solid;
 `
 
 
