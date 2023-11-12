@@ -1,7 +1,6 @@
 'use client'
 
 import "../globals.css"
-import "tailwindcss/tailwind.css";
 import React, {useState} from 'react';
 import BotonHamburguesa from "./BotonHamburguesa";
 import BotonCerrar from "./BotonCerrar";
@@ -12,17 +11,6 @@ export default function Menu() {
    setcerrado(!cerrado);
   }
 
-  let ancho = window.innerWidth
-
-  const Cel = () => {
-    if(ancho > 600){
-       HandleClick();
-    }
-    else{
-      setcerrado(cerrado);
-    }
-  }
-
 
 
 return (
@@ -30,7 +18,7 @@ return (
 
 
 <nav className="Nav flex h-full">
-  <ul className={` ${cerrado ? 'menu' : 'translate-x-0 menu'}bg-F-blue min-h-full select-none`} onMouseLeave={Cel}>
+  <ul className={` ${cerrado ? 'menu' : 'translate-x-0 menu'}bg-F-blue min-h-full select-none`} onMouseLeave={HandleClick}>
    <BotonCerrar cerrado={cerrado} HandleClick={HandleClick}/>
    <a href="/"><li className="justify-center">Inicio</li></a>
         <li className="justify-center">Institucional

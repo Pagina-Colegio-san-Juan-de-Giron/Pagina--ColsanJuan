@@ -26,8 +26,6 @@ button{
     justify-content: center;
     width: 100%;
     row-gap: 1rem;
-    background-color: #added6;
-
 }
 
 .sliderImg{
@@ -40,6 +38,7 @@ button{
 
 .cargado{
     opacity: 1;
+    width: 100%;
 }
 
 .container-circulos{
