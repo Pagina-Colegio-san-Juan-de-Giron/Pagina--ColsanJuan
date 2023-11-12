@@ -10,7 +10,7 @@ const alice = Alice({
 const Mision = () => {
   return (
     <main>
-      <header className={alice.className}>
+      <header className={`${alice.className} header`}>
         <div className='container-hheader'>
           <span className='span'/>
             VISIÓN DEL COLEGIO<br/> 
