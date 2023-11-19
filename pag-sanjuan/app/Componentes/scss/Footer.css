@@ -204,6 +204,6 @@ h1{
     }
 
     .correo{
-        font-size: calc(1rem + 1vw);
+        font-size: calc(.7rem + 1vw);
     }
 }

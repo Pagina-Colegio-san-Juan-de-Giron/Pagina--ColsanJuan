@@ -25,7 +25,7 @@ body{
     z-index: 10;
     grid-area: header;
     width: 100%;
-    min-height: 5rem;
+    min-height: 7rem;
     height: 15vh;
     background-color: #023E87;
 }
@@ -43,6 +43,7 @@ body{
 .Footer{
     grid-area: footer;
     background-color: rgba(255, 255, 255, 0);
+    min-height: 500px;
 }
 
 @media (max-width: 600px){
