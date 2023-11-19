@@ -117,6 +117,10 @@ span{
         font-size: calc(.8rem + 1vw);
     }
 
+    .imagen{
+        min-width: 4rem;
+    }
+
 }
 
 @media (max-width: 700px){

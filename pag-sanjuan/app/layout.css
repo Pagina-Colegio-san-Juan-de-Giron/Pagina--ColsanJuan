@@ -56,7 +56,7 @@ body{
     .grid-container{
         display: grid;
         grid-template:
-        "header header" 15vh
+        "header header" 7rem
         "section section"  auto
         "footer footer" 80vh/
         auto    auto;

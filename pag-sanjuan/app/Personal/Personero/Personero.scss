@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Hhheader{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 1rem;
+
+    h2{
+        color: #F1CC77;
+        font-weight: bold;
+        font-size: 1.5vw;
+    }
+    
+    h1{
+        font-size: 5vw;
+        font-weight: bold;
+    }
+}
+
+p{
+    margin: 1.5vw;
+    font-size: 1.5vw;
+    padding-bottom: 1rem;
+
+    h2{
+        color: #F1CC77;
+        font-weight: bold;
+    }
+}

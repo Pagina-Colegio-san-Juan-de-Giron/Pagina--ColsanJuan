@@ -8,7 +8,7 @@ import Stonk from "./Componentes/Imágenes/trend-up-svgrepo-com.svg"
 import Uno from "./Componentes/Imágenes/number-one-bold-svgrepo-com.svg"
 import Bombilla from "./Componentes/Imágenes/lightbulb-on-svgrepo-com.svg"
 import { useState, useEffect } from "react";
-import { Alice } from 'next/font/google'
+import { Alice } from 'next/font/google';
 import juanchos from "./Componentes/Imágenes/juanchos.jpg"
 
         

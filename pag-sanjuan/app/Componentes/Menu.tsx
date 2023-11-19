@@ -25,7 +25,7 @@ return (
         
         <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
           <span><span className="linea"></span></span>
-              <a href="/Institucional/Reseña_Historica"><li>Reseña Histórica</li></a>
+              <a href="/Institucional/ResenaHistorica"><li>Reseña Histórica</li></a>
               <a href="/Institucional/Mision"><li>Misión</li></a>
               <a href="/Institucional/Vision"><li>Visión</li></a>
               <a href="/Institucional/Filosofia_institucional"><li>Filosofía<br/>Institucional</li></a>
