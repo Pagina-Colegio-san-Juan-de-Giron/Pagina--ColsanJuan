@@ -67,7 +67,7 @@ return (
               <a href="/Personal/Directivos_docentes"><li>Directivos<br/>Docente</li></a>
               <a href="/Personal/Docentes"><li>Docentes</li></a>
               <a href="/Personal/Personero"><li>Personero</li></a>
-              <a href="/Personal/Personero"><li>Contralor</li></a>
+              <a href="/Personal/Contralor"><li>Contralor</li></a>
               <a href="/Personal/Administrativos"><li>Administrativos</li></a>
               <a href="/Personal/Personal_de_Apoyo"><li>Personal de<br/>apoyo</li></a>
         </ul>
