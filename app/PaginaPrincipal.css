@@ -1,0 +1,167 @@
+
+container-slider{
+    overflow-x: hidden;
+    border: 1px solid black;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: #B9BFDB;
+}
+
+
+button{
+    width: 20px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-pagina{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    row-gap: 1rem;
+}
+
+.sliderImg{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 3s;
+    background-color: #B9BFDB;
+}
+
+.cargado{
+    opacity: 1;
+    width: 100%;
+}
+
+.container-circulos{
+    width: 12rem;
+    height: 2rem;
+    display: flex;
+    gap: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.circulo{
+    background-color: white;
+    border-radius: 50%;
+    width: 25%;
+    height: 80%;
+}
+
+.container-Sslider{
+    background-color: #B9BFDB;
+    width: 100%;
+    height: 30vw;
+}
+
+.container-video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: 50vw;
+    padding: 5vw;
+}
+
+.container-video div{
+    width: 80%;
+    height: 100%;
+}
+
+.container-video div iframe{
+    width: 100%;
+    height: 100%;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 5vw;
+}
+
+article h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.container-articulo img{
+    width: 50vw;
+}
+
+.container-articulo{
+    display: flex;
+    min-width: 100%;
+}
+
+.logros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+h2{
+    font-size: 2vw;
+    width: 70%;
+    font-weight: bold;
+    padding: 3vw;
+    text-align: right;
+    line-height: normal;
+}
+
+.logros span{
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.Icono{
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    border:1vw solid #e3b76a;
+    box-shadow: gold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: 2rem;
+}
+
+.Icono img{
+    width: 70%;
+}
+
+@media (max-width: 600px){
+    .container-articulo{
+        height: 40vh;
+    }
+
+    .Icono{
+        width: 14vw;
+        height: 14vw;
+    }
+
+    h2{
+        font-size: 2.5vw;
+        width: 70%;
+        font-weight: bold;
+        padding: 3vw;
+        text-align: right;
+        line-height: normal;
+    }
+}

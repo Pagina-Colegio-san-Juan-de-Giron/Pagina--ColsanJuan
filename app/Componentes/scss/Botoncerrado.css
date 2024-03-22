@@ -1,0 +1,26 @@
+i{
+    display: none;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    font-size: 2rem;
+    justify-content: flex-end;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+span{ 
+    padding-right: 10%;
+}
+
+@media (max-width: 600px){
+    i{
+        display: flex;
+        font-style: normal;
+        font-weight: bold;
+        color: white;
+        font-size: 2rem;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+}
