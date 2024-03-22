@@ -1,0 +1,147 @@
+main{
+    padding-bottom: 1rem;
+}
+
+
+
+.punto{
+    width: 3vw;
+    height: 1.5vw;
+    background-color: #3E3F95;
+    border-radius: 50%;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2vw;
+}
+
+text{
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: justify;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+p::before{
+    content: "\2022";
+    color: #3E3F95;
+    margin-left: 1vw;
+    font-size: 5vw;
+    align-items: flex-start;
+}
+
+.parrafo-inicio{
+    width: 80%;
+    height: auto;
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.parrafo-inicio::before {
+    content: none; 
+  }
+
+.container-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+}
+
+.articulo{
+    width: 100%;
+    display: flex;
+}
+
+.container-descrip{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        color: #E3B76B;
+        font-size: 3vw;
+        font-weight: bold;
+    }
+}
+
+.container-image{
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        font-size: 3vw;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+    }
+
+    img{
+        padding: 1vw;
+    }
+}
+
+.mujerP{
+    padding-top: 4vw;
+}
+
+@media (max-width: 600px){
+
+    .parrafo-inicio{
+        width: 80%;
+        height: auto;
+        font-weight: bold;
+        font-size: 3vw;
+    }
+
+    .container-descrip{
+        width: 70%;
+
+        h1{
+            color: #E3B76B;
+            font-size: 5vw;
+            font-weight: bold;
+        }
+    }
+
+    .container-image{
+        width: 30%;
+        img{
+            padding: 2vw;
+        }
+
+        h2{
+            font-size: 6vw;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    
+    p{
+        text-align: justify;
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .mujerP{
+        padding-top: 8vw;
+    }
+    
+}
