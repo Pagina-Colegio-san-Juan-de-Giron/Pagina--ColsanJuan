@@ -205,6 +205,15 @@ main{
                 top: 0;
                 opacity: 0;
             }
+
+            input[type="file"] .noclickeable{
+                position: absolute;
+                cursor: default;
+                transform: scale(10);
+                left: 0;
+                top: 0;
+                opacity: 0;
+            }
         }
 
     }
@@ -241,6 +250,19 @@ main{
                 cursor: pointer;
             }
         }
+    }
+
+
+    .novisible{
+        display: none;
+    }
+
+    .Yaenviados{
+        background-color: red;
+    }
+
+    .noclickeable{
+        cursor: default;
     }
 }
 

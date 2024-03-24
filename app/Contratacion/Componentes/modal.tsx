@@ -13,6 +13,9 @@ const [Files, setFiles] = useState<File[]>([]);
 const [UplFiles, setUplFiles] = useState<File[]>([]);
 const [Filename, setFileName] = useState("");
 const [FileArray, setFileArray] = useState<string[]>([]);
+const [Enviado, setenviado] = useState<boolean>(false);
+const [EnviadoSubir, setenviadoSubir] = useState<boolean>(false);
+const [nombrepropuesta, setnombre] = useState<string>("");
 
 
   useEffect(() => {
@@ -67,16 +70,25 @@ const [FileArray, setFileArray] = useState<string[]>([]);
                         </div>
 
                         <h1>Subida de archivos</h1>
-
                         <form className='upload' onSubmit={
                           async (e) => {
                             e.preventDefault()
-                            if (!File) return;
-                          Files.forEach(async (file) => { 
-                            setUplFiles([]);
+                            if (!File || nombrepropuesta.trim() === ""){
+                              alert('Ingrese un documento o nombre de la propuesta');
+                              return;
+                            }
+
+                            setenviado(true);
+                            setenviadoSubir(true);
+
+
+                            Files.forEach(async (file) => { 
+                              
+                              
                            try{
                             const form = new FormData()
                               form.set('File', file);
+                              form.set('Name', nombrepropuesta)
 
                             //enviar al server
                             const res = await fetch('api/Upload', {
@@ -95,32 +107,42 @@ const [FileArray, setFileArray] = useState<string[]>([]);
                             catch(error){
                               console.log(error);
                              }
-                          })
+                           })
                           }
                          }
                         >
-
+                          <input type='text' placeholder='Nombre de la empresa :V' value={nombrepropuesta} onChange={(e) => setnombre(e.target.value)}></input>
                           <div className='Contenedor-subidas'>
                             <h2>Archivos Subidos</h2>
                             <div className='contenedorInfo' >
                               {
                                 UplFiles.map((Archivo) => {
                                   return(
-                                    <C_Archivo key={Archivo.lastModified} File={Archivo} Ffunction={EliminarElemento}/>
+                                    <C_Archivo enviado={Enviado} key={Archivo.lastModified} File={Archivo} Ffunction={EliminarElemento}/>
                                   );
                                 })
                               }
+
+                              <div className={`${Enviado ? 'Yaenviados' : 'novisible'}`}>
+                                {
+                                  UplFiles.map((arch) => {
+                                    return(
+                                      <span>{arch.name}</span>
+                                    )
+                                  })
+                                }
+                              </div>
                             </div>
                           </div>
 
                         <div className='contenedor-botones'>
-                          <button type='button' className='botoneleccion'>
+                          <button type='button' disabled={Enviado} className={`${Enviado ? 'noclickeable' : 'botoneleccion'}`}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-upload" viewBox="0 0 16 16">
                               <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
                               <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
                             </svg>
                             Subir peticiones
-                            <input type='file' onChange={(e) => {
+                            <input type='file' className={`${Enviado ? 'noclickeable' : ''}`} disabled={Enviado} onChange={(e) => {
                               console.log("cambio :p")
                               if (e.target && e.target.files){
                                 const selectedFile = e.target.files[0];
@@ -139,9 +161,9 @@ const [FileArray, setFileArray] = useState<string[]>([]);
                                 }
                               }
                             
-                              }} className='icon-upload'/>
+                              }}/>
                           </button>
-                          <button className='botonsubida'>Enviar</button>
+                          <button className='botonsubida' disabled={EnviadoSubir}>Enviar</button>
                         </div>
                         </form>
                 </section>
