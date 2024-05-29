@@ -138,7 +138,7 @@ main{
     height: 95%;
 
     .download{
-        background-color: violet;
+        background-color: rgb(113, 253, 239);
         padding: 1rem;
         display: flex;
         justify-content: space-between;
@@ -161,7 +161,7 @@ main{
     }
 
     .upload{
-        background-color: greenyellow;
+        background-color: rgb(255, 255, 147);
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -188,7 +188,8 @@ main{
         }
 
         button{
-            background-color: cadetblue;
+            background-color: white;
+            border-radius: 1rem;
             position: relative;
             padding: 1rem;
             display: flex;
@@ -226,7 +227,7 @@ main{
         row-gap: 1rem;
 
         .ContenedorArchivo{
-            background-color: violet;
+            background-color: white;
             margin-bottom: .5rem;
             width: 100%;
             height: 2rem;
@@ -258,7 +259,8 @@ main{
     }
 
     .Yaenviados{
-        background-color: red;
+        background-color: rgb(255, 243, 71);
+        border-radius: 1rem;
     }
 
     .noclickeable{

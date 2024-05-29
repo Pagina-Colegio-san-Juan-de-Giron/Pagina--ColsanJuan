@@ -28,6 +28,7 @@ const carousel = (props: Props) => {
         const NextIndex = Math.floor(Math.random() * images.length);
         SetSelectedImage(images[NextIndex]);
         SetSelectedIndex(NextIndex);
+        console.log(SelectedImage)
       }, 1000)
     };
     

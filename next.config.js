@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+
 const nextConfig = {// Can be safely removed in newer versions of Next.js
     future: {
   
