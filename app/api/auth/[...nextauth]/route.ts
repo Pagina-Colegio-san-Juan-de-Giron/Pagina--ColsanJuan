@@ -43,7 +43,7 @@ const AuthOpts = {
         })
     ],
     pages: {
-        signIn: "/auth/signin"
+        signIn: "/Contratacion/ADMIN"
     },
     secret: process.env.NEXTAUTH_SECRET,
 };

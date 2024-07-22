@@ -34,7 +34,7 @@ const login = () => {
       console.log("Quien eres? un maldito espía? Para quién?")
     }
     else{
-      router.push("/Contratacion/ADMIN/Secretaria/Modal")
+      router.push("/Contratacion/ADMIN/Secretaria")
       console.log("Eres un admin papu")
     }
  }

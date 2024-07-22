@@ -18,7 +18,7 @@ let idcontador = 0;
           EsCarpeta: Isfolder,
           name: file,
           items: Isfolder ? leerdir([rutaFile]) : [],
-          path: rutaFile,
+          path: rutaFile
         };
         return carpeta
       });
@@ -31,9 +31,21 @@ let idcontador = 0;
 
 export async function GET(req, res, NextApiResponse) {
  try {
-  const data = leerdir(["public/"])
-  console.log(data)
-  return Response.json(data)
+  const url = new URL(req.url);
+  const searchparams = new URLSearchParams(url.searchParams)
+  const Dirpath = searchparams.get("Dirpath")
+  if (Dirpath) {
+    const dirleer = path.join("app/Contratacion/ADMIN/Secretaria/Licitaciones", Dirpath)
+    const data = leerdir([dirleer])
+    console.log(data)
+    return Response.json(data)  
+  }
+  else{
+    const data = leerdir(["app/Contratacion/ADMIN/Secretaria/Licitaciones"])
+    console.log(data)
+    return Response.json(data)
+  }
+  
  } catch (err) {
   console.log("holi :)", err)
   return Response.json(err);

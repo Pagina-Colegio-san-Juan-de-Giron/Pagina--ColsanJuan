@@ -4,6 +4,7 @@ import "../globals.css"
 import React, {useState} from 'react';
 import BotonHamburguesa from "./BotonHamburguesa";
 import BotonCerrar from "./BotonCerrar";
+import Link from "next/link";
 
 export default function Menu() {
   const [cerrado, setcerrado] = useState(true)
@@ -86,7 +87,7 @@ return (
 
       </li>
 
-        <a href="/Contratacion"><li className="justify-center">Contratación</li></a>
+        <Link href="/Contratacion"><li className="justify-center">Contratación</li></Link>
         <a href="/Egresados"><li className="justify-center">Egresados</li></a>
         <a href="/Galeria"><li className="justify-center">Galería</li></a>
   </ul>
