@@ -36,7 +36,7 @@ interface FolderProps {
 
 
 
-function Folder({ explorer }: FolderProps) {
+function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => void) {
 
     const [expandedFolders, setExpandedFolders] = useState<number[]>([]);
     const [downloadStat, setDwnloadStat] = useState("");
@@ -134,10 +134,10 @@ function Folder({ explorer }: FolderProps) {
                 return(<>
                    <div>
                        <span className="Cont-folder" onClick={() => CambiarExpan(file.id)}>📂 {file.name}  
-                        <div className="Close_Contr" onClick={() => { HandleCloseds(file.name); console.log(Closed); HandleeClick() }}>
+                        <div className="Close_Contr" onClick={(e) => {e.stopPropagation(); console.log(Closed); HandleeClick();}}>
                             Cerrar contratacion
 
-                            <Añadir cerrado={ceerrado} HandleClick={HandleeClick}/>
+                            <Añadir HandleClosed={HandleCloseds} Nombre={file.name} cerrado={ceerrado} HandleClick={HandleeClick}/>
                         </div>
                        </span>
                    </div>
