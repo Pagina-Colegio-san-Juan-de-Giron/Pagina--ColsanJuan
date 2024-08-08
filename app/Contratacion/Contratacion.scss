@@ -126,20 +126,28 @@ main{
     }
 }
 
-.content{
+.contentMoodal{
     h1{
         color: #6d9dfe;
         font-weight: 800;
         font-size: 2rem;
     }
 
+    overflow: scroll;
     display: flex;
     flex-direction: column;
     height: 95%;
 
+
+   .contentDownload{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
     .download{
-        background-color: rgb(113, 253, 239);
-        padding: 1rem;
+        gap: .5rem;
+        background-color: rgb(135, 233, 223);
+        padding: .5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -159,6 +167,8 @@ main{
             cursor: pointer;
         }
     }
+   } 
+    
 
     .upload{
         background-color: rgb(255, 255, 147);
@@ -171,6 +181,7 @@ main{
         align-items: center;
         border-radius: 10px;
         gap: 1rem;
+        padding: 1rem;
 
         .icon-upload{
             background-color: rgba(0, 0, 0, 0);

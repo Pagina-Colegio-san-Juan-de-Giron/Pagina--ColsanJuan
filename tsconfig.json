@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "middleware.js", "middleware.js", "app/Contratacion/ADMIN/Secretaria/Modal/componentes/Folders.jsx", "app/Contratacion/ADMIN/Secretaria/Modal/modal.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "middleware.js", "middleware.js", "app/Contratacion/ADMIN/Secretaria/Modal/componentes/Folders.jsx", "app/Contratacion/ADMIN/Secretaria/Modal/modal.jsx", "app/api/Secretaria/Fechas/route.js"],
   "exclude": ["node_modules"]
 }

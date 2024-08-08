@@ -1,10 +1,8 @@
 'use client'
-import ClosedsContext from "@/app/Context/ClosedsContext";
 import exp from "constants";
 import path from "path";
 import { space } from "postcss/lib/list";
 import React, { JSXElementConstructor, useContext, useState } from "react";
-import Añadir from "../../ModalB/page"
 
 interface ExplorerItem {
     id: number;
@@ -122,10 +120,7 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
 
       console.log(explorer)
 
-      const ClosedContext = useContext(ClosedsContext);
-
-      if (ClosedContext){
-        const {isClosed ,Closed, setClosed, HandleCloseds} = ClosedContext
+     
 
         return (<div className="Folders-container">{
             explorer.map((file) => {
@@ -134,11 +129,6 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
                 return(<>
                    <div>
                        <span className="Cont-folder" onClick={() => CambiarExpan(file.id)}>📂 {file.name}  
-                        <div className="Close_Contr" onClick={(e) => {e.stopPropagation(); console.log(Closed); HandleeClick();}}>
-                            Cerrar contratacion
-
-                            <Añadir HandleClosed={HandleCloseds} Nombre={file.name} cerrado={ceerrado} HandleClick={HandleeClick}/>
-                        </div>
                        </span>
                    </div>
     
@@ -168,10 +158,6 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
         }
         </div>
     )
-      }
-      else{
-        throw new Error ("Debe existir un contexto") 
-      }
 
 }
 

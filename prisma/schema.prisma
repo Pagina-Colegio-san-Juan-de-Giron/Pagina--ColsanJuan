@@ -20,3 +20,10 @@ model Users {
   CreatedAt DateTime @default(now())
   UpdatedAt DateTime @updatedAt
 }
+
+model Fecha{
+  id Int @id @default(autoincrement())
+  Fecha String
+  Nombre String @unique
+  @@map("Fecha")
+}

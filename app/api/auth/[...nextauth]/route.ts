@@ -2,7 +2,7 @@ import nextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import db from "@/libs/db"
 import bcrypt from 'bcrypt'
-import { User } from "@prisma/client";
+import { Users } from "@prisma/client";
 import { use } from "react";
 import Email from "next-auth/providers/email";
 import { error } from "console";
@@ -18,7 +18,7 @@ const AuthOpts = {
             
             async authorize(credentials, request): Promise<any>{
                 if(!credentials) throw new Error ("No hay credenciales")
-                    const foundeduser: User | null = await db.user.findUnique({
+                    const foundeduser: Users | null = await db.users.findUnique({
                         where: {
                             Username: credentials.Username,
                             pswd: credentials.pswd
@@ -27,6 +27,8 @@ const AuthOpts = {
 
                     if (!foundeduser) throw new Error("No se encontro el usuario")
 
+
+                            //cambie nombre de User a Users porque me lo pedia el editor, si te da error cambialo denuevo
 
                     else if(credentials.pswd != foundeduser.pswd){
                         throw new Error("Contraseña incorrecta")

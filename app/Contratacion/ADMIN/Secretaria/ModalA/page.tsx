@@ -1,13 +1,16 @@
-'use client'
-import React, {useEffect, useState} from 'react';
-import { JsonArray, JsonObject } from '@prisma/client/runtime/library';
-import C_Archivo from "../ModalA/Archivo"
-import "./Contratacion.scss"
+import React, {use, useContext, useEffect, useState, ChangeEvent, Dispatch, SetStateAction} from 'react';
+import styled from 'styled-components';
+import C_Archivo from "./Archivo";
+import { strict } from 'assert';
+import { appendFile } from 'fs';
 
 
+interface Fechas {
+  nombre: string;
+  Fecha: string;
+}
 
-
-const page = ({ Nombre ,cerrado, HandleClick }: { Nombre: string; cerrado: boolean; HandleClick: () => void }) => {
+const modal = ({ FolderPath ,InitFilename ,Finished ,Name, cerrado, HandleClick}: { FolderPath: string; InitFilename: string; Finished: boolean; Name: string ;cerrado: boolean; HandleClick: () => void ; }) => {
 const [File, setFile] = useState<File | null >(null);
 const [Files, setFiles] = useState<File[]>([]);
 const [UplFiles, setUplFiles] = useState<File[]>([]);
@@ -15,24 +18,26 @@ const [Filename, setFileName] = useState("");
 const [FileArray, setFileArray] = useState<string[]>([]);
 const [Enviado, setenviado] = useState<boolean>(false);
 const [EnviadoSubir, setenviadoSubir] = useState<boolean>(false);
-const [nombredirLic, setnombreLic] = useState<string>("");
-const [explorer, setexplorer] = useState<JsonArray>();
+const [nombrepropuesta, setnombre] = useState<string>("");
 
+const [FechaInner, setFechaInner] = useState<string>("")
+const [Finishet, setFinished] = useState<boolean>(false);
+
+useEffect(() => {
+  setFinished(Finished);
+}, [])
+
+  useEffect(() => {
+    console.log(File);
+    console.log(Files);
+    console.log(Filename);
+  }, [File]);
 
 
   useEffect(() => {
-    async function obtenerdirs() {
-      const response = await fetch('/api/Secretaria');
-      const data = await response.json();
-      console.log(data);
-      if(data) {
-        setexplorer(data);
-      }
-      console.log(explorer)
-  }
-
-  obtenerdirs();
-  }, []);
+    console.log(Files, "Holaaa");
+    setUplFiles(Files);
+  }, [Files]);
 
   function EliminarElemento(FileDeleted: File |  null){
     if(FileDeleted){
@@ -43,69 +48,123 @@ const [explorer, setexplorer] = useState<JsonArray>();
     }
   }
 
+ 
+
+  
+
+  const DownloadFile = async (Filepath: string, filename: string) => {
+
+    
+    
+    try{
+        const res = await fetch(`/api/Secretaria/Download?Filepath=${Filepath}&Filename=${filename}`)
+        const blob = await res.blob();
+
+        const DisposicionContenido = res.headers.get('Content-disposition');
+        if(DisposicionContenido){
+            const Nombrecoincidido = DisposicionContenido.match(/filename="(.+)"/);
+            const Nombre = Nombrecoincidido ? Nombrecoincidido[1] : "downloadedFile";
+            const url = window.URL.createObjectURL(blob)
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = Nombre
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        }
+
+        
+    }
+    catch(err){
+        console.error("Error descargando:", err);
+    }
+}
+
+    
 
 
-  return (
-    <>
-        <div className={`overlay ${cerrado ? 'hidden anim_fade-out' : 'showed'}`}>
-            <div className={`contenedor-modal ${cerrado ? 'hidden-content anim_fade-outmove' : ''}`}>
-                <header className='titulo-modal'>
-                    <h2>
-                        {Nombre}
-                    </h2>
-                </header>
-                <span className='boton-cerrar' onClick={HandleClick}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                    </svg>
-                </span>
-
-                <section className='content'>
-                        <h1>Añadir licitacion</h1>
-                        <form className='create' onSubmit={
-                          async (e) => {
-                            e.preventDefault()
-                            if (!File || nombredirLic.trim() === ""){
-                              alert('Ingrese un documento o nombre de la propuesta');
-                              return;
-                            }
-
-                            setenviado(true);
-                            setenviadoSubir(true);
-
-
-                              
-                              
-                           try{
-                            const form = new FormData()
-                              form.set('File', File);
-                              form.set('Name', nombredirLic)
-
-                            //enviar al server
-                            const res = await fetch('/api/Upload/Secretaria', {
-                                method: "POST",
-                                body: form
-                              });
-
-                              if(res.ok){
-                                console.log("archivo suubido")
+    return (
+      <>
+          <div className={`overlay ${cerrado ? 'hidden anim_fade-out' : 'showed'}`}>
+              <div className={`contenedor-modal ${cerrado ? 'hidden-content anim_fade-outmove' : ''}`}>
+                  <header className='titulo-modal'>
+                      <h2>
+                          {Name}
+                      </h2>
+                  </header>
+                  <span className='boton-cerrar' onClick={HandleClick}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                      <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                      </svg>
+                  </span>
+  
+                  <section className='content'>
+                          <h1>Subida de archivos</h1>
+                         
+                          <form className='upload' onSubmit={
+                            async (e) => {
+                              e.preventDefault()
+                              if (!File || nombrepropuesta.trim() === "" || FechaInner === "" ){
+                                alert('Ingrese un documento, nombre de la propuesta o fecha de cierre');
+                                return;
                               }
+  
+                              setenviado(true);
+                              setenviadoSubir(true);
+                              
+                              try{
+                                  const form = new FormData()
+                                    form.set('Fecha', FechaInner);
+                                    form.set('Nombre', nombrepropuesta)
+                                  const res = await fetch('/api/Secretaria/Fechas', {
+                                    method: "POST",
+                                    body: form
+                                  })
 
-                              const data = await res.json()
-                              console.log(data)
-
+                                  if(res.ok){
+                                    console.log("Fecha Puesta")
+                                  }else{
+                                    throw new Error('Error en la respuesta de la API');
+                                  }
+                              }
+                              catch(error){
+                                console.log(error);
+                              }
+  
+  
+                              Files.forEach(async (file) => { 
+                                
+                                
+                             try{
+                              const form = new FormData()
+                                form.set('File', file);
+                                form.set('Name', nombrepropuesta)
+  
+                              //enviar al server
+                              const res = await fetch('/api/Upload/Secretaria', {
+                                  method: "POST",
+                                  body: form
+                                });
+  
+                                if(res.ok){
+                                  console.log("archivo suubido")
+                                }
+  
+                                const data = await res.json()
+                                console.log(data)
+  
+                              }
+                              catch(error){
+                                console.log(error);
+                               }
+                             })
                             }
-                            catch(error){
-                              console.log(error);
-                             }
-                          }
-                         }>
-                            <div className='Cont_Name'>
-                                Nombre de la licitación
-                                <input type="text" value={nombredirLic} onChange={(e) => setnombreLic(e.target.value)}/>
-                            </div> 
-
-                      
+                           }
+                          >
+                            <input type='text' placeholder='Nombre de licitacion' value={nombrepropuesta} onChange={(e) => {setnombre(e.target.value);}}></input>
+                             <h2><b>Fecha de cierre</b></h2>
+                            <input type="datetime-local" value={FechaInner} onChange={(e) => setFechaInner(e.target.value)}/>
                             <div className='Contenedor-subidas'>
                               <h2>Archivos Subidos</h2>
                               <div className='contenedorInfo' >
@@ -158,13 +217,15 @@ const [explorer, setexplorer] = useState<JsonArray>();
                                 }}/>
                             </button>
                             <button className='botonsubida' disabled={EnviadoSubir}>Enviar</button>
-                          </div>       
-                        </form>
-                </section>
-            </div>
-        </div> 
-    </>
-  );
+                          </div>
+                          </form>
+
+                  </section>
+              </div>
+          </div> 
+      </>
+    );
+  
 }
 
-export default page
+export default modal

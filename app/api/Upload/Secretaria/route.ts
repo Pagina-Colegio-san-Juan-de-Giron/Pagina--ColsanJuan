@@ -45,6 +45,7 @@ export async function POST(req: Request, res: Response) {
     }
   }
   catch(error){
+    console.log(error)
     return new Response(JSON.stringify({message: "ERROOOOR"}),{status: 400,})
   }
     

@@ -23,6 +23,8 @@ export default function Home() {
   
   const [images, setimages] = useState(["IMG-20230929-WA0048.jpg"]);
 
+  
+
   useEffect(() => {
     async function obtenerImagenes() {
         const response = await fetch('/api/Slider');
@@ -33,7 +35,7 @@ export default function Home() {
     }
 
     obtenerImagenes();
-  }, []);
+  }, [images]);
 
   const leer = () => {
     console.log(images)

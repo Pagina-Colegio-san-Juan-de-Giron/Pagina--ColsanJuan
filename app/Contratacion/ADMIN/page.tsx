@@ -35,7 +35,7 @@ const login = () => {
     }
     else{
       router.push("/Contratacion/ADMIN/Secretaria")
-      console.log("Eres un admin papu")
+      console.log("Eres un admin")
     }
  }
 )

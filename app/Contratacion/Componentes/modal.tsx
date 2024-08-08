@@ -8,7 +8,7 @@ import ClosedsContext from '@/app/Context/ClosedsContext';
 
 
 
-const modal = ({ FolderPath ,InitFilename ,Finished ,Name, cerrado, HandleClick }: { FolderPath: string; InitFilename: string; Finished: boolean; Name: string ;cerrado: boolean; HandleClick: () => void }) => {
+const modal = ({ FolderPath ,InitFilename ,Finished ,Name, cerrado, HandleClick, isClosed }: { FolderPath: string; InitFilename: string[]; Finished: boolean; Name: string ;cerrado: boolean; HandleClick: () => void; isClosed: (foldername: string) => boolean }) => {
 const [File, setFile] = useState<File | null >(null);
 const [Files, setFiles] = useState<File[]>([]);
 const [UplFiles, setUplFiles] = useState<File[]>([]);
@@ -44,13 +44,7 @@ useEffect(() => {
     }
   }
 
-  const ClosedContext = useContext(ClosedsContext)
-
-  if(!ClosedContext){
-    throw new Error ("CONTEXTO NECESARIO")
-  }
-
-  const {isClosed} = ClosedContext 
+  
 
   const DownloadFile = async (Filepath: string, filename: string) => {
 
@@ -100,35 +94,47 @@ useEffect(() => {
                       </svg>
                   </span>
   
-                  <section className='content'>
+                  <section className='contentMoodal'>
                       <h1> Descarga</h1>
                         { !isClosed(Name) ?
-                          <div className='download'>
+                        <div className='contentDownload'>{
+
+                          InitFilename.map((Filename) => {
+                            return (<div className='download'>
                               <h2>
-                                  {InitFilename}
+                                  {Filename} 
                               </h2>
-                             <span className='icon' onClick={() => DownloadFile(FolderPath, InitFilename)}>
+                             <span className='icon' onClick={() => DownloadFile(FolderPath, Filename)}>
                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-download" viewBox="0 0 16 16">
                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
                                </svg>
                              </span>
                           </div>
+                            )
+                          })
+                          }
+                        </div>
+                          
 
                           :
-
-                          <div className='download'>
+                          InitFilename.map((Filename) => {
+                            return (
+                              <div className='download'>
                               <h2>
-                                  {InitFilename}
+                                  {Filename}
                               </h2>
-                             <span className='icon' onClick={() => DownloadFile(FolderPath, InitFilename)}>
+                             <span className='icon' onClick={() => DownloadFile(FolderPath, Filename)}>
                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-download" viewBox="0 0 16 16">
                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
                                </svg>
                              </span>
-                          </div>
-
+                          </div>    
+                            )
+                          })
+                          
+                          
                         }
                           <h1>Subida de archivos</h1>
                         { !isClosed(Name) ? 
