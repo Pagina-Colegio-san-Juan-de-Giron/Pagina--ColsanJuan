@@ -2,7 +2,7 @@
 import exp from "constants";
 import path from "path";
 import { space } from "postcss/lib/list";
-import React, { JSXElementConstructor, useContext, useState } from "react";
+import React, { JSXElementConstructor, useContext, useEffect, useState } from "react";
 
 interface ExplorerItem {
     id: number;
@@ -39,7 +39,14 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
     const [expandedFolders, setExpandedFolders] = useState<number[]>([]);
     const [downloadStat, setDwnloadStat] = useState("");
     const [ceerrado, setceerrado] = useState<boolean>(true)
+    const [FechaCambiar] = useState<string>("")
 
+
+    useEffect(() => {
+        const CambiarFecha = async(Fecha: string, Nombre: String) =>{
+            
+        }
+    }, [FechaCambiar])
     const HandleeClick = () => {
         setceerrado(!ceerrado);
       }
@@ -128,11 +135,14 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
                 const Expandido = expandedFolders.includes(file.id);
                 return(<>
                    <div>
-                       <span className="Cont-folder" onClick={() => CambiarExpan(file.id)}>📂 {file.name}  
+                       <span className="Cont-folder" onClick={() => CambiarExpan(file.id)}>📂 {file.name}
+                            <form action="">
+                                <input type="datetime-local" value={}/>
+                            </form>
                        </span>
                    </div>
     
-                   <div style={{display: Expandido ? "block" : "none"}}>
+       <div style={{display: Expandido ? "block" : "none"}}>
                         <Folder explorer={file.items}/>         
                    </div>
                 </> 

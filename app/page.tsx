@@ -10,6 +10,7 @@ import Bombilla from "./Componentes/Imágenes/lightbulb-on-svgrepo-com.svg"
 import { useState, useEffect } from "react";
 import { Alice } from 'next/font/google';
 import juanchos from "./Componentes/Imágenes/juanchos.jpg"
+import React from 'react'
 
         
 const alice = Alice({ 
@@ -31,11 +32,10 @@ export default function Home() {
         const data = await response.json();
         setimages(data.filenames);
         console.log(images)
-        console.log(data.filenames)
     }
 
     obtenerImagenes();
-  }, [images]);
+  }, []);
 
   const leer = () => {
     console.log(images)
