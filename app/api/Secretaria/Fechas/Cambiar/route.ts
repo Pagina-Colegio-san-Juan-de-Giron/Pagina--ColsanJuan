@@ -1,9 +1,8 @@
 
 import db from "@/libs/db"
-export async function POST(req: Request) {
-    const data = await req.formData()
-    const FechaNueva = data.get('Fecha')
-    const Nombre = data.get('Nombre')
+export async function PUT(req: Request) {
+    const data = await req.json()
+    const {FechaNueva, Nombre} = data
 
     
 

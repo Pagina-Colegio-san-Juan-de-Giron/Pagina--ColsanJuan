@@ -39,14 +39,11 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
     const [expandedFolders, setExpandedFolders] = useState<number[]>([]);
     const [downloadStat, setDwnloadStat] = useState("");
     const [ceerrado, setceerrado] = useState<boolean>(true)
-    const [FechaCambiar] = useState<string>("")
+    const [FechaCambiar, setFechaCambiar] = useState<string>("")
+    const [NombreCambiar,setNombreCambiar] = useState<string>("")
 
 
-    useEffect(() => {
-        const CambiarFecha = async(Fecha: string, Nombre: String) =>{
-            
-        }
-    }, [FechaCambiar])
+  
     const HandleeClick = () => {
         setceerrado(!ceerrado);
       }
@@ -115,6 +112,32 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
         }
     }
 
+    useEffect(() => {
+        const CambiarFecha = async () =>  {
+            try{
+                  const res = await fetch('/api/Secretaria/Fechas/Cambiar', {
+                    method: "PUT",
+                    body: JSON.stringify({
+                        FechaNueva: FechaCambiar,
+                        Nombre: NombreCambiar
+                    })
+                  })  
+
+                  if (res?.ok){
+                    console.log("Se cambio la fecha")
+                  }else{
+                    console.log("Fecha no cambiada")
+                  }
+            }
+            catch(err)
+            {
+                console.log(err)
+            }
+        }
+
+        CambiarFecha()
+    },[FechaCambiar])
+
     const CambiarExpan = (id: number) => {
         setExpandedFolders(expandedFolders.includes(id)
             ? expandedFolders.filter(folderId => folderId !== id)
@@ -128,6 +151,8 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
       console.log(explorer)
 
      
+        
+
 
         return (<div className="Folders-container">{
             explorer.map((file) => {
@@ -136,9 +161,7 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
                 return(<>
                    <div>
                        <span className="Cont-folder" onClick={() => CambiarExpan(file.id)}>📂 {file.name}
-                            <form action="">
-                                <input type="datetime-local" value={}/>
-                            </form>
+                            <input type="datetime-local" value={FechaCambiar} onChange={(e) => {setFechaCambiar(e.target.value); setNombreCambiar(file.name)}} />
                        </span>
                    </div>
     
