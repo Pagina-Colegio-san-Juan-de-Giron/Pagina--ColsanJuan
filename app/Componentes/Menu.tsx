@@ -8,8 +8,14 @@ import Link from "next/link";
 
 export default function Menu() {
   const [cerrado, setcerrado] = useState(true)
+  
+
   const HandleClick = () => {
-   setcerrado(!cerrado);
+    setcerrado(!cerrado)
+  } 
+
+  const Close = () => {
+    setcerrado(true)
   }
 
 
@@ -17,10 +23,9 @@ export default function Menu() {
 return (
 <>
 
-
-<nav className="Nav flex h-full">
-  <ul className={` ${cerrado ? 'menu' : 'translate-x-0 menu'}bg-F-blue min-h-full select-none`} onMouseLeave={HandleClick}>
-   <BotonCerrar cerrado={cerrado} HandleClick={HandleClick}/>
+<nav className={` ${cerrado ? 'Nav flex w-0 ' : 'Nav flex h-full w-full abierto' }`}>
+  <ul className={` ${cerrado ? 'menu hidden ' : 'translate-x-0 menu'} bg-F-blue min-h-full h-full select-none`} onMouseLeave={Close}>
+   <BotonCerrar cerrado={cerrado} HandleClick={Close}/>
    <a href="/"><li className="justify-center">Inicio</li></a>
         <li className="justify-center">Institucional
         

@@ -1,12 +1,8 @@
 'use client'
 
 import React, {useState, useEffect, useContext} from 'react'
-import Image from 'next/image'
-import imagen from "@/app/Componentes/Imágenes/images.jpg"
 import "./Contratacion.scss"
 import Overlay from "./Componentes/modal"
-import { now } from 'next-auth/client/_utils'
-import { promises } from 'dns'
 
 const Page = () => {
 
@@ -71,12 +67,13 @@ const HandleCloseds = (Foldername: string) => {
         if(data) {
          
 
-          const ResetArray = Array(data.length).fill(false)
           
           
           setLic(data);
-          setCerrados(ResetArray)
 
+          const FullFalse = Array(data.length).fill(false)
+          setCerrados(FullFalse)
+          console.log("Arreglo nuevo ", Estadocerrados, "Estado buscado ", FullFalse)
       
           
           
@@ -97,7 +94,7 @@ const HandleCloseds = (Foldername: string) => {
   useEffect(() => {
     Licitaciones.map((lic) => {
       const FechaCierreLic = FechasCierre[lic.name]
-      let FechaActual = new Date()
+      const FechaActual = new Date()
       if(FechaActual > FechaCierreLic){
         HandleCloseds(lic.name)
       }

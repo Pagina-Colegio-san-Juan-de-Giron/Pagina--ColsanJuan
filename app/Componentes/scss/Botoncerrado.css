@@ -13,6 +13,7 @@ span{
     padding-right: 10%;
 }
 
+
 @media (max-width: 600px){
     i{
         display: flex;
@@ -22,5 +23,9 @@ span{
         font-size: 2rem;
         justify-content: flex-end;
         cursor: pointer;
+    }
+
+    .Nofunct{
+        pointer-events: none;
     }
 }

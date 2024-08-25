@@ -1,28 +1,54 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
-import imagen from "@/app/Componentes/Imágenes/images.jpg"
 import "./Contralor.scss"
 import { Alice } from 'next/font/google';
 import escudo from "@/app/Componentes/Imágenes/Escudo.svg";
-import { promises as fs } from 'fs';
 import ImagenLado from "./Imágenes/fotoIDK.jpg"
+import path from 'path';
 
 const alice = Alice({ 
   subsets: ['latin-ext'],
   weight: ['400']
 })
 
+interface ArregloDatos  {
+  ImageRoute: string,
+  id: number,
+  Nombre: string,
+  Jornada: string
 
-const page = async () => {
+}
 
-  const file = await fs.readFile(process.cwd() + '/app/Personal/Contralor/Data.json', 'utf8');
-  const data = JSON.parse(file);
+const GetURl = (img: string) => {
+  const images = require(`@/app/Personal/Contralor/Imagenes/${img}`)
+  return images
+}
 
+const page = () => {
 
-  const GetURl = (img: string) => {
-    var images = require("@/app/Personal/Contralor" + img)
-    return images
+  
+  const Json: ArregloDatos[] = [
+    {
+      id: 1,
+      ImageRoute: "fotoIDK.jpg",
+      Nombre: "1",
+      Jornada: "Mañana"
+  },
+  {
+      id: 2,
+      ImageRoute: "fotoIDK.jpg",
+      Nombre: "2",
+      Jornada: "Mañana"
+  },
+  {
+      id: 1,
+      ImageRoute: "fotoIDK.jpg",
+      Nombre: "3",
+      Jornada: "Mañana"
   }
+  ]
+
 
 
   return (
@@ -82,18 +108,20 @@ const page = async () => {
           <section className='Escudo-container'>
             <Image className='Escudoo' src={escudo} alt='escudo'/>
           </section>
+
           <section className='Photos'>
-              {
-                data.map(data => (
-                  <div className= 'containerPersonero'>
-                    <Image className='fotoPers' src={GetURl(data.ImageRoute)} alt="foto personero"/>
+              { Json ?
+                Json.map((data) => (
+                  <div className= 'containerPersonero' key={data.id}>
+                    <Image className='fotoPers' src={GetURl(data.ImageRoute)} width="100" height="100" alt="foto personero"/>
                     <h2 className='nombrePers'>{data.Nombre}</h2>
                     <h2 className='jornadaPers'>{data.Jornada}</h2>
                   </div>
                 ))
+                :
+                <div>No hay personeros</div>
               }
           </section>
-
 
         </div>
 

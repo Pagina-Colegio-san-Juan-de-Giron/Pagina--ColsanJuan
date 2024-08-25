@@ -9,6 +9,7 @@ html{
 
 body{
     min-height: 100%;
+    overflow-x: hidden;
 }
 
 .grid-container{
@@ -58,7 +59,7 @@ body{
         grid-template:
         "header header" 7rem
         "section section"  auto
-        "footer footer" 80vh/
+        "footer footer" 100vh/
         auto    auto;
     }
 }

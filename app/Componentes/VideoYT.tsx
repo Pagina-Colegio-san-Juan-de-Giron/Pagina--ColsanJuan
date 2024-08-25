@@ -5,7 +5,7 @@ import Youtube, { YouTubeProps } from 'react-youtube'
 const VideoYT = () => {
 
     const ReproductorFuncionando: YouTubeProps['onReady'] = (event) => {
-       event.target.PauseVideo();
+       event.target.pauseVideo();
     };
 
     const opts: YouTubeProps['opts'] = {

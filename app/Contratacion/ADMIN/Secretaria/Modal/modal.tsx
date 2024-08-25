@@ -66,7 +66,7 @@ const [explorer, setexplorer] = useState<JsonArray>();
                         <h1>Explorador de propuestas</h1>
                         <form className='upload'>
 
-                         <Folders explorer={explorer} cerrado={cerrado} HandleClick={HandleClick}/>
+                         <Folders explorer={explorer} cerrado={cerrado} IsLic HandleClick={HandleClick}/>
 
                         </form>
                 </section>

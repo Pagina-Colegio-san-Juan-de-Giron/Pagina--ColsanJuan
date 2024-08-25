@@ -1,8 +1,6 @@
 'use client'
-import exp from "constants";
 import path from "path";
-import { space } from "postcss/lib/list";
-import React, { JSXElementConstructor, useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface ExplorerItem {
     id: number;
@@ -34,19 +32,16 @@ interface FolderProps {
 
 
 
-function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => void) {
+function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolean}) {
 
     const [expandedFolders, setExpandedFolders] = useState<number[]>([]);
     const [downloadStat, setDwnloadStat] = useState("");
-    const [ceerrado, setceerrado] = useState<boolean>(true)
     const [FechaCambiar, setFechaCambiar] = useState<string>("")
     const [NombreCambiar,setNombreCambiar] = useState<string>("")
 
 
   
-    const HandleeClick = () => {
-        setceerrado(!ceerrado);
-      }
+    
     
 
     const DownloadFile = async (Filepath: string, filename: string) => {
@@ -159,14 +154,19 @@ function Folder({ explorer }: FolderProps, cerrado: boolean, HandleClick: () => 
                 if(file.EsCarpeta){
                 const Expandido = expandedFolders.includes(file.id);
                 return(<>
-                   <div>
-                       <span className="Cont-folder" onClick={() => CambiarExpan(file.id)}>📂 {file.name}
+                   <div className="Lic-Cont">
+                       <span className="Cont-folder" onClick={() => CambiarExpan(file.id)}>📂 {file.name}</span>
+                       {
+                            IsLic ?
                             <input type="datetime-local" value={FechaCambiar} onChange={(e) => {setFechaCambiar(e.target.value); setNombreCambiar(file.name)}} />
-                       </span>
+                            :
+
+                            <span className="nothing"></span>
+                        }
                    </div>
     
        <div style={{display: Expandido ? "block" : "none"}}>
-                        <Folder explorer={file.items}/>         
+                        <Folder explorer={file.items} IsLic={false} />         
                    </div>
                 </> 
                 );

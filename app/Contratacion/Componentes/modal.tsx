@@ -1,9 +1,5 @@
-import React, {use, useContext, useEffect, useState} from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState} from 'react';
 import C_Archivo from "./Archivo";
-import { strict } from 'assert';
-import { appendFile } from 'fs';
-import ClosedsContext from '@/app/Context/ClosedsContext';
 
 
 
@@ -34,6 +30,7 @@ useEffect(() => {
     console.log(Files, "Holaaa");
     setUplFiles(Files);
   }, [Files]);
+
 
   function EliminarElemento(FileDeleted: File |  null){
     if(FileDeleted){
@@ -75,14 +72,10 @@ useEffect(() => {
     }
 }
 
-    const SetItialFile = () => {
-
-    }
-
     return (
       <>
-          <div className={`overlay ${cerrado ? 'hidden anim_fade-out' : 'showed'}`}>
-              <div className={`contenedor-modal ${cerrado ? 'hidden-content anim_fade-outmove' : ''}`}>
+          <div className={`overlay ${!cerrado ? 'hidden anim_fade-out' : 'showed'}`}>
+              <div className={`contenedor-modal ${!cerrado ? 'hidden-content anim_fade-outmove' : ''}`}>
                   <header className='titulo-modal'>
                       <h2>
                           {Name}
@@ -118,21 +111,24 @@ useEffect(() => {
                           
 
                           :
-                          InitFilename.map((Filename) => {
-                            return (
-                              <div className='download'>
-                              <h2>
-                                  {Filename}
-                              </h2>
-                             <span className='icon' onClick={() => DownloadFile(FolderPath, Filename)}>
-                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-download" viewBox="0 0 16 16">
-                               <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                               <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                               </svg>
-                             </span>
-                          </div>    
-                            )
-                          })
+                          <div className='contentDownload'>{
+
+                            InitFilename.map((Filename) => {
+                              return (<div className='download'>
+                                <h2>
+                                    {Filename} 
+                                </h2>
+                               <span className='icon' onClick={() => DownloadFile(FolderPath, Filename)}>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-download" viewBox="0 0 16 16">
+                                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                 <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                 </svg>
+                               </span>
+                            </div>
+                              )
+                            })
+                            }
+                          </div>
                           
                           
                         }
@@ -148,7 +144,7 @@ useEffect(() => {
   
                               setenviado(true);
                               setenviadoSubir(true);
-  
+                              alert("Su archivo a sido subido")
   
                               Files.forEach(async (file) => { 
                                 
@@ -167,6 +163,7 @@ useEffect(() => {
   
                                 if(res.ok){
                                   console.log("archivo suubido")
+                                  alert("Su archivo a sido subido")
                                 }
   
                                 const data = await res.json()
@@ -203,7 +200,7 @@ useEffect(() => {
                                 </div>
                               </div>
                             </div>
-  
+                          { !Enviado ?
                           <div className='contenedor-botones'>
                             <button type='button' disabled={Enviado} className={`${Enviado ? 'noclickeable' : 'botoneleccion'}`}>
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-upload" viewBox="0 0 16 16">
@@ -233,7 +230,9 @@ useEffect(() => {
                                 }}/>
                             </button>
                             <button className='botonsubida' disabled={EnviadoSubir}>Enviar</button>
-                          </div>
+                          </div> :
+
+                          <div></div> }
                           </form>
 
                           :

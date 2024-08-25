@@ -150,6 +150,9 @@ h1{
 
 
 @media (max-width: 600px){
+    .Footer{
+        height: 100%;
+    }
     .columns{
         display: flex;
         flex-direction: column;
@@ -187,6 +190,7 @@ h1{
         height: 32vh;
         width: 50vh;
         justify-content: center;
+        padding: 1rem;
     }
 
     .escudo{

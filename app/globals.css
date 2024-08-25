@@ -22,6 +22,16 @@ nav{
 
   @media (max-width: 600px){
 
+
+        nav{  
+          width: 100vw;
+          height: 100%;
+        }
+
+        .abierto{
+          overflow-y: scroll;
+        }
+
         .linea{
            display: flex;
            height: 2px;
@@ -31,7 +41,8 @@ nav{
          }
 
         ul{
-          width: 100vw;
+          width: 100%;
+          height: 100%;
           z-index: 10;
           background-color: #023E87;
           transform: translateX(-100%);
@@ -84,6 +95,8 @@ nav{
 
 
 @media(min-width: 601px) {
+
+  
 
   .linea{
     display: none;
