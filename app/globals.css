@@ -25,11 +25,12 @@ nav{
 
         nav{  
           width: 100vw;
-          height: 100%;
+          height: 100vh;
         }
 
         .abierto{
           overflow-y: scroll;
+          background-color: #023E87;
         }
 
         .linea{
@@ -46,6 +47,9 @@ nav{
           z-index: 10;
           background-color: #023E87;
           transform: translateX(-100%);
+          flex-grow: 111111;
+          display: flex;
+          flex-direction: column;
         }
 
         li{

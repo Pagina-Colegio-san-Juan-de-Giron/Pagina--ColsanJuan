@@ -24,7 +24,7 @@ return (
 <>
 
 <nav className={` ${cerrado ? 'Nav flex w-0 ' : 'Nav flex h-full w-full abierto' }`}>
-  <ul className={` ${cerrado ? 'menu hidden ' : 'translate-x-0 menu'} bg-F-blue min-h-full h-full select-none`} onMouseLeave={Close}>
+  <ul className={` ${cerrado ? 'menu hidden ' : 'translate-x-0'} bg-F-blue select-none`} onMouseLeave={Close}>
    <BotonCerrar cerrado={cerrado} HandleClick={Close}/>
    <a href="/"><li className="justify-center">Inicio</li></a>
         <li className="justify-center">Institucional

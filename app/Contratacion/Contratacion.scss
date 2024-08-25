@@ -3,7 +3,6 @@ main{
     margin: 2rem;
     display: flex;
     flex-direction: column;
-    padding-bottom: 200000px;
 }
 
 
@@ -140,13 +139,14 @@ main{
         font-size: 2rem;
     } 
 
-    overflow: scroll;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     height: 95%;
 
 
    .contentDownload{
+    
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -156,7 +156,7 @@ main{
         background-color: rgb(135, 233, 223);
         padding: .5rem;
         display: flex;
-        flex-wrap: wrap;
+        overflow-wrap: break-word;
         
         justify-content: space-between;
         align-items: center;
@@ -175,6 +175,11 @@ main{
             transition: ease all .5s;
             cursor: pointer;
         }
+
+        h2{
+            width: 100%;
+        }
+        
     }
    } 
     
@@ -289,5 +294,7 @@ main{
 }
 
 @media (max-width: 600px){
-
+    .download{
+        flex-direction: column;
+    }
 }

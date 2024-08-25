@@ -19,7 +19,7 @@ interface ArregloDatos  {
 }
 
 const GetURl = (img: string) => {
-  const images = require(`@/app/Personal/Contralor/Imagenes/${img}`)
+  const images = require(`@/app/Personal/Personero/Imágenes/${img}`)
   return images
 }
 
