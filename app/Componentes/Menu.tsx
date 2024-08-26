@@ -70,7 +70,7 @@ return (
       
         <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
         <span><span className="linea"></span></span>
-              <a href="/Personal/Directivos_docentes"><li>Directivos<br/>Docente</li></a>
+              <a href="/Personal/Directivos_Docentes"><li>Directivos<br/>Docente</li></a>
               <a href="/Personal/Docentes"><li>Docentes</li></a>
               <a href="/Personal/Personero"><li>Personero</li></a>
               <a href="/Personal/Contralor"><li>Contralor</li></a>
