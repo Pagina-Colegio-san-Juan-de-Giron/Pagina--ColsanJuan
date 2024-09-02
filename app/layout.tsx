@@ -5,6 +5,7 @@ import "./layout.css"
 import {ReactNode} from 'react'
 import React from 'react'
 
+
 export const metadata = {
   title: 'Página Colegio San Juan de Girón',
   description: 'Idk'
@@ -20,6 +21,7 @@ export default function RootLayout({children}: { children: ReactNode }) {
             <Header/>
             <Menu/>
               <section className="Section">
+
                   {children}
               </section>
             <Footer/>

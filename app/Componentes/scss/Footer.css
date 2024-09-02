@@ -142,6 +142,7 @@ h1{
     height: 95%;
     display: flex;
     justify-content: flex-end;
+
 }
 
 .cel{
@@ -190,6 +191,7 @@ h1{
         height: 32vh;
         width: 50vh;
         justify-content: center;
+
         padding: 1rem;
     }
 

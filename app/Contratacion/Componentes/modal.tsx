@@ -1,10 +1,14 @@
+
 import React, { useEffect, useState} from 'react';
 import C_Archivo from "./Archivo";
 
 
 
 
+
+
 const modal = ({ FolderPath ,InitFilename ,Finished ,Name, cerrado, HandleClick, isClosed }: { FolderPath: string; InitFilename: string[]; Finished: boolean; Name: string ;cerrado: boolean; HandleClick: () => void; isClosed: (foldername: string) => boolean }) => {
+
 const [File, setFile] = useState<File | null >(null);
 const [Files, setFiles] = useState<File[]>([]);
 const [UplFiles, setUplFiles] = useState<File[]>([]);
@@ -31,7 +35,6 @@ useEffect(() => {
     setUplFiles(Files);
   }, [Files]);
 
-
   function EliminarElemento(FileDeleted: File |  null){
     if(FileDeleted){
       const filtered = Files.filter(file => file.lastModified != FileDeleted.lastModified);
@@ -41,7 +44,7 @@ useEffect(() => {
     }
   }
 
-  
+
 
   const DownloadFile = async (Filepath: string, filename: string) => {
 
@@ -72,10 +75,12 @@ useEffect(() => {
     }
 }
 
+
     return (
       <>
           <div className={`overlay ${!cerrado ? 'hidden anim_fade-out' : 'showed'}`}>
               <div className={`contenedor-modal ${!cerrado ? 'hidden-content anim_fade-outmove' : ''}`}>
+
                   <header className='titulo-modal'>
                       <h2>
                           {Name}
@@ -87,6 +92,7 @@ useEffect(() => {
                       </svg>
                   </span>
   
+
                   <section className='contentMoodal'>
                       <h1> Descarga</h1>
                         { !isClosed(Name) ?
@@ -98,12 +104,14 @@ useEffect(() => {
                                   {Filename} 
                               </h2>
                              <span className='icon' onClick={() => DownloadFile(FolderPath, Filename)}>
+
                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-download" viewBox="0 0 16 16">
                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
                                </svg>
                              </span>
                           </div>
+
                             )
                           })
                           }
@@ -131,6 +139,7 @@ useEffect(() => {
                           </div>
                           
                           
+
                         }
                           <h1>Subida de archivos</h1>
                         { !isClosed(Name) ? 
@@ -144,8 +153,9 @@ useEffect(() => {
   
                               setenviado(true);
                               setenviadoSubir(true);
+
                               alert("Su archivo a sido subido")
-  
+
                               Files.forEach(async (file) => { 
                                 
                                 
@@ -163,6 +173,7 @@ useEffect(() => {
   
                                 if(res.ok){
                                   console.log("archivo suubido")
+
                                   alert("Su archivo a sido subido")
                                 }
   
@@ -200,6 +211,7 @@ useEffect(() => {
                                 </div>
                               </div>
                             </div>
+
                           { !Enviado ?
                           <div className='contenedor-botones'>
                             <button type='button' disabled={Enviado} className={`${Enviado ? 'noclickeable' : 'botoneleccion'}`}>
@@ -230,9 +242,11 @@ useEffect(() => {
                                 }}/>
                             </button>
                             <button className='botonsubida' disabled={EnviadoSubir}>Enviar</button>
+
                           </div> :
 
                           <div></div> }
+
                           </form>
 
                           :

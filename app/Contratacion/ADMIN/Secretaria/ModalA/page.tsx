@@ -1,3 +1,4 @@
+
 import React, {use, useContext, useEffect, useState, ChangeEvent, Dispatch, SetStateAction} from 'react';
 import styled from 'styled-components';
 import C_Archivo from "./Archivo";
@@ -11,6 +12,7 @@ interface Fechas {
 }
 
 const modal = ({ FolderPath ,InitFilename ,Finished ,Name, cerrado, HandleClick}: { FolderPath: string; InitFilename: string; Finished: boolean; Name: string ;cerrado: boolean; HandleClick: () => void ; }) => {
+
 const [File, setFile] = useState<File | null >(null);
 const [Files, setFiles] = useState<File[]>([]);
 const [UplFiles, setUplFiles] = useState<File[]>([]);
@@ -18,6 +20,7 @@ const [Filename, setFileName] = useState("");
 const [FileArray, setFileArray] = useState<string[]>([]);
 const [Enviado, setenviado] = useState<boolean>(false);
 const [EnviadoSubir, setenviadoSubir] = useState<boolean>(false);
+
 const [nombrepropuesta, setnombre] = useState<string>("");
 
 const [FechaInner, setFechaInner] = useState<string>("")
@@ -39,6 +42,7 @@ useEffect(() => {
     setUplFiles(Files);
   }, [Files]);
 
+
   function EliminarElemento(FileDeleted: File |  null){
     if(FileDeleted){
       const filtered = Files.filter(file => file.lastModified != FileDeleted.lastModified);
@@ -47,6 +51,7 @@ useEffect(() => {
       setUplFiles(filtered);
     }
   }
+
 
  
 

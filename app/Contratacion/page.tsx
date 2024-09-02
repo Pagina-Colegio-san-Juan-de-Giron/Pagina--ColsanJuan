@@ -14,6 +14,7 @@ const Page = () => {
     path: string
   }
 
+
   interface RegistrosFechas {
     id: number,
     Fecha: string,
@@ -51,6 +52,7 @@ const HandleCloseds = (Foldername: string) => {
   }
 
   const [Licitaciones, setLic] = useState<Licitaciones[]>([])
+
 
   
 
@@ -142,11 +144,13 @@ const HandleCloseds = (Foldername: string) => {
   }
 
 
+
   return (
    <main> 
     <section className='contenedor-contratacion'>{
 
     Licitaciones.map((lic) => {
+
       
       let index = lic.id
       let InitialPath = lic.path
@@ -160,6 +164,7 @@ const HandleCloseds = (Foldername: string) => {
         </span>
 
         <Overlay isClosed={isClosed} FolderPath={InitialPath} InitFilename={Downloads} Name={lic.name} Finished={Finished}  cerrado={Estadocerrados[index]} HandleClick={() => HandleClick(index)}/>
+
       </>
       )
     })

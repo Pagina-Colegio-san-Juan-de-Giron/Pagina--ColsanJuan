@@ -12,10 +12,12 @@ interface Licitaciones {
   name: string
 }
 
+
 interface Fechas {
   nombre: string,
   Fecha: string
 }
+
 
 
 const alice = Alice({ 
@@ -54,6 +56,8 @@ const page: React.FC = () => {
 
   return (
    <main> 
+
+
     <div className={`${alice.className} Boton-CrearLic`} onClick={() => {setceerrado(false)}}>
           Crear nueva licitación 
 
@@ -74,8 +78,10 @@ const page: React.FC = () => {
     </section>
 
     <Overlay Nombre={NombreActual} cerrado={cerrado} HandleClick={HandleClick}/>
+
     
     
+
    </main> 
   )
 }

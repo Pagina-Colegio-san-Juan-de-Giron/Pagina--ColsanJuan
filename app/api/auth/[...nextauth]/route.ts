@@ -18,7 +18,7 @@ const AuthOpts = {
             
             async authorize(credentials, request): Promise<any>{
                 if(!credentials) throw new Error ("No hay credenciales")
-                    const foundeduser: Users | null = await db.users.findUnique({
+                    const foundeduser: User | null = await db.user.findUnique({
                         where: {
                             Username: credentials.Username,
                             pswd: credentials.pswd
@@ -27,8 +27,6 @@ const AuthOpts = {
 
                     if (!foundeduser) throw new Error("No se encontro el usuario")
 
-
-                            //cambie nombre de User a Users porque me lo pedia el editor, si te da error cambialo denuevo
 
                     else if(credentials.pswd != foundeduser.pswd){
                         throw new Error("Contraseña incorrecta")

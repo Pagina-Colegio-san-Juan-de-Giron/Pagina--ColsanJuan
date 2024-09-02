@@ -1,3 +1,4 @@
+
 'use client'
 import React from 'react'
 import Image from 'next/image'
@@ -6,10 +7,12 @@ import { Alice } from 'next/font/google';
 import escudo from "@/app/Componentes/Imágenes/Escudo.svg";
 import ImagenLado from "./Imagenes/fotoIDK.jpg"
 
+
 const alice = Alice({ 
   subsets: ['latin-ext'],
   weight: ['400']
 })
+
 
 interface ArregloDatos  {
   ImageRoute: string,
@@ -47,6 +50,7 @@ const page = () => {
       Jornada: "Mañana"
   }
   ]
+
 
 
 
@@ -108,19 +112,23 @@ const page = () => {
             <Image className='Escudoo' src={escudo} alt='escudo'/>
           </section>
 
+
           <section className='Photos'>
               { Json ?
                 Json.map((data) => (
                   <div className= 'containerPersonero' key={data.id}>
                     <Image className='fotoPers' src={GetURl(data.ImageRoute)} width="100" height="100" alt="foto personero"/>
+
                     <h2 className='nombrePers'>{data.Nombre}</h2>
                     <h2 className='jornadaPers'>{data.Jornada}</h2>
                   </div>
                 ))
+
                 :
                 <div>No hay personeros</div>
               }
           </section>
+
 
         </div>
 

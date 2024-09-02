@@ -10,6 +10,7 @@ import Bombilla from "./Componentes/Imágenes/lightbulb-on-svgrepo-com.svg"
 import { useState, useEffect } from "react";
 import { Alice } from 'next/font/google';
 import juanchos from "./Componentes/Imágenes/juanchos.jpg"
+
 import React from 'react'
 
         
@@ -24,7 +25,9 @@ export default function Home() {
   
   const [images, setimages] = useState(["IMG-20230929-WA0048.jpg"]);
 
+
   
+
 
   useEffect(() => {
     async function obtenerImagenes() {
@@ -32,6 +35,7 @@ export default function Home() {
         const data = await response.json();
         setimages(data.filenames);
         console.log(images)
+
     }
 
     obtenerImagenes();

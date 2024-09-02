@@ -1,3 +1,4 @@
+
 'use client'
 import React from 'react'
 import Image from 'next/image'
@@ -10,6 +11,7 @@ const alice = Alice({
   subsets: ['latin-ext'],
   weight: ['400']
 })
+
 interface ArregloDatos  {
   ImageRoute: string,
   id: number,
@@ -47,6 +49,7 @@ const page = () => {
       Jornada: "Mañana"
   }
   ]
+
 
 
   return (
@@ -115,6 +118,7 @@ const page = () => {
           </section>
           <section className='Photos'>
               {
+
                 Json.map(data => (
                   <div className= 'containerPersonero' key={data.id}>
                     <Image className='fotoPers' src={GetURl(data.ImageRoute)} alt="foto personero"/>

@@ -8,6 +8,7 @@ import Link from "next/link";
 
 export default function Menu() {
   const [cerrado, setcerrado] = useState(true)
+
   
 
   const HandleClick = () => {
@@ -22,6 +23,7 @@ export default function Menu() {
 
 return (
 <>
+
 
 <nav className={` ${cerrado ? 'Nav flex w-0 ' : 'Nav flex h-full w-full abierto' }`}>
   <ul className={` ${cerrado ? 'menu hidden ' : 'translate-x-0'} bg-F-blue select-none`} onMouseLeave={Close}>
@@ -70,6 +72,7 @@ return (
       
         <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
         <span><span className="linea"></span></span>
+
               <a href="/Personal/Directivos_Docentes"><li>Directivos<br/>Docente</li></a>
               <a href="/Personal/Docentes"><li>Docentes</li></a>
               <a href="/Personal/Personero"><li>Personero</li></a>

@@ -1,6 +1,11 @@
 'use client'
+
 import path from "path";
 import React, { useEffect, useState } from "react";
+import ClosedsContext from "@/app/Context/ClosedsContext";
+import exp from "constants";
+import { space } from "postcss/lib/list";
+import Añadir from "../../ModalB/page"
 
 interface ExplorerItem {
     id: number;
@@ -41,7 +46,6 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
 
 
   
-    
     
 
     const DownloadFile = async (Filepath: string, filename: string) => {
@@ -107,6 +111,7 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
         }
     }
 
+
     useEffect(() => {
         const CambiarFecha = async () =>  {
             try{
@@ -145,15 +150,13 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
 
       console.log(explorer)
 
-     
-        
-
 
         return (<div className="Folders-container">{
             explorer.map((file) => {
                 if(file.EsCarpeta){
                 const Expandido = expandedFolders.includes(file.id);
                 return(<>
+
                    <div className="Lic-Cont">
                        <span className="Cont-folder" onClick={() => CambiarExpan(file.id)}>📂 {file.name}</span>
                        {
@@ -167,6 +170,7 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
     
        <div style={{display: Expandido ? "block" : "none"}}>
                         <Folder explorer={file.items} IsLic={false} />         
+
                    </div>
                 </> 
                 );

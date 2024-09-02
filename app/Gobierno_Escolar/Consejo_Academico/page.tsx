@@ -4,6 +4,7 @@ import imagen from "@/app/Componentes/Imágenes/images.jpg"
 import { Alice } from 'next/font/google';
 import "./Cons_Académico.scss"
 import libro from "./open-book-svgrepo-com.svg"
+
 import { promises as fs } from 'fs';
 
 
@@ -11,6 +12,7 @@ const alice = Alice({
   subsets: ['latin-ext'],
   weight: ['400']
 })
+
 
 const page = async() => {
 
@@ -26,6 +28,7 @@ return (
 <main> 
     <header className='Hhheader'>
       <h1 className={alice.className}>Consejo Académico</h1>
+
 
       <section className='Container-Personas'>
         {

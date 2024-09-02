@@ -22,6 +22,7 @@ const carousel = (props: Props) => {
       return() => clearInterval(interval);
     });
 // se ejecuta la api para cargar las imagenes 
+
     const SelectNextImage = (index: number, images: string[]) => {
       setcargado(false);
       setTimeout(() => {
