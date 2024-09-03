@@ -1,50 +1,53 @@
+import { NextApiRequest, NextApiResponse } from 'next'
+import fs, { lstat } from 'fs'
 import path from 'path'
-import {writeFile} from 'fs'
-import * as fs from 'fs';
+
+let idcontador = 0;
 
 
-export async function POST(req: Request) {
-    
 
-  try{
-    const data = await req.formData()
-    const file = data.get('File')
-    const name = data.get('Name')
-
-    if (typeof file === 'object' && file instanceof Blob && typeof name === 'string') {
-
-        const bytes = await file.arrayBuffer();
-
-        const buffer = Buffer.from(bytes)
-
-       
-        const Directorio = path.join(process.cwd(), 'app/Contratacion/ADMIN/Secretaria/Licitaciones', name);
-        const rutaarchivo = path.join(Directorio, file.name)
-        console.log(Directorio)
-
-        await fs.promises.mkdir(Directorio, { recursive: true });
-
-
-          console.log(rutaarchivo);
-
-          writeFile(rutaarchivo, buffer, (err) => {
-              if (err)
-                console.log(err, "error");
-              else {
-                
-                console.log("archivo subido");
-              }
-            return new Response(JSON.stringify({message: "uploaded file"}))
-          })
-    } 
-    else 
-    {
-        console.error("El valor de no es un Blob. i GOT YOU");
-    }
+  const leerdir = (rutacarpetas) => {
+    return rutacarpetas.flatMap(rutacarpeta => {
+      const filenames = fs.readdirSync(rutacarpeta);
+      const carpetas = filenames.map(file => {
+        const rutaFile = path.join(rutacarpeta, file);
+        const Isfolder = fs.lstatSync(rutaFile).isDirectory();
+        const baseDir = path.resolve("public")
+        const carpeta = {
+          id: idcontador++,
+          EsCarpeta: Isfolder,
+          name: file,
+          items: Isfolder ? leerdir([rutaFile]) : [],
+          path: rutaFile
+        };
+        return carpeta
+      });
+      return carpetas
+    });
   }
-  catch(error){
-    console.log(error)
-    return new Response(JSON.stringify({message: "ERROOOOR"}),{status: 400,})
+  
+  
+
+
+export async function GET(req, res, NextApiResponse) {
+ try {
+  const url = new URL(req.url);
+  const searchparams = new URLSearchParams(url.searchParams)
+  const Dirpath = searchparams.get("Dirpath")
+  if (Dirpath) {
+    const dirleer = path.join("app/Contratacion/ADMIN/Secretaria/Licitaciones", Dirpath)
+    const data = leerdir([dirleer])
+    console.log(data)
+    return Response.json(data)  
   }
-    
+  else{
+    const data = leerdir(["app/Contratacion/ADMIN/Secretaria/Licitaciones"])
+    console.log(data)
+    return Response.json(data)
+  }
+  
+ } catch (err) {
+  console.log("holi :)", err)
+  return Response.json(err);
+ }
 }
