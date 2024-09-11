@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
-import "@/app/PaginaPrincipal.css"
+import "@/app/PaginaPrincipal.scss"
 //crea la interfas para la creacion del front dinamico 
 interface Props{
   images: string[];
@@ -21,6 +21,7 @@ const carousel = (props: Props) => {
       }, 7000);
       return() => clearInterval(interval);
     });
+
 // se ejecuta la api para cargar las imagenes 
 
     const SelectNextImage = (index: number, images: string[]) => {
@@ -36,7 +37,7 @@ const carousel = (props: Props) => {
   return (
     <div className="container-slider">
       <span className='container-Sslider'>
-        <Image className="cargado" src={require(`../../public/img/${SelectedImage}`)} alt='imagen' onLoad={() =>(setcargado(true))}/>
+        <Image className="cargado" src={`/img/${SelectedImage}`} height={100} width={100} alt='imagen' onLoad={() =>(setcargado(true))}/>
       </span>
     </div>
     )

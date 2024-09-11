@@ -1,15 +1,11 @@
 'use client'
 
-import "./PaginaPrincipal.css"
+import "./PaginaPrincipal.scss"
 import Slider from "./Componentes/carousel"
+import Slider2 from "./Componentes/carousel_manual"
 import Video from "./Componentes/VideoYT"
-import Image from "next/image"
-import Stonk from "./Componentes/Imágenes/trend-up-svgrepo-com.svg"
-import Uno from "./Componentes/Imágenes/number-one-bold-svgrepo-com.svg"
-import Bombilla from "./Componentes/Imágenes/lightbulb-on-svgrepo-com.svg"
 import { useState, useEffect } from "react";
 import { Alice } from 'next/font/google';
-import juanchos from "./Componentes/Imágenes/juanchos.jpg"
 
 import React from 'react'
 
@@ -24,6 +20,7 @@ export default function Home() {
 
   
   const [images, setimages] = useState(["IMG-20230929-WA0048.jpg"]);
+  const [imagesNoti, setimagesNoti] = useState(["juanchos.jpg"]);
 
 
   
@@ -38,7 +35,16 @@ export default function Home() {
 
     }
 
+    async function obtenerImagenesNoticias() {
+      const response = await fetch('/api/Slider/Noticias');
+      const data = await response.json();
+      setimagesNoti(data.filenames);
+      console.log(imagesNoti)
+
+    }
+
     obtenerImagenes();
+    obtenerImagenesNoticias();
   }, []);
 
   const leer = () => {
@@ -50,31 +56,19 @@ export default function Home() {
   return (
     <section className="container-pagina">
       <Slider images={images} ></Slider>
-      <article>
-          <h1 className={alice.className}>Somos el Colegio san Juan de Girón</h1>
-          <div className="container-articulo">
-            <Image src={juanchos} alt="juanchos"/>
-            <div className="logros">
-                <span>
-                  <h2>Uno de los mejores<br/> ICFES del año 2022</h2>
-                  <div className="Icono">
-                    <Image src={Stonk} alt="Icono-barra"/>
-                  </div>
-                </span>
-                <span>
-                  <h2>Uno de los primeros<br/> colegios de Girón</h2>
-                  <div className="Icono">
-                   <Image src={Uno} alt="Icono-uno"/>
-                  </div>
-                </span>
-                <span>
-                  <h2>Certificados en<br/> potecial y creatividad  </h2>
-                  <div className="Icono">
-                    <Image src={Bombilla} alt="Icono-bombilla"/>
-                  </div>
-                </span>
-            </div>
+        <article>
+          <div className="Container-BotonesPrincipales">
+              <a href="https://q.plataformaintegra.net/colsanjuangiron/#" className={alice.className}>
+                  Plataforma de notas
+              </a>
+
+              <a href="" className={alice.className}>
+                  Manual de convivencia
+              </a>
           </div>
+
+
+          <Slider2 images={imagesNoti}/>
         </article>
         <Video/>
     </section>

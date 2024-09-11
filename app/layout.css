@@ -47,6 +47,29 @@ body{
     min-height: 500px;
 }
 
+.containerRedes{
+    position: fixed;
+    top: 25%;
+    right: 0;
+    width: 5rem;
+    height: auto;
+    background-color: #acb4d6;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.containerRedes .redes svg{
+    width: 5vw;
+    height: 5vh;
+}
+
+.redes{
+    display: flex;
+    flex-direction: column;
+    gap: .3vw;
+    padding: 1vw;
+}
+
 @media (max-width: 600px){
     
     .Nav{
