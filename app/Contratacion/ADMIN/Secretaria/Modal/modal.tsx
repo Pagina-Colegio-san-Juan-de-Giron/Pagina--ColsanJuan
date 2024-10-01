@@ -1,11 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import styled from 'styled-components';
-import { strict } from 'assert';
-import { appendFile } from 'fs';
 import Folders from "./componentes/Folders"
-import { data } from 'autoprefixer';
-import exp from 'constants';
-import { JsonArray, JsonObject } from '@prisma/client/runtime/library';
+import { JsonArray} from '@prisma/client/runtime/library';
 
 
 

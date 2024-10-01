@@ -1,7 +1,7 @@
 
 import fs from 'fs'
 
-const rutaarchivos = "Componentes/Imágenes/SliderNoticias";
+const rutaarchivos = "app/Componentes/Imágenes/SliderNoticias";
 
 export async function GET() {
   const filenames = fs.readdirSync(rutaarchivos);

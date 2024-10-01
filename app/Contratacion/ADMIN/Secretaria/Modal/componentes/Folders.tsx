@@ -179,7 +179,7 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
                     const rutaarchivo = path.join(process.cwd(), file.path)
                     console.log(rutaarchivo) 
                     console.log("archi");
-                    return <span className="file" onClick={() => ShowFile(file.path, file.name)}> 
+                    return <span className="file" key={file.id} onClick={() => ShowFile(file.path, file.name)}> 
                         📄 {file.name}
                                <span className='icon' onClick={() => DownloadFile(file.path, file.name)}>
                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-download" viewBox="0 0 16 16">

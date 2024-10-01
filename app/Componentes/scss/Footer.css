@@ -162,7 +162,7 @@ h1{
 }
 
 
-@media (max-width: 600px){
+@media (max-width: 1024px){
     .Footer{
         height: 100%;
     }
@@ -200,8 +200,8 @@ h1{
 
     .container-mapa{
         display: flex;
-        height: 32vh;
-        width: 50vh;
+        height: 100%;
+        width: 95vw;
         justify-content: center;
 
         padding: 1rem;
@@ -215,6 +215,11 @@ h1{
         font-size: 3vw;
         display: flex;
         justify-content: flex-end;
+        height: auto;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .cel{

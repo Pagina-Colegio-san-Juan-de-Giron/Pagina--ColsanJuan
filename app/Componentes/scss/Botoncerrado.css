@@ -14,7 +14,7 @@ span{
 }
 
 
-@media (max-width: 600px){
+@media (max-width: 1024px){
     i{
         display: flex;
         font-style: normal;

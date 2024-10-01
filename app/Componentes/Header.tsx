@@ -2,6 +2,7 @@
 
 import "./scss/Header.css";
 import Image from 'next/image';
+import React from "react";
 import escudo from "./Imágenes/Escudo.svg";
 import { Alice } from 'next/font/google'
 import { Dancing_Script } from 'next/font/google'

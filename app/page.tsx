@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { Alice } from 'next/font/google';
 
 import React from 'react'
+import path from "path"
 
         
 const alice = Alice({ 
@@ -23,7 +24,38 @@ export default function Home() {
   const [imagesNoti, setimagesNoti] = useState(["juanchos.jpg"]);
 
 
+  const ShowFile = async () => {
+    const Filepath = "app/Componentes/PDF/manual_de_convivencia.pdf"
+    console.log("RUTAAAA : ", Filepath )
+    console.log("CWDD : ", process.cwd)
+    const filename = "manual_de_convivencia.pdf"
   
+    try{
+        const res = await fetch(`/api/Secretaria/Preview?Filepath=${Filepath}&Filename=${filename}`)
+        const blob = await res.blob();
+
+        const DisposicionContenido = res.headers.get('Content-disposition');
+        if(DisposicionContenido){
+            const Nombrecoincidido = DisposicionContenido.match(/filename="(.+)"/);
+            const Nombre = Nombrecoincidido ? Nombrecoincidido[1] : "downloadedFile";
+            const url = window.URL.createObjectURL(blob)
+            const PestañaPrev = window.open(url, '_blank');
+            if (PestañaPrev) {
+                PestañaPrev.onload = () => {
+                window.URL.revokeObjectURL(url);
+            };
+        }
+        else{
+            console.error("Fallo al previsualizar");
+        }
+        }
+
+        
+    }
+    catch(err){
+        console.error("Error descargando:", err);
+    }
+  }
 
 
   useEffect(() => {
@@ -35,11 +67,18 @@ export default function Home() {
 
     }
 
+
     async function obtenerImagenesNoticias() {
-      const response = await fetch('/api/Slider/Noticias');
-      const data = await response.json();
-      setimagesNoti(data.filenames);
-      console.log(imagesNoti)
+      try{
+        const response = await fetch('/api/Slider/Noticias');
+        const data = await response.json();
+        setimagesNoti(data.filenames);
+        console.log("Imagenes de notificaciones", data.filenames,"Holii", imagesNoti)
+      }catch(err){
+        console.log("Error noti: ", err)
+      }
+      
+      
 
     }
 
@@ -58,15 +97,53 @@ export default function Home() {
       <Slider images={images} ></Slider>
         <article>
           <div className="Container-BotonesPrincipales">
-              <a href="https://q.plataformaintegra.net/colsanjuangiron/#" className={alice.className}>
+              <a href="https://q.plataformaintegra.net/colsanjuangiron/#" rel="noreferrer noopener" target="_blank" className={`${alice.className} yellow`}>
                   Plataforma de notas
               </a>
 
-              <a href="" className={alice.className}>
+              <a className={`${alice.className} blue`} onClick={ShowFile}>
                   Manual de convivencia
+              </a>
+
+              <a href="/Contratacion" target="_blank" className={`${alice.className} green`}>
+                  Contratacion
               </a>
           </div>
 
+          <section className="gridInfo">
+              <div className="card">
+                <span className={alice.className}>Titulo Area</span>
+                blalbalbalbalbalbal
+              </div>
+              <div className="card">
+                <span className={alice.className}>Titulo Area</span>
+                blalbalbalbalbalbal
+              </div>
+              <div className="card">
+                <span className={alice.className}>Titulo Area</span>
+                blalbalbalbalbalbal
+              </div>
+              <div className="card">
+                <span className={alice.className}>Titulo Area</span>
+                blalbalbalbalbalbal
+              </div>
+              <div className="card">
+                <span className={alice.className}>Titulo Area</span>
+                blalbalbalbalbalbal
+              </div>
+              <div className="card">
+                <span className={alice.className}>Titulo Area</span>
+                blalbalbalbalbalbal
+              </div>
+              <div className="card">
+                <span className={alice.className}>Titulo Area</span>
+                blalbalbalbalbalbal
+              </div>
+              <div className="card">
+                <span className={alice.className}>Titulo Area</span>
+                blalbalbalbalbalbal
+              </div>
+          </section>
 
           <Slider2 images={imagesNoti}/>
         </article>

@@ -45,32 +45,31 @@ body{
     grid-area: footer;
     background-color: rgba(255, 255, 255, 0);
     min-height: 500px;
+    z-index: 4;
 }
 
 .containerRedes{
     position: fixed;
-    top: 25%;
-    right: 0;
-    width: 5rem;
+    top: 1%;
+    right: 1%;
+    width: auto;
     height: auto;
-    background-color: #acb4d6;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: .5vw;
+    border-bottom-left-radius: .5vw;
+    z-index: 11;
 }
 
 .containerRedes .redes svg{
-    width: 5vw;
-    height: 5vh;
+    width: 2vw;
+    height: 2vw;
 }
 
 .redes{
     display: flex;
-    flex-direction: column;
-    gap: .3vw;
-    padding: 1vw;
+    gap: 1vw;
 }
 
-@media (max-width: 600px){
+@media (max-width: 1024px){
     
     .Nav{
         z-index: 11;
@@ -85,5 +84,23 @@ body{
         "section section"  auto
         "footer footer" 100vh/
         auto    auto;
+    }
+
+    .containerRedes{
+        width: 10vw;
+        height: 30vw;
+        border-top-left-radius: 2vw;
+        border-bottom-left-radius: 2vw;
+    }
+
+    .containerRedes .redes svg{
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .redes{
+        display: flex;
+        gap: 2vw;
+        padding: 1vw;
     }
 }

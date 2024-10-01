@@ -56,11 +56,23 @@ const carousel = (props: Props) => {
 
     
   return (
-    <div className="container-slider">
+    <div className="container-slidermanual">
       <span className='container-SsliderNoti'>
-        <Image className="cargado" src={`/SliderNoticias/${SelectedImage}`} height={100} width={100} alt='imagen' onLoad={() =>(setcargado(true))}/>
+        <Image className={cargado ? 'cargado Sliderimg' : 'Sliderimg'} src={`/SliderNoticias/${SelectedImage}`} height={1920} width={1080} quality={100} alt='imagen' onLoad={() => (setcargado(true))} />
         <span className='Boton-der' onClick={() => SelectNextImage(SelectedIndex, props.images)}>&gt;</span>
-        <span className='Boton-izq' onClick={() => SelectImage(SelectedIndex, props.images)}>&lt;</span>
+        <span className='Boton-izq' onClick={() => SelectPrevImage(SelectedIndex, props.images)}>&lt;</span>
+
+        <div className='container-dots'>
+            {
+                props.images.map((dot, index) => (
+                  <span key={index} className={SelectedIndex === index ? 'abierto' : 'dot'}>
+                    
+                  </span>
+                ))
+
+            }
+        </div>
+
       </span>
     </div>
     )

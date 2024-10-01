@@ -49,7 +49,7 @@ return (
         <ul className={`${cerrado ? 'submenu' : 'translate-x-0 submenu'}`}>
         <span><span className="linea"></span></span>
               <a href="/Normativas/PEI"><li>PEI</li></a>
-              <a href="" target="_blank"><li>Manual de<br/>convivencia</li></a>
+              <a href="/Normativas/Manual_de_Convivencia" target="_blank"><li>Manual de<br/>convivencia</li></a>
               <a href="/Normativas/SIEE"><li>SIEE</li></a>
               <a href="/Normativas/Otros"><li>Otros</li></a>
         </ul>
