@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import "./login.scss"
+import "./Login.scss"
 import { useForm , SubmitHandler} from 'react-hook-form'
 import { signIn } from 'next-auth/react'
 import { data } from 'autoprefixer'

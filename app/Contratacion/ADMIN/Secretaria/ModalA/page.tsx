@@ -1,4 +1,4 @@
-
+'use client'
 import React, {use, useContext, useEffect, useState, ChangeEvent, Dispatch, SetStateAction} from 'react';
 import styled from 'styled-components';
 import C_Archivo from "./Archivo";
