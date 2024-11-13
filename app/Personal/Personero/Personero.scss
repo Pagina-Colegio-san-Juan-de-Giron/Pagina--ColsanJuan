@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+}
+
+.Hhheader{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 1rem;
+
+    h2{
+        color: #F1CC77;
+        font-weight: bold;
+        font-size: 1.5vw;
+    }
+    
+    h1{
+        font-size: 5vw;
+        font-weight: bold;
+    }
+}
+
+p{
+    font-size: 1.5vw;
+    padding-bottom: 1rem;
+    font-weight: 700;
+    text-align: justify;
+
+    h2{
+        color: #F1CC77;
+        font-weight: bold;
+    }
+}
+
+article{
+    margin: 1.5vw;
+}
+
+.intro{
+    font-weight: 500;
+}
+
+
+.Sspan::before{
+    content: "•";
+    color: #F1CC77;
+    justify-content: flex-start;
+}
+
+.fondoazul{
+    background-color: rgba($color: #ACB4D6, $alpha: 0.44);
+    padding: 1vw;
+    font-weight: 600;
+}
+
+.Hist{
+    color: #F1CC77;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.Photo-Container{
+    display: flex;
+    width: 100%;
+    background-color: #B9BFDB;
+    border-radius: 15px;
+    height: 20vw;
+    min-height: 250px;
+}
+
+.Escudo-container{
+    width: 15%;
+    display: flex;
+    align-items: flex-start;
+    margin: 1rem;  
+}
+
+.Escudoo{
+    display: block;
+    width: 8vw;
+}
+
+.nombrePers{
+    font-weight: bold;
+}
+
+.jornadaPers{
+    font-weight: bold;
+}
+
+.containerPersonero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+}
+
+.fotoPers{
+    width: 80%;
+    height: 80%;
+}
+
+.Photos{
+    display: flex;
+    width: 85%;
+    margin-top: 1rem;
+}
+
+.FotoLadodiv{
+    display: flex;
+    gap: 1rem;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.imagenLado{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    flex-grow: 10000;
+}
+
+
+@media (max-width: 600px){
+    p{ 
+        font-size: 5vw;
+    }
+    .Hhheader{
+        h1{
+        font-size: 8vw;
+        }
+
+        h2{
+            font-size: 3vw;
+        }
+    }
+
+    .Hist{
+        font-size: 8vw;
+    }
+
+    .Photo-Container{
+        display: block;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .Escudo-container{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+
+        .Escudoo{
+            width: 15vw;
+            margin-top: 1rem;
+        }
+    }
+
+    .containerPersonero{
+        width: 100%;
+    }
+
+    .Photos{
+        width: 100%;
+    }
+
+    .text{
+        width: 50%;
+    }
+
+    .imagenLado{
+        width: 50%;
+    }
+}
+
+
