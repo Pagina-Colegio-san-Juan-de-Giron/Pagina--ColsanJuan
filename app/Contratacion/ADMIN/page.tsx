@@ -2,9 +2,8 @@
 
 import React from 'react'
 import "./login.scss"
-import { useForm , SubmitHandler} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { signIn } from 'next-auth/react'
-import { data } from 'autoprefixer'
 import { useRouter } from 'next/navigation'
 
 

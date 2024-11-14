@@ -1,11 +1,7 @@
 import nextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import db from "@/libs/db"
-import bcrypt from 'bcrypt'
-import { Users } from "@prisma/client";
-import { use } from "react";
-import Email from "next-auth/providers/email";
-import { error } from "console";
+
 
 const AuthOpts = {
     providers: [
@@ -16,26 +12,34 @@ const AuthOpts = {
                 pswd: {label: "Password", type: "password"}
             },
             
-            async authorize(credentials, request): Promise<any>{
+            async authorize(credentials) {
+                console.log(credentials)
                 if(!credentials) throw new Error ("No hay credenciales")
-                    const foundeduser: User | null = await db.user.findUnique({
+                    const foundeduser = await db.users.findUnique({
                         where: {
                             Username: credentials.Username,
-                            pswd: credentials.pswd
-                        }
+                            pswd: credentials.pswd,
+                        },
+                        select: {
+                            id: true,
+                            Username: true,
+                            pswd: true,
+                        },
                     })
+
+                    const user = {id: foundeduser?.id, pswd: foundeduser?.pswd, Username: foundeduser?.Username}
 
                     if (!foundeduser) throw new Error("No se encontro el usuario")
 
 
-                    else if(credentials.pswd != foundeduser.pswd){
+                    else if(credentials.pswd != user.pswd){
                         throw new Error("Contraseña incorrecta")
                     } 
             
-                    console.log(credentials.pswd, foundeduser.pswd)
+                    console.log(credentials.pswd, user.pswd)
 
                     return {
-                        id: foundeduser.id,
+                        id: foundeduser.id.toString(),
                         name: foundeduser.Username
                     }
                 

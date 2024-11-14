@@ -47,6 +47,8 @@ export async function GET(req, ) {
         headers
     });
  }
+
+
  catch(err){
     console.log(err)
  }

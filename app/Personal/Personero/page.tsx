@@ -6,6 +6,7 @@ import "./Personero.scss"
 import { Alice } from 'next/font/google';
 import escudo from "@/app/Componentes/Imágenes/Escudo.svg";
 import ImagenLado from "./Imágenes/fotoIDK.jpg"
+import ImagenesPersoneros from './Imágenes/exportImages';
 
 const alice = Alice({ 
   subsets: ['latin-ext'],
@@ -20,10 +21,6 @@ interface ArregloDatos  {
 
 }
 
-const GetURl = (img: string) => {
-  const images = require(`@/app/Personal/Personero/Imágenes/${img}`)
-  return images
-}
 
 
 const page = () => {
@@ -32,19 +29,19 @@ const page = () => {
   const Json: ArregloDatos[] = [
     {
       id: 1,
-      ImageRoute: "fotoIDK.jpg",
+      ImageRoute: "FotoIDK",
       Nombre: "1",
       Jornada: "Mañana"
   },
   {
       id: 2,
-      ImageRoute: "fotoIDK.jpg",
+      ImageRoute: "FotoIDK2",
       Nombre: "2",
       Jornada: "Mañana"
   },
   {
-      id: 1,
-      ImageRoute: "fotoIDK.jpg",
+      id: 3,
+      ImageRoute: "FotoIDK3",
       Nombre: "3",
       Jornada: "Mañana"
   }
@@ -61,12 +58,14 @@ const page = () => {
     <article>
     <div className='FotoLadodiv'>
       <div className='text'>
+
+        <Image className='imagenCel' src={ImagenLado} alt='idk'/>
       <p className='intro'>
         Es un líder juvenil con la capacidad de generar participación en la
         Comunidad Estudiantil, de descubrir y trabajar las necesidades del grupo al que representa, de defenderlos derechos humanos y promueve la cultura democrática, de velar porque la comunicación entre estudiantes, maestros, padres de familia y demás integrantes de la Comunidad Educativa sea abierta, clara, sencilla y respetuosa.
       </p>
 
-      <p>
+      <div className="Paragraph">
         <h2>Artículo 28. Objetivos</h2> <br/>
          El trabajo del Personero Estudiantil está encaminado a la promoción y el cumplimiento de los Derechos y Deberes de los estudiantes, además de:<br/>
         <br/>
@@ -80,19 +79,19 @@ const page = () => {
 
         <div className='Sspan'> Ser promotor de paz y convivencia.<br/></div>
         
-      </p>
+      </div>
       </div>
 
-      <Image className='imagenLado' src={ImagenLado} alt='idk'/>
+      <Image className='imagenLado CelOculto' src={ImagenLado} alt='idk'/>
     </div> 
-      <p>
+      <div className="Paragraph">
         <h2>Artículo 29. Cualidades del personero.</h2>
           <div className='fondoazul'>
             Debe representar el perfil del estudiante Juanista, Ser ante todo responsable y dar ejemplo en lo académico y disciplinario, tener iniciativa para desarrollar proyectos que busquen el bienestar de los estudiantes, siempre y cuando se encuentren amparados por la norma y estén al alcance en su cargo.
           </div>
-      </p>
+      </div>
 
-      <p>
+      <div className="Paragraph">
         <h2>Artículo 30. Requisitos</h2>
         
 
@@ -106,7 +105,7 @@ const page = () => {
 
          <div className='Sspan'> No haber recibido sanciones por faltas graves, los dos años anteriores a la postulación.</div><br/>
 
-      </p>
+      </div>
 
       <section>
         <h2 className={` Hist ${alice.className}`}>Histórico</h2>
@@ -118,14 +117,21 @@ const page = () => {
           </section>
           <section className='Photos'>
               {
-
-                Json.map(data => (
-                  <div className= 'containerPersonero' key={data.id}>
-                    <Image className='fotoPers' src={GetURl(data.ImageRoute)} alt="foto personero"/>
-                    <h2 className='nombrePers'>{data.Nombre}</h2>
-                    <h2 className='jornadaPers'>{data.Jornada}</h2>
+                Json ? (  
+                Json.map(Data => {
+                  return(
+                  <div className= 'containerPersonero' key={Data.id}>
+                        <Image className='fotoPers' src={ImagenesPersoneros[Data.ImageRoute]} alt="foto personero"/>
+                        <h2 className='nombrePers'>{Data.Nombre}</h2>
+                        <h2 className='jornadaPers'>{Data.Jornada}</h2>
                   </div>
-                ))
+                )})
+
+                ) : (
+                  <div>
+                    No hay imagenes
+                  </div>
+                )
               }
           </section>
 

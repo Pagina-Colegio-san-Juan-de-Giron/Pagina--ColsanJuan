@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import fs, { lstat } from 'fs'
+import fs from 'node:fs'
 import path from 'path'
 
 let idcontador = 0;

@@ -13,10 +13,7 @@ interface Licitaciones {
 }
 
 
-interface Fechas {
-  nombre: string,
-  Fecha: string
-}
+
 
 
 

@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import { Alice } from 'next/font/google';
 
 import React from 'react'
-import path from "path"
 
         
 const alice = Alice({ 

@@ -22,16 +22,25 @@
     }
 }
 
-p{
+.Paragraph{
     font-size: 1.5vw;
     padding-bottom: 1rem;
     font-weight: 700;
     text-align: justify;
+    word-spacing: -.1vw;
 
     h2{
         color: #F1CC77;
         font-weight: bold;
     }
+}
+
+p{
+    font-size: 1.5vw;
+    padding-bottom: 1rem;
+    font-weight: 700;
+    text-align: justify;
+    word-spacing: -.1vw;
 }
 
 article{
@@ -126,10 +135,20 @@ article{
     flex-grow: 10000;
 }
 
+.imagenCel{
+    display: none;
+}
+
 
 @media (max-width: 600px){
     p{ 
         font-size: 5vw;
+        word-spacing: -.3vw;
+    }
+
+    .Paragraph{
+        font-size: 5vw;
+        word-spacing: -.3vw;
     }
     .Hhheader{
         h1{
@@ -172,11 +191,28 @@ article{
     }
 
     .text{
-        width: 50%;
+        display: block;
+        width: 100%;
+
+        Image{
+            float: right;
+        }
     }
 
-    .imagenLado{
-        width: 50%;
+    .CelOculto{
+        display: none;
+    }
+
+    .imagenCel{
+        display: block;
+        width: 30vw;
+        height: 50vw;
+        float: right;
+        margin-left: 2vw;
+    }
+
+    article{
+        margin: 2vw;
     }
 }
 

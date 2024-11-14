@@ -49,24 +49,26 @@ body{
 }
 
 .containerRedes{
+    padding: .3vw;
     position: fixed;
     top: 1%;
-    right: 1%;
+    right: 0;
     width: auto;
     height: auto;
     border-top-left-radius: .5vw;
     border-bottom-left-radius: .5vw;
     z-index: 11;
+    margin-right: 1vw;
 }
 
 .containerRedes .redes svg{
-    width: 2vw;
-    height: 2vw;
+    width: 1.5vw;
+    height: 1.5vw;
 }
 
 .redes{
     display: flex;
-    gap: 1vw;
+    gap: .5vw;
 }
 
 @media (max-width: 1024px){
@@ -87,20 +89,23 @@ body{
     }
 
     .containerRedes{
-        width: 10vw;
+        width: auto;
         height: 30vw;
         border-top-left-radius: 2vw;
         border-bottom-left-radius: 2vw;
+        margin-right: 2.5vw;
     }
 
-    .containerRedes .redes svg{
-        width: 4vw;
-        height: 4vw;
-    }
+
 
     .redes{
         display: flex;
-        gap: 2vw;
+        gap: 3vw;
         padding: 1vw;
+    }
+
+    .containerRedes .redes svg{
+        width: 3vw;
+        height: 3vw;
     }
 }

@@ -1,9 +1,6 @@
-
-import React, {use, useContext, useEffect, useState, ChangeEvent, Dispatch, SetStateAction} from 'react';
-import styled from 'styled-components';
+'use client'
+import React, { useEffect, useState } from 'react';
 import C_Archivo from "./Archivo";
-import { strict } from 'assert';
-import { appendFile } from 'fs';
 
 
 interface Fechas {
@@ -57,34 +54,6 @@ useEffect(() => {
 
   
 
-  const DownloadFile = async (Filepath: string, filename: string) => {
-
-    
-    
-    try{
-        const res = await fetch(`/api/Secretaria/Download?Filepath=${Filepath}&Filename=${filename}`)
-        const blob = await res.blob();
-
-        const DisposicionContenido = res.headers.get('Content-disposition');
-        if(DisposicionContenido){
-            const Nombrecoincidido = DisposicionContenido.match(/filename="(.+)"/);
-            const Nombre = Nombrecoincidido ? Nombrecoincidido[1] : "downloadedFile";
-            const url = window.URL.createObjectURL(blob)
-            const link = document.createElement("a");
-            link.href = url;
-            link.download = Nombre
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
-        }
-
-        
-    }
-    catch(err){
-        console.error("Error descargando:", err);
-    }
-}
 
     
 
