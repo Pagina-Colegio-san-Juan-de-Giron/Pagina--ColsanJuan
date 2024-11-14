@@ -30,7 +30,6 @@ const [explorer, setexplorer] = useState<JsonArray>();
 
   obtenerdirs();
   }, []);
-
   function EliminarElemento(FileDeleted: File |  null){
     if(FileDeleted){
       const filtered = Files.filter(file => file.lastModified != FileDeleted.lastModified);
