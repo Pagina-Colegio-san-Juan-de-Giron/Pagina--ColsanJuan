@@ -1,9 +1,10 @@
 import path from 'path'
-import {writeFile, mkdir} from 'fs'
-const fs = require('fs');
+import {writeFile} from 'node:fs'
+import fs from 'node:fs'
 
+declare type FormDataEntryValue = string | null;
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
     
 
   try{
@@ -28,7 +29,7 @@ export async function POST(req: Request, res: Response) {
 
           console.log(rutaarchivo);
 
-          writeFile(rutaarchivo, buffer, (err: any) => {
+          writeFile(rutaarchivo, buffer, (err) => {
               if (err)
                 console.log(err, "error");
               else {
@@ -44,7 +45,7 @@ export async function POST(req: Request, res: Response) {
     }
   }
   catch(error){
-    return new Response(JSON.stringify({message: "ERROOOOR"}),{status: 400,})
+    return new Response(JSON.stringify({message: "ERROOOOR", error}),{status: 400,})
 
   }
     

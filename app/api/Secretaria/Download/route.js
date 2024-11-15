@@ -1,7 +1,8 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import fs from 'fs'
-import path from 'path'
+
+import fs from 'node:fs'
+import path from 'node:path'
 import { error } from 'console';
+import process from 'node:process'
 
 export async function GET(req) {
  try{

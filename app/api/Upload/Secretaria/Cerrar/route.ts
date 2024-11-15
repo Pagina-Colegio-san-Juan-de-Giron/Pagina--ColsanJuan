@@ -1,15 +1,11 @@
 import path from 'path'
-import {writeFile, mkdir, readdir} from 'fs'
-import { unlink } from 'fs/promises';
-const fs = require('fs');
+import fs from 'node:fs/promises'
 
-let contador: number = 0;
 
-export async function POST(req: Request, res: Response) {
-    
+export async function POST(req: Request) {
+
 
   try{
-    contador++;
     const data = await req.formData()
     const file = data.get('File')
     const name = data.get('Name')
@@ -23,10 +19,10 @@ export async function POST(req: Request, res: Response) {
        
         const Directorio = path.join(process.cwd(), 'app/Contratacion/ADMIN/Secretaria/Licitaciones', name);
         
-        const files = await fs.promises.readdir(Directorio)
+        const files = await fs.readdir(Directorio)
 
         for(const File of files){
-            await fs.promises.unlink(path.join(Directorio, File));
+            await fs.unlink(path.join(Directorio, File));
         }
 
         try{

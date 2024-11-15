@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import fs from 'node:fs'
 import path from 'path'
 
@@ -12,7 +11,6 @@ let idcontador = 0;
       const carpetas = filenames.map(file => {
         const rutaFile = path.join(rutacarpeta, file);
         const Isfolder = fs.lstatSync(rutaFile).isDirectory();
-        const baseDir = path.resolve("public")
         const carpeta = {
           id: idcontador++,
           EsCarpeta: Isfolder,
@@ -29,7 +27,7 @@ let idcontador = 0;
   
 
 
-export async function GET(req, res, NextApiResponse) {
+export async function GET(req) {
  try {
   const url = new URL(req.url);
   const searchparams = new URLSearchParams(url.searchParams)
