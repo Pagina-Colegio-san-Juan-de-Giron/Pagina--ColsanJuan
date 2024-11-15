@@ -2,23 +2,21 @@ import path from 'path'
 import {writeFile} from 'node:fs'
 import fs from 'node:fs'
 
-declare type FormDataEntryValue = string | null;
+
 
 export async function POST(req: Request) {
-    
+  
 
   try{
     const data = await req.formData()
-    const file = data.get('File')
-    const name = data.get('Name')
-    const Dirname = data.get('Dirname')
+    const file = data.get('File') as File
+    const name = data.get('Name') as string
+    const Dirname = data.get('Dirname') as string
 
     if (typeof file === 'object' && file instanceof Blob && typeof name === 'string') {
 
         const bytes = await file.arrayBuffer();
-
         const buffer = Buffer.from(bytes)
-
         const carpetanumerada = `Propuesta_${name}`
         
         const Directorio = path.join(process.cwd(), 'app/Contratacion/ADMIN/Secretaria/Licitaciones', Dirname ,carpetanumerada);
