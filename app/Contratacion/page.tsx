@@ -1,18 +1,25 @@
 'use client'
 
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useEffect} from 'react'
 import "./Contratacion.scss"
 import Overlay from "./Componentes/modal"
 
 const Page = () => {
-
+  interface ExplorerItem {
+    id: number;
+    EsCarpeta: boolean;
+    name: string;
+    items: ExplorerItem[];
+    path: string;
+}
   interface Licitaciones {
     name: string
     id: number
-    items: []
+    items: Licitaciones[]
     EsCarpeta: boolean
     path: string
   }
+
 
 
   interface RegistrosFechas {
@@ -132,11 +139,11 @@ const HandleCloseds = (Foldername: string) => {
 
 
   const ObtenerValoresIniciales = (lic: Licitaciones) => {
-      let Downloads: string[] = [] 
+      let Downloads: Licitaciones[] = [] 
       lic.items.forEach((element: Licitaciones) => {
         if(!element.EsCarpeta)
         {
-          Downloads = [...Downloads, element.name]
+          Downloads = [...Downloads, element]
         }
       })
 
@@ -152,8 +159,8 @@ const HandleCloseds = (Foldername: string) => {
     Licitaciones.map((lic) => {
 
       
-      let index = lic.id
-      let InitialPath = lic.path
+      const index = lic.id
+      const InitialPath = lic.path
       const {Downloads} = ObtenerValoresIniciales(lic) 
 
       

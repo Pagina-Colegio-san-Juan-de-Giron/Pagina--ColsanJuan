@@ -15,7 +15,7 @@ const AuthOpts = {
             async authorize(credentials) {
                 console.log(credentials)
                 if(!credentials) throw new Error ("No hay credenciales")
-                    const foundeduser = await db.users.findUnique({
+                    const foundeduser = await db.Users.findUnique({
                         where: {
                             Username: credentials.Username,
                             pswd: credentials.pswd,

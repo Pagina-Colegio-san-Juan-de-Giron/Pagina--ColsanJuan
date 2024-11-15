@@ -2,13 +2,7 @@
 
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
-const nextConfig = {// Can be safely removed in newer versions of Next.js
-    future: {
-  
-      // by default, if you customize webpack config, they switch back to version 4.
-      // Looks like backward compatibility approach.
-      webpack5: true,   
-    },
+const nextConfig = {
   
     webpack(config) {
       config.resolve.fallback = {

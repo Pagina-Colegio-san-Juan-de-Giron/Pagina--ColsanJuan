@@ -3,9 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import { error } from 'console';
 
-const rutaarchivos = "public/";
-
-export async function GET(req, res) {
+export async function GET(req) {
  try{
 
     const url = new URL(req.url);
