@@ -1,8 +1,6 @@
 'use client'
 
 import React, {useEffect, useState} from 'react'
-import Image from 'next/image'
-import imagen from "@/app/Componentes/Imágenes/images.jpg"
 import "./Secretaria.scss"
 import Overlay from "./Modal/modal"
 import Añadir from "./ModalA/page"
@@ -36,7 +34,7 @@ const page: React.FC = () => {
     setceerrado(!ceerrado);
   }
 
-  let NombreActual: string = ""
+  const NombreActual: string = ""
 
   async function ObtenerLic(){
     const response = await fetch('/api/Secretaria');
@@ -44,6 +42,7 @@ const page: React.FC = () => {
       console.log(data);
       if(data) {
         setLic(data);
+        console.log(Licitaciones)
       } 
   }
 
@@ -66,7 +65,7 @@ const page: React.FC = () => {
 
     
 
-    <Añadir Nombre={NombreActual} cerrado={ceerrado} HandleClick={HandleeClick}/>
+    <Añadir Name={NombreActual} cerrado={ceerrado} HandleClick={HandleeClick}/>
 
     <section className='contenedor-contratacion'>
           <span className={`${alice.className} boton-contratacion`} onClick={HandleClick}>

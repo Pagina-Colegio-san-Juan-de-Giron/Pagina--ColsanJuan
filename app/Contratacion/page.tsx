@@ -5,13 +5,6 @@ import "./Contratacion.scss"
 import Overlay from "./Componentes/modal"
 
 const Page = () => {
-  interface ExplorerItem {
-    id: number;
-    EsCarpeta: boolean;
-    name: string;
-    items: ExplorerItem[];
-    path: string;
-}
   interface Licitaciones {
     name: string
     id: number
@@ -72,7 +65,6 @@ const HandleCloseds = (Foldername: string) => {
       const response = await fetch('/api/Secretaria');
         const data = await response.json();
         console.log(data);
-        const fecha: Record<string, Date> = {}
         if(data) {
          
 
@@ -83,6 +75,7 @@ const HandleCloseds = (Foldername: string) => {
           const FullFalse = Array(data.length).fill(false)
           setCerrados(FullFalse)
           console.log("Arreglo nuevo ", Estadocerrados, "Estado buscado ", FullFalse)
+          setFinished(true)
       
           
           

@@ -7,10 +7,7 @@ import { JsonArray } from '@prisma/client/runtime/library';
 
 const page = ({ cerrado, HandleClick }: { cerrado: boolean; HandleClick: () => void }) => {
 const [File, setFile] = useState<File | null >(null);
-const [Files, setFiles] = useState<File[]>([]);
-const [UplFiles, setUplFiles] = useState<File[]>([]);
 const [Filename, setFileName] = useState("");
-const [FileArray, setFileArray] = useState<string[]>([]);
 const [Enviado, setenviado] = useState<boolean>(false);
 const [EnviadoSubir, setenviadoSubir] = useState<boolean>(false);
 const [nombredirLic, setnombreLic] = useState<string>("");
@@ -30,14 +27,6 @@ const [explorer, setexplorer] = useState<JsonArray>();
 
   obtenerdirs();
   }, []);
-  function EliminarElemento(FileDeleted: File |  null){
-    if(FileDeleted){
-      const filtered = Files.filter(file => file.lastModified != FileDeleted.lastModified);
-      setFiles(filtered);
-      console.log(filtered);
-      setUplFiles(filtered);
-    }
-  }
 
 
 

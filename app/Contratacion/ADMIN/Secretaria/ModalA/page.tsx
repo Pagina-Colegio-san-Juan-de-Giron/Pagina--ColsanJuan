@@ -3,12 +3,9 @@ import React, { useEffect, useState } from 'react';
 import C_Archivo from "./Archivo";
 
 
-interface Fechas {
-  nombre: string;
-  Fecha: string;
-}
 
-const modal = ({ FolderPath ,InitFilename ,Finished ,Name, cerrado, HandleClick}: { FolderPath: string; InitFilename: string; Finished: boolean; Name: string ;cerrado: boolean; HandleClick: () => void ; }) => {
+
+const modal = ({Name, cerrado, HandleClick}: { Name: string ;cerrado: boolean; HandleClick: () => void ; }) => {
 
 const [File, setFile] = useState<File | null >(null);
 const [Files, setFiles] = useState<File[]>([]);
@@ -21,11 +18,7 @@ const [EnviadoSubir, setenviadoSubir] = useState<boolean>(false);
 const [nombrepropuesta, setnombre] = useState<string>("");
 
 const [FechaInner, setFechaInner] = useState<string>("")
-const [Finishet, setFinished] = useState<boolean>(false);
 
-useEffect(() => {
-  setFinished(Finished);
-}, [])
 
   useEffect(() => {
     console.log(File);
@@ -154,7 +147,7 @@ useEffect(() => {
                                   {
                                     UplFiles.map((arch) => {
                                       return(
-                                        <span>{arch.name}</span>
+                                        <span key={arch.name}>{arch.name}</span>
                                       )
                                     })
                                   }

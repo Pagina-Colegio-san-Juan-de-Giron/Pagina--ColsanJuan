@@ -2,10 +2,6 @@
 
 import path from "path";
 import React, { useEffect, useState } from "react";
-import ClosedsContext from "@/app/Context/ClosedsContext";
-import exp from "constants";
-import { space } from "postcss/lib/list";
-import Añadir from "../../ModalB/page"
 
 interface ExplorerItem {
     id: number;
@@ -15,25 +11,12 @@ interface ExplorerItem {
     path: string;
 }
 
-interface FolderProps {
-    explorer: ExplorerItem[];
-  }
+
 
   
 
  
-  const HandleSubmit = async (filepath: string, filename: string) => {
-        try{
-            const res = await fetch(`/api/Secretaria/Download?Filepath=${filepath}&Filename=${filename}`)
-
-            if(res.ok){
-              console.log("archivo manejado")
-            }
-        }
-        catch(err){
-            console.log("ERROR: ", err)
-        }
-  }
+ 
 
 
 
@@ -69,6 +52,7 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
                 setDwnloadStat("Descargado");
+                console.log(downloadStat)
             }
     
             
@@ -89,8 +73,6 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
     
             const DisposicionContenido = res.headers.get('Content-disposition');
             if(DisposicionContenido){
-                const Nombrecoincidido = DisposicionContenido.match(/filename="(.+)"/);
-                const Nombre = Nombrecoincidido ? Nombrecoincidido[1] : "downloadedFile";
                 const url = window.URL.createObjectURL(blob)
                 const PestañaPrev = window.open(url, '_blank');
                 if (PestañaPrev) {

@@ -13,7 +13,7 @@ interface Licitaciones {
 
 
 
-const modal = ({ FolderPath ,InitFilename ,Finished ,Name, cerrado, HandleClick, isClosed }: { FolderPath: string; InitFilename: Licitaciones[]; Finished: boolean; Name: string ;cerrado: boolean; HandleClick: () => void; isClosed: (foldername: string) => boolean }) => {
+const modal = ({InitFilename ,Finished ,Name, cerrado, HandleClick, isClosed }: { FolderPath: string; InitFilename: Licitaciones[]; Finished: boolean; Name: string ;cerrado: boolean; HandleClick: () => void; isClosed: (foldername: string) => boolean }) => {
 
 const [File, setFile] = useState<File | null >(null);
 const [Files, setFiles] = useState<File[]>([]);
@@ -27,6 +27,7 @@ const [Finishet, setFinished] = useState<boolean>(false);
 
 useEffect(() => {
   setFinished(Finished);
+  console.log(Finishet)
 }, [])
 
   useEffect(() => {
@@ -105,7 +106,7 @@ useEffect(() => {
                         <div className='contentDownload'>{
 
                           InitFilename.map((File) => {
-                            return (<div className='download'>
+                            return (<div className='download' key={File.id}>
                               <h2>
                                   {File.name} 
                               </h2>
@@ -128,7 +129,7 @@ useEffect(() => {
                           <div className='contentDownload'>{
 
                             InitFilename.map((File) => {
-                              return (<div className='download'>
+                              return (<div className='download' key={File.id}>
                                 <h2>
                                     {File.name} 
                                 </h2>
@@ -210,7 +211,7 @@ useEffect(() => {
                                   {
                                     UplFiles.map((arch) => {
                                       return(
-                                        <span>{arch.name}</span>
+                                        <span key={arch.name}>{arch.name}</span>
                                       )
                                     })
                                   }

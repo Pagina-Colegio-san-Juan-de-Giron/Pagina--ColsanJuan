@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react"
+import { useEffect} from "react"
 
 import React from 'react'
 
+interface Propstypes {
+    enviado: boolean,
+    File: File,
+    Ffunction(FileDeleted: File | null): void
+  }
 
-
-function Archivo(props: any) {
+function Archivo(props: Propstypes) {
 
 
     const {File, Ffunction, enviado} = props; 

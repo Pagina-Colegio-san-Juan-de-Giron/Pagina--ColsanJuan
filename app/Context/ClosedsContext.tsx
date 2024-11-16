@@ -1,7 +1,6 @@
 'use client'
-
+import React from 'react'
 import { createContext, ReactNode, FC, useState, useEffect } from "react";
-import Folder from "../Contratacion/ADMIN/Secretaria/Modal/componentes/Folders";
 
 interface PropsCloseds {
     Closed: string[]
