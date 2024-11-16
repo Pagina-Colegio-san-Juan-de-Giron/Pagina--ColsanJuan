@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import imagen from "@/app/Componentes/Imágenes/images.jpg"
 import { Alice } from 'next/font/google';
 import "./Cons_Académico.scss"
 import libro from "./open-book-svgrepo-com.svg"
+import ImagenesDocentes from './ImagenesDocentes';
 
 import { promises as fs } from 'fs';
 
@@ -13,16 +13,18 @@ const alice = Alice({
   weight: ['400']
 })
 
+interface DatosDocentes {
+  Url: string
+  Nombre: string
+  Cargo: string
+}
 
 const page = async() => {
 
   const file = await fs.readFile(process.cwd() + '/app/Gobierno_Escolar/Consejo_Academico/Data.json', 'utf8');
-  const data = JSON.parse(file);
+  const data: DatosDocentes[] = JSON.parse(file);
 
-  const GetURl = (img: string) => {
-    var image = require("@/app/Gobierno_Escolar/Consejo_Directivo/" + img)
-    return image
-  } 
+ 
 
 return (
 <main> 
@@ -30,17 +32,7 @@ return (
       <h1 className={alice.className}>Consejo Académico</h1>
 
 
-      <section className='Container-Personas'>
-        {
-          data.map(data => (
-            <div className='container-tarjeta'>
-              <Image className='fotopersona' src={GetURl(data.Url)} alt='foto'/>
-              <h2 className='nombre'>{data.Nombre}</h2>
-              <h2>{data.Cargo}</h2>
-            </div>
-          ))
-        }
-      </section>
+      <ImagenesDocentes data={data}/>
 
       <h2>CAPITULO II. GOBIERNO ESCOLAR.</h2>
     </header>

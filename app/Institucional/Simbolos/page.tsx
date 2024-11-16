@@ -23,7 +23,7 @@ const Simbolos = () => {
                 El color blanco hace alusión a la luz de la sabiduría y de la verdad que imparte nuestro colegio en las mentes de todos sus educandos. La paz por encima de todo ese es el significado de no solo nuestra bandera sino tambien el de nuestra institucion .
               </p>
             </article>
-            <Image src={Bandera} className='Bandera'></Image>
+            <Image src={Bandera} alt="bandera "className='Bandera'></Image>
         </div>
 
         <div className='EscudoS'>
@@ -36,7 +36,7 @@ const Simbolos = () => {
                 <br/>
                 Tercer campo inferior. Libro abierto: El libro significa la búsqueda intelectual a la luz y protección de cristo, luz de luz.
               </p>
-              <Image className='Eescudo' src={Escudo}></Image>
+              <Image className='Eescudo' alt='escudo' src={Escudo}></Image>
               <h3>Sabias que el escudo del colegio<br/>fue re diseñado en el año 2019</h3>
             </article>
         </div>

@@ -2,9 +2,9 @@ import React from 'react'
 import "./Uniformes.scss"
 import Image from 'next/image'
 import { Alice } from 'next/font/google'
-import edfisica from './Imágenes/Ed_física.JPG'
-import diario_hombre from './Imágenes/Diario_hombre.JPG'
-import diario_mujer from './Imágenes/Diario_mujer.JPG'
+import edfisica from './Imágenes/Ed_física.jpg'
+import diario_hombre from './Imágenes/Diario_hombre.jpg'
+import diario_mujer from './Imágenes/Diario_mujer.jpg'
 
 
 const alice = Alice({ 

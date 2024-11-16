@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Image from 'next/image'
-import imagen from "@/app/Componentes/Imágenes/images.jpg"
 import "./ConsejoDirectivo.scss"
 import { Alice } from 'next/font/google';
 import { promises as fs } from 'fs';
