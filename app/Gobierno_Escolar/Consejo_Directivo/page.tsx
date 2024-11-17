@@ -1,26 +1,41 @@
-
-
-import React from 'react'
+'use client'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import "./ConsejoDirectivo.scss"
 import { Alice } from 'next/font/google';
 import { promises as fs } from 'fs';
+import ImagenesDocentes from './ImagenesDocentes';
+
 
 const alice = Alice({ 
   subsets: ['latin-ext'],
   weight: ['400']
 })
 
+interface DatosDocentes {
+  Url: string
+  Nombre: string
+  Cargo: string
+}
 
-const page = async () => {
+const page = () => {
 
-  const file = await fs.readFile(process.cwd() + '/app/Gobierno_Escolar/Consejo_Directivo/Data.json', 'utf8');
-  const data = JSON.parse(file);
+  const [data, setdata] = useState<DatosDocentes[]>()
+  const [loading, setload] = useState<boolean>(true)
 
-  const GetURl = (img) => {
-    var image = require("@/app/Gobierno_Escolar/Consejo_Directivo/" + img)
-    return image
-  } 
+  useEffect(() => {
+    const obtenerJson = async () => {
+      const response = await fetch('/api/JsonRead/Directivos');
+      const Data = await response.json();
+      setdata(Data.data)
+      setload(false)
+    }
+
+
+    obtenerJson()
+
+    console.log(data)
+  }, [])
 
   return (
    <main> 
@@ -28,21 +43,26 @@ const page = async () => {
       <h1 className={alice.className}>Consejo Directivo</h1>
       <h2>CAPITULO II. GOBIERNO ESCOLAR.</h2>
 
-      <section className='Container-Personas'>
+      <div>
         {
-          data.map(data => (
-            <div className='container-tarjeta'>
-              <Image className='fotopersona' src={GetURl(data.Url)} alt='foto'/>
-              <h2 className='nombre'>{data.Nombre}</h2>
-              <h2>{data.Cargo}</h2>
-            </div>
-          ))
+          !loading? 
+          data ?
+           
+           <ImagenesDocentes data={data}/>
+
+          :
+          <div>no hay json</div>
+
+
+          :
+          <div>cargando</div>
         }
-      </section>
+      </div>
+      
       <article>
         <h2>Funciones</h2>
 
-        <p>
+        <div className='para'>
           <div className='paragraph'><div className='spaaan'>a)</div>  Tomar las decisiones que afecten el funcionamiento de la institución, excepto las que sean competencia de otra autoridad, tales como las reservadas a la dirección administrativa, en el caso de los establecimientos privados.<br/>
           <br/></div>
           <div className='paragraph'><div className='spaaan'>b)</div>  Servir de instancia para resolver los conflictos que se presenten entre docentes y administrativos con los alumnos del establecimiento educativo y después de haber agotado los procedimientos previstos en el reglamento o manual de convivencia.<br/>
@@ -78,7 +98,7 @@ const page = async () => {
           <div className='paragraph'><div className='spaaan'>o)</div> Aprobar el presupuesto de ingresos y gastos de los recursos propios y los provenientes de pagos legalmente autorizados, efectuados por los padres y responsables de la educación de los alumnos, tales como derechos académicos, uso de libros de texto y similares<br/>
           <br/></div>
           <div className='paragraph'><div className='spaaan'>p)</div> Darse su propio reglamento. <br/></div>
-        </p>
+        </div>
       </article>
     </header>
    </main> 

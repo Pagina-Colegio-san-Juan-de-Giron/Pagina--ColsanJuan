@@ -14,7 +14,7 @@ const Obtenerimagenes = (Path: string) => {
     useEffect(() => {
         const ObtenerImagen = async () => {
           try {
-            const imagen = await import(`@/app/Gobierno_Escolar/Consejo_Academico/${Path}`)
+            const imagen = await import(`@/app/Gobierno_Escolar/Consejo_Directivo/${Path}`)
             setImport(imagen.default)
           } catch (error) {
             console.log("error al obtener imagen", error)

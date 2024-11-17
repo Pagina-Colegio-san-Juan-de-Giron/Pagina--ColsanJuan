@@ -42,7 +42,7 @@ export async function POST(req: Request) {
             
         }
         catch(err){
-            console.log("Error al crear el registro:", err);
+            console.log("Error al crear el registro:, Fechas", err);
         }
         
     }else {

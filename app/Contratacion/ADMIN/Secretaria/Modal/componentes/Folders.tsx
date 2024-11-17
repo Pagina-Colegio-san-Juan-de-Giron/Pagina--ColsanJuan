@@ -97,18 +97,20 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
     useEffect(() => {
         const CambiarFecha = async () =>  {
             try{
-                  const res = await fetch('/api/Secretaria/Fechas/Cambiar', {
-                    method: "PUT",
-                    body: JSON.stringify({
-                        FechaNueva: FechaCambiar,
-                        Nombre: NombreCambiar
-                    })
-                  })  
-
-                  if (res?.ok){
-                    console.log("Se cambio la fecha")
-                  }else{
-                    console.log("Fecha no cambiada")
+                  if(NombreCambiar != ""){
+                    const res = await fetch('/api/Secretaria/Fechas/Cambiar', {
+                        method: "PUT",
+                        body: JSON.stringify({
+                            FechaNueva: FechaCambiar,
+                            Nombre: NombreCambiar
+                        })
+                      })  
+    
+                      if (res?.ok){
+                        console.log("Se cambio la fecha")
+                      }else{
+                        console.log("Fecha no cambiada")
+                      }
                   }
             }
             catch(err)

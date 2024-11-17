@@ -14,16 +14,17 @@ datasource db {
 }
 
 model Users {
-  id Int @id @default(autoincrement())
-  Username String @unique 
-  pswd String 
+  id        Int      @id @default(autoincrement())
+  Username  String   @unique
+  pswd      String
   CreatedAt DateTime @default(now())
   UpdatedAt DateTime @updatedAt
 }
 
-model Fecha{
-  id Int @id @default(autoincrement())
-  Fecha String
+model Fecha {
+  id     Int    @id @default(autoincrement())
+  Fecha  String
   Nombre String @unique
+
   @@map("Fecha")
 }

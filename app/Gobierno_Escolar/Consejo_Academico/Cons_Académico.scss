@@ -16,15 +16,45 @@
         font-size: 1.5vw;
     }
 
-    Container-Personas{
+    .Container-Personas{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1vw;
+        row-gap: 1rem;
+
         h2{
             text-align: center;
         }
 
         .container-tarjeta{
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2{
+                display: flex;
+                justify-content: center;
+
+                
+                text-align: center;
+            }
+
+            .nombre{
+                color: #034684;
+                font-weight: bold;
+                text-align: center;
+            }
+
             .fotopersona{
-                width: 100px;
-                height: 100;
+                width: 15vw;
+                display: flex;
+                justify-content: center;
+                border-radius: 50%;
+
+                border: 2px #034684 solid;
+                padding: 2px;
             }
         }
     }
@@ -44,6 +74,17 @@ article{
         font-weight: bold;
         font-size: 2vw;
     }
+    .para{
+        .paragraph{
+            display: flex;
+            gap: 1rem;
+        }
+
+        .spaaan{
+            color: #F1CC77;
+        }
+    }
+
     p{
         .paragraph{
             display: flex;
@@ -78,7 +119,7 @@ article{
         max-width: 100%;
 
         .libroimagen{
-            z-index: 1000;
+            z-index: 1;
             width: 7vw;
         }
     }
@@ -110,8 +151,8 @@ article{
 
 
         .container-libro{
-            height: 40vw;
-            width: 40vw;
+            height: 10vw;
+            width: 10vw;
             margin-top: 1rem;
             
             .libro{
@@ -122,7 +163,7 @@ article{
                 
             
                 .libroimagen{
-                    width: 25vw;
+                    width: 7vw;
                 }
             }
 
@@ -147,6 +188,10 @@ article{
 
     article{
         h2{
+            font-size: 5vw;
+        }
+
+        .para{
             font-size: 5vw;
         }
 

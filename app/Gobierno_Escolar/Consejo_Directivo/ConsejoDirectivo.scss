@@ -85,6 +85,17 @@
             }
         }
 
+        .para{
+            font-weight: 600;
+            font-size: 2vw;
+            text-align: justify;
+
+            .paragraph{
+                display: flex;
+                gap: 1rem;
+            }
+        }
+
 
         .spaaan{
             color: #F1CC77;
@@ -120,6 +131,9 @@
             }
 
             p{
+                font-size: 5vw;
+            }
+            .para{
                 font-size: 5vw;
             }
         }

@@ -1,11 +1,11 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Alice } from 'next/font/google';
 import "./Cons_Académico.scss"
 import libro from "./open-book-svgrepo-com.svg"
 import ImagenesDocentes from './ImagenesDocentes';
-
-import { promises as fs } from 'fs';
+import { data } from 'autoprefixer';
 
 
 const alice = Alice({ 
@@ -19,10 +19,24 @@ interface DatosDocentes {
   Cargo: string
 }
 
-const page = async() => {
+const page = () => {
 
-  const file = await fs.readFile(process.cwd() + '/app/Gobierno_Escolar/Consejo_Academico/Data.json', 'utf8');
-  const data: DatosDocentes[] = JSON.parse(file);
+  const [data, setdata] = useState<DatosDocentes[]>()
+  const [loading, setload] = useState<boolean>(true)
+
+  useEffect(() => {
+    const obtenerJson = async () => {
+      const response = await fetch('/api/JsonRead');
+      const Data = await response.json();
+      setdata(Data.data)
+      setload(false)
+    }
+
+
+    obtenerJson()
+
+    console.log(data)
+  }, [])
 
  
 
@@ -30,11 +44,24 @@ return (
 <main> 
     <header className='Hhheader'>
       <h1 className={alice.className}>Consejo Académico</h1>
-
-
-      <ImagenesDocentes data={data}/>
-
       <h2>CAPITULO II. GOBIERNO ESCOLAR.</h2>
+      <div>
+        {
+          !loading? 
+          data ?
+           
+           <ImagenesDocentes data={data}/>
+
+          :
+          <div>no hay json</div>
+
+
+          :
+          <div>cargando</div>
+        }
+      </div>
+
+      
     </header>
 
   <div className='container-art-imagen'>
@@ -54,7 +81,7 @@ return (
 
       <h2>Funciones</h2>
 
-      <p>
+      <div className='para'>
           <div className='paragraph'><div className='spaaan'>a)</div>  Servir de órgano consultor del Consejo Directivo en la revisión de la propuesta del proyecto educativo institucional.<br/>
           <br/></div>
 
@@ -75,7 +102,7 @@ return (
 
           <div className='paragraph'><div className='spaaan'>g)</div>  Las demás funciones afines o complementarias con las anteriores que le atribuya el Proyecto<br/>
           <br/></div>
-      </p> 
+      </div> 
     </article>
 
     <span className='container-libro'>
