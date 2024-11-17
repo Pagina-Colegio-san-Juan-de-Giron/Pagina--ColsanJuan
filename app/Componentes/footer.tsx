@@ -49,9 +49,6 @@ const footer = () => {
                      </div>
                 </div>
 
-                <div className='mapa-contenedor'>
-                  <Mapa/>
-                </div>
               </div>
               <div className='lema'>
               <h1 className={alice.className}>¡Creemos en la excelencia como el camino para lograr los sueños!</h1>
