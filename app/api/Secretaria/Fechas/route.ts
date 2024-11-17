@@ -1,5 +1,5 @@
 
-import db from "@/libs/db"
+import db  from "@/libs/db"
 export async function POST(req: Request) {
     const data = await req.formData()
     const Fecha = data.get('Fecha')

@@ -139,7 +139,7 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
             explorer.map((file) => {
                 if(file.EsCarpeta){
                 const Expandido = expandedFolders.includes(file.id);
-                return(<>
+                return(<React.Fragment key={file.id}>
 
                    <div className="Lic-Cont">
                        <span className="Cont-folder" onClick={() => CambiarExpan(file.id)}>📂 {file.name}</span>
@@ -156,7 +156,7 @@ function Folder({ explorer , IsLic }: { explorer: ExplorerItem[] ; IsLic: boolea
                         <Folder explorer={file.items} IsLic={false} />         
 
                    </div>
-                </> 
+                </React.Fragment> 
                 );
                 }
                 if (!file.EsCarpeta){

@@ -90,7 +90,7 @@ body{
 
     .containerRedes{
         width: auto;
-        height: 30vw;
+        height: auto;
         border-top-left-radius: 2vw;
         border-bottom-left-radius: 2vw;
         margin-right: 2.5vw;

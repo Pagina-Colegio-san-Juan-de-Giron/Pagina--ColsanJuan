@@ -1,5 +1,5 @@
 
-import db from "@/libs/db"
+import  db  from "@/libs/db"
 import { Prisma } from "@prisma/client"
 export async function PUT(req: Request) {
     const data = await req.json()

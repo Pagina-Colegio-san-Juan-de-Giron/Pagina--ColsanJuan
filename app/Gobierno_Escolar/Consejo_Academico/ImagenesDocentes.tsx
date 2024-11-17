@@ -39,13 +39,14 @@ function ImagenesDocentes({data} : {data: DatosDocentes[]}) {
           data.map(data => {
             const FinalImport = Obtenerimagenes(data.Url)
             console.log(FinalImport)
-            return(
-            <div className='container-tarjeta' key={data.Nombre}>
-              <Image className='fotopersona' src={FinalImport as string} alt='foto'/>
-              <h2 className='nombre'>{data.Nombre}</h2>
-              <h2>{data.Cargo}</h2>
-            </div>
-          )})
+            return FinalImport?(  
+              <div className='container-tarjeta' key={data.Nombre}>
+                <Image className='fotopersona' src={FinalImport} alt='foto'/>
+                <h2 className='nombre'>{data.Nombre}</h2>
+                <h2>{data.Cargo}</h2>
+              </div>
+          ) :
+          null})
         }
       </section>
   )

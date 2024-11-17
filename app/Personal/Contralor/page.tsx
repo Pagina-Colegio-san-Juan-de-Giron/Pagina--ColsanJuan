@@ -5,7 +5,7 @@ import Image from 'next/image'
 import "./Contralor.scss"
 import { Alice } from 'next/font/google';
 import escudo from "@/app/Componentes/Imágenes/Escudo.svg";
-import ImagenLado from "./Imagenes/fotoIDK.jpg"
+import ImagenLado from "./Imágenes/fotoIDK.jpg"
 import ImagenesPersoneros from './Imágenes/exportImages';
 
 
@@ -42,7 +42,7 @@ const page = () => {
       Jornada: "Mañana"
   },
   {
-      id: 1,
+      id: 3,
       ImageRoute: "FotoIDK3",
       Nombre: "3",
       Jornada: "Mañana"

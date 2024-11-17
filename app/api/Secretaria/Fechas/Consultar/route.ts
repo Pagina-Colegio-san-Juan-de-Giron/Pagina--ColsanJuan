@@ -3,20 +3,23 @@ import db from "@/libs/db"
 
 export async function GET() {
 
-
+    let registro
     try{
-        const registro = await db.fecha.findMany()
+        registro = await db.fecha.findMany()
 
         if(registro === null){
             console.log("no hay archivo encontrado")
         }
         
-        console.log("El registro es: ", registro)
-        return Response.json({registro})
-
-        
     }
     catch(err){
         console.log("error al leer fecha", err)
+    }
+
+    try {
+        console.log("El registro es: ", registro)
+        return Response.json({registro})
+    } catch (error) {
+        console.log("error al devolver registro:", error)
     }
 }

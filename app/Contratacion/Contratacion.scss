@@ -10,7 +10,7 @@ main{
 
     flex-wrap: wrap;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 2rem;
 }
 
@@ -39,8 +39,10 @@ main{
     justify-content: center;
     align-items: center;
     opacity: 1;
+    z-index: 6;
 
     .contenedor-modal{
+        margin-top: 10vh;
         transition: ease .5s all;
         width: 70vw;
         height: 60vh;

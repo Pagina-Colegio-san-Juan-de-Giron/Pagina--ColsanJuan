@@ -1,6 +1,6 @@
 import nextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import db from "@/libs/db"
+import db  from "@/libs/db"
 
 
 const AuthOpts = {

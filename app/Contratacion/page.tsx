@@ -105,27 +105,27 @@ const HandleCloseds = (Foldername: string) => {
 
   const ObtenerFechaCierre = async() => {
     
-      
+      let data
       try{
         const response = await fetch('/api/Secretaria/Fechas/Consultar');
-        const data = await response.json();
-  
-        if(data){
-          console.log("LA fecha essss: ", data.registro)
-          const fechaMap: Record<string, Date> = {} 
-          await Promise.all(data.registro.map((registro: RegistrosFechas) => {
-            fechaMap[registro.Nombre] = new Date(registro.Fecha)
-          }))
-          setFechasCierre(fechaMap)
-          console.log("pureba registros: ", FechasCierre)
-        }else{
-          console.log("No hay registro esperado")
-          return null
-        }
+        data = await response.json();
       }
       catch(err){
         console.log("error en la llamada a la api", err)
         return null;
+      }
+
+      if(data){
+        console.log("LA fecha essss: ", data.registro)
+        const fechaMap: Record<string, Date> = {} 
+        await Promise.all(data.registro.map((registro: RegistrosFechas) => {
+          fechaMap[registro.Nombre] = new Date(registro.Fecha)
+        }))
+        setFechasCierre(fechaMap)
+        console.log("pureba registros: ", FechasCierre)
+      }else{
+        console.log("No hay registro esperado")
+        return null
       }
 
   }
@@ -158,14 +158,14 @@ const HandleCloseds = (Foldername: string) => {
 
       
 
-      return (<>
+      return (<React.Fragment key={lic.id}>
         <span className='boton-contratacion' onClick={() => {HandleClick(index);}}>
           {lic.name}
         </span>
 
         <Overlay isClosed={isClosed} FolderPath={InitialPath} InitFilename={Downloads} Name={lic.name} Finished={Finished}  cerrado={Estadocerrados[index]} HandleClick={() => HandleClick(index)}/>
 
-      </>
+      </React.Fragment>
       )
     })
       

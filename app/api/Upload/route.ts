@@ -33,6 +33,7 @@ export async function POST(req: Request) {
               else {
                 
                 console.log("archivo subido");
+                return new Response(JSON.stringify({message: "Archivo subido"}),{status: 200,})
               }
             return new Response(JSON.stringify({message: "uploaded file"}))
           })
