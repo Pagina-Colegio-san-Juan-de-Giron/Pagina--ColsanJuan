@@ -1,5 +1,4 @@
 import path from 'path'
-import {writeFile} from 'fs'
 import fs from 'fs';
 
 export async function POST(req: Request) {

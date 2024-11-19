@@ -5,7 +5,6 @@ import { Alice } from 'next/font/google';
 import "./Cons_Académico.scss"
 import libro from "./open-book-svgrepo-com.svg"
 import ImagenesDocentes from './ImagenesDocentes';
-import { data } from 'autoprefixer';
 
 
 const alice = Alice({ 

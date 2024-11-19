@@ -1,9 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import Image from 'next/image'
 import "./ConsejoDirectivo.scss"
 import { Alice } from 'next/font/google';
-import { promises as fs } from 'fs';
 import ImagenesDocentes from './ImagenesDocentes';
 
 

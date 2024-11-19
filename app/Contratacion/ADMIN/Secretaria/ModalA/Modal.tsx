@@ -5,7 +5,7 @@ import C_Archivo from "./Archivo";
 
 
 
-const modal = ({Name, cerrado, HandleClick}: { Name: string ;cerrado: boolean; HandleClick: () => void ; }) => {
+const Modal = ({Name, cerrado, HandleClick}: { Name: string ;cerrado: boolean; HandleClick: () => void ; }) => {
 
 const [File, setFile] = useState<File | null >(null);
 const [Files, setFiles] = useState<File[]>([]);
@@ -195,4 +195,4 @@ const [FechaInner, setFechaInner] = useState<string>("")
   
 }
 
-export default modal
+export default Modal

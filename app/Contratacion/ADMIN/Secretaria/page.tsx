@@ -3,7 +3,7 @@
 import React, {useEffect, useState} from 'react'
 import "./Secretaria.scss"
 import Overlay from "./Modal/modal"
-import Añadir from "./ModalA/page"
+import Añadir from "./ModalA/Modal"
 import { Alice } from 'next/font/google'
 
 interface Licitaciones {

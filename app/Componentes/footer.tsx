@@ -8,7 +8,6 @@ import { Alice } from 'next/font/google'
 import telefono from "./Imágenes/phone-svgrepo-com.svg"
 import mail from "./Imágenes/mail-alt-svgrepo-com.svg"
 import marcador from "./Imágenes/map-point-svgrepo-com.svg"
-import Mapa from "./mapa"
 
 const alice = Alice({ 
   subsets: ['latin-ext'],

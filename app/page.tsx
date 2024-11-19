@@ -35,8 +35,6 @@ export default function Home() {
 
         const DisposicionContenido = res.headers.get('Content-disposition');
         if(DisposicionContenido){
-            const Nombrecoincidido = DisposicionContenido.match(/filename="(.+)"/);
-            const Nombre = Nombrecoincidido ? Nombrecoincidido[1] : "downloadedFile";
             const url = window.URL.createObjectURL(blob)
             const PestañaPrev = window.open(url, '_blank');
             if (PestañaPrev) {
