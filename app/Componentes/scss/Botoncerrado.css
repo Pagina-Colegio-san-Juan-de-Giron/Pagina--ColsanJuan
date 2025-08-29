@@ -1,0 +1,28 @@
+i{
+    display: none;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    font-size: 2rem;
+    justify-content: flex-end;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+
+
+@media (max-width: 1024px){
+    i{
+        display: flex;
+        font-style: normal;
+        font-weight: bold;
+        color: white;
+        font-size: 2rem;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+
+    .Nofunct{
+        pointer-events: none;
+    }
+}

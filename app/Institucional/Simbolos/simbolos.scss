@@ -1,0 +1,285 @@
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
+    .Título{
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        padding: 1rem;
+        color: #ffde59;
+        font-size: 4vw;
+    }
+}
+
+.grid-template{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto; 
+    grid-template-areas: 
+    "Bandera  Bandera"
+    "Escudo   Himno";
+}
+
+
+.BanderaS{
+    grid-area: Bandera;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.BanderaSs{
+    grid-area: Bandera;
+    display: flex;
+    flex-direction: column;
+    header{
+        display: flex;
+        width: 100%;
+        justify-content: start;
+        align-items: flex-start;
+        margin-left: 2vw;
+        h2{
+            color: #004aad;
+            font-weight: bold;
+            font-size: 3vw;
+        }
+    }
+}
+
+.Bandera{
+    width: 30%;
+    padding: 1%;
+    height: 100%;
+}
+
+.EscudoS{
+    grid-area: Escudo;
+    padding: 1vw;
+}
+
+.HimnoS{
+    grid-area: Himno;
+}
+
+.art-bandera{
+    display: block;
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+
+    header{
+        display: flex;
+        width: 100%;
+        justify-content: start;
+        align-items: flex-start;
+
+        h2{
+            color: #004aad;
+            font-weight: bold;
+            font-size: 4vw;
+        }
+    }
+
+    p{
+        padding: 3vw;
+        font-size: 1.7vw;
+        text-align: justify;
+    }
+}
+
+
+
+
+.art-himno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    
+    header{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+        
+        h2{
+            color: 
+            #ffde59;
+            font-weight: bold;
+            font-size: 3vw;
+        }
+    }
+    
+    p{
+        background-color: #C2EBFF;
+        width: 80%;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+        padding: 1vw;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+}
+
+.art-escudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    header{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+
+        h2{
+            color: #ffde59;
+            font-weight: bold;
+            font-size: 3vw;
+        }
+    }
+
+    p{
+        font-size: 1.7vw;
+        text-align: justify;
+    }
+
+    h3{
+        font-size: 2vw;
+        border: .5vw solid #004AAD;
+        padding: 1rem;
+        box-shadow: inset 0 -.7vw 0px #3F4196, 0 1vw 0px #38B6FF;
+        background-color: #c6ecff;
+        border-radius: 2rem;
+    }
+}
+
+.Eescudo{
+    width: 15vw;
+    padding: 1rem;
+}
+
+
+@media (max-width: 600px){
+    .grid-template{
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto; 
+        grid-template-areas: 
+        "Bandera  Bandera"
+        "Escudo   Himno";
+    
+    }
+
+    .art-escudo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    
+        header{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+    
+            h2{
+                color: #E3B76B;
+                font-weight: bold;
+                font-size: 5vw;
+            }
+        }
+    
+        p{
+            font-size: 3vw;
+            text-align: justify;
+        }
+    
+        h3{
+            font-size: 3vw;
+            border: 1vw solid #4142C6;
+            padding: 1rem;
+        }
+    }
+
+    .Eescudo{
+        width: 30vw;
+        padding: 1rem;
+    }
+    
+
+    .art-bandera{
+        display: block;
+        width: 65%;
+        height: 100%;
+        border-radius: 20px;
+    
+        header{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+    
+            h2{
+                color: #ffde59;
+                font-weight: bold;
+                font-size: 5vw;
+            }
+        }
+    
+        p{
+            padding: 1vw;
+            font-size: 3vw;
+            text-align: justify;
+        }
+    }
+    
+    .Bandera{
+        width: 34%;
+        padding: 1%;
+        height: 100%;
+    }
+    
+    
+    .art-himno{
+        display: block;
+        width: 100%;
+        height: auto;
+        background-color: #EDF0FF;
+        border-radius: 20px;
+    
+        header{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+    
+            h2{
+                color: #ffde59;
+                font-weight: bold;
+                font-size: 2vw;
+            }
+        }
+    
+        p{
+            width: 100%;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            padding: 1vw;
+            font-size: 2vw;
+            font-weight: bold;
+        }
+    }
+}

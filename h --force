@@ -1,0 +1,284 @@
+[33mcommit 9001ebc3bc25883a4d36694863b1106843000ad3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Sun Aug 25 16:14:06 2024 -0500
+
+    faltan cosas de los demás
+
+[33mcommit fb9565c2d67f3f3eb7b503bff19640f4c8f254ac[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Sun Aug 25 11:42:23 2024 -0500
+
+    faltan estilos
+
+[33mcommit e88a0cac56b26fdfdee1631a8f1acbadf3daa988[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Mon Aug 12 09:31:11 2024 -0500
+
+    contratacion 2
+
+[33mcommit 5a1d3c7f2f2996223fb0334ce9d011e33dac438a[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Mon Aug 12 08:19:51 2024 -0500
+
+    Contratacion falta boton
+
+[33mcommit a8533f8e291531b342fa457f242f632bb030f6b2[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Wed Aug 7 20:08:20 2024 -0500
+
+    contratacion cerrado
+
+[33mcommit 3cb4a19a469ce94747b880df039c3ec0521dfde3[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Mon Jul 22 09:44:48 2024 -0500
+
+    Casi contratacion 2 push
+
+[33mcommit 18938dc85bf64b7b32c6efa66ffe20c71aed4b04[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Mon Jul 22 09:43:32 2024 -0500
+
+    Casi contratacion
+
+[33mcommit 84a3ebeb3e6b459f62dc726ac1c3bcb8df031c2f[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Tue May 28 21:38:05 2024 -0500
+
+    Casi contratacion (ordenar y hacer bueno, un poco)
+
+[33mcommit d3c2d036c1fc4621e1d8015f8d96ebf5d6790a11[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Sat Mar 23 20:06:37 2024 -0500
+
+    Subida de archivos con creacion de carpetas lista (era severa bobada el error)
+
+[33mcommit 5e31f454e0e058c3fa17c5fa05e268f782c87876[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Fri Mar 22 06:58:54 2024 -0500
+
+    aver 2.0
+
+[33mcommit dd359e8d63d7fcfb401f7a5e5560d03a62d532a2[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Thu Mar 21 21:14:07 2024 -0500
+
+    hola
+
+[33mcommit 3acbf36bd93019c0b251705a6668d995565fadcf[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Wed Nov 29 19:39:40 2023 -0500
+
+    Páginas, falta mejorar la carga de las mismas
+
+[33mcommit 862c4f8bbd233c9298c4d98c216520fd993d5483[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Sat Nov 18 23:49:24 2023 -0500
+
+    Empezando a hacer página de personero
+
+[33mcommit 6ddafcfe96a40abc8a1e5610084eb22d20719f2a[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Sat Nov 18 23:11:41 2023 -0500
+
+    Footer arreglado, escudo nuevo
+
+[33mcommit a529c39a8fc468c5472da7e6b2f78ddd658a7b70[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Sun Nov 12 18:07:42 2023 -0500
+
+    rutas creadas, responsive footer
+
+[33mcommit 483f08a61e03dba3b4a4883fed555a3ff5635a17[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Sun Nov 12 11:56:56 2023 -0500
+
+    mejora del responsive header
+
+[33mcommit ae149b9473c6221f9e62965e4cba5fa7f645ab3b[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Wed Nov 1 08:39:33 2023 -0500
+
+[33mcommit 1b97a48844a48441cf277ae40e956f1259681f14[m[33m ([m[1;31morigin/Profesor[m[33m)[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Mon Oct 30 08:39:07 2023 -0500
+
+    Arreglos profesor
+
+[33mcommit e458b74bc75b2fcb2a0720e92ca7027005d60615[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Sun Oct 15 18:46:10 2023 -0500
+
+    uniformes, simbolos, mision, vision
+
+[33mcommit 2ab1dc9431eacfc27e46d593c32b0f4aeae0296c[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Fri Oct 13 22:32:43 2023 -0500
+
+    simbolos hecho (acomodar tamaño cel Bandera)
+
+[33mcommit 01836a91f2af1835e642031162d2925a32a51fde[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Thu Oct 12 22:33:27 2023 -0500
+
+    base pagina simbolos
+
+[33mcommit 046a7597771aa2862cc3fb0aca21b49ccc61f464[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Thu Oct 12 19:14:20 2023 -0500
+
+    arreglo tamaño celulares
+
+[33mcommit 050120ccb484fdb06a0becacaa1ce477818eac38[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Thu Oct 12 11:23:37 2023 -0500
+
+    boceto pagina principal (cambiar video e imagenes)
+
+[33mcommit 9763c9168263a0bf417f3f3cb817cb1e1c5b6597[m
+Merge: ca4b8463 47bc5856
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Wed Oct 11 17:31:37 2023 -0500
+
+    Merge pull request #1 from Pagina-Colegio-san-Juan-de-Giron/codespace-zany-space-umbrella-q7qgv5w6rp5q364q
+    
+    juanchos agregados (se me acabo el codespace)
+
+[33mcommit 47bc5856336c47f3e6577dafd2d6a0a3ad8274fd[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Wed Oct 11 22:29:17 2023 +0000
+
+    Pending changes exported from your codespace
+
+[33mcommit ca4b84632bcb91072f3cafcc63aa5790e560f4ed[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Wed Oct 11 01:44:23 2023 +0000
+
+    Video agregado
+
+[33mcommit fae9f6d69f8bdf9c567253e84618a35c62c80ae6[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Tue Oct 10 17:44:07 2023 +0000
+
+    mejor responsive footer
+
+[33mcommit caae174e99d15dd545850f5d95db68c0a3c911c2[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Mon Oct 9 23:12:42 2023 +0000
+
+    arreglando footer
+
+[33mcommit 5cefd14095ac7f6f9bcc7499ec3c58ef280e1358[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Mon Oct 9 13:33:56 2023 +0000
+
+    Slider completo
+
+[33mcommit 531c01ac7dcdc2d51016fa89ed6ca741182dd8b3[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Sun Oct 8 17:47:07 2023 +0000
+
+    slider (a punto de ver final)
+
+[33mcommit df86a67392c2ca84702f7930e5456dd91569475f[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Wed Oct 4 02:48:13 2023 +0000
+
+    slider base (autoplay, falta ajustar botones)
+
+[33mcommit 16ee14215b6a74027201b00ef5b9c50d44726fdc[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Tue Oct 3 19:40:06 2023 +0000
+
+    avance slider pagina principal
+
+[33mcommit 22ff0f6543aeb95b9226ee8469b0c6eebff2dcde[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Tue Oct 3 03:06:55 2023 +0000
+
+    footer arreglado (falta mapa, pag-principal)
+
+[33mcommit cb9a02c338bbbc147cea8768de2b60fd8b7fc01f[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Sun Oct 1 02:42:12 2023 +0000
+
+    Footer mejorado (falta responsive y mapa)
+
+[33mcommit 99950dbd68edfe21e7cd15e1ff8e92eea3c1af4d[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Thu Sep 28 01:13:49 2023 +0000
+
+    avance footer (apenas estructurando)
+
+[33mcommit 12c71e1b57d707305c7f266027a6b58bb9922892[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Wed Sep 27 19:07:07 2023 +0000
+
+    submenu celulares
+
+[33mcommit 6b575a823d29307fef44872b00c1acb58fde15c2[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Wed Sep 27 18:47:08 2023 +0000
+
+    mejoras submenu celular
+
+[33mcommit 16d28e1977f8007d0add7f110e6b1265dfe03543[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Sat Sep 16 18:31:10 2023 +0000
+
+    submenu celular
+
+[33mcommit 24d89e06b59cab5bf5af52a65ec11204ba771b29[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Fri Sep 15 23:23:20 2023 +0000
+
+    arreglo header
+
+[33mcommit 061c11d52a2d05a4ce6996465cbdc4fc66d38c7c[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Fri Sep 15 02:20:30 2023 +0000
+
+    Lema y años (base)
+
+[33mcommit d3865e868352b7e67f36fa4e081deaf2b902f7ef[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Fri Sep 15 01:55:17 2023 +0000
+
+    Escudo vector provisional
+
+[33mcommit 8b6c2586ea085dee7e613a06ad36fc5251704291[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Thu Sep 14 20:45:12 2023 -0500
+
+    Create Escudo.svg
+
+[33mcommit a36c877e690a434185cbe27fcb7fe0c0f9b7b771[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Fri Sep 15 01:25:54 2023 +0000
+
+    mejoras responsive header,falta vectorizar el logo
+
+[33mcommit 5aa8778a87c80f63e92f67ea82a70f8def199011[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Wed Sep 13 20:03:29 2023 +0000
+
+    base nombre colegio (no responsive)
+
+[33mcommit 308c412649f809971799f728522af9cccd24d7f8[m
+Author: Página Colegio san Juan de Giron <144557927+Pagina-Colegio-san-Juan-de-Giron@users.noreply.github.com>
+Date:   Wed Sep 13 02:05:33 2023 +0000
+
+    Ajuste espacios header (Solo estructura)
+
+[33mcommit 389d603db57b496f959d923383359238f5994731[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Mon Sep 11 20:38:45 2023 -0500
+
+    Página
+    
+    Submenús, estructura base de las páginas
+
+[33mcommit 71a4942cb55e08e38473066fecfadd73c000c889[m
+Author: Pagina-Colegio-san-Juan-de-Giron <paginacolsanjuandegiron@santander.edu.co>
+Date:   Mon Sep 11 20:30:17 2023 -0500
+
+    Initial commit

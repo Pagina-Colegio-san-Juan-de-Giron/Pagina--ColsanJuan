@@ -1,0 +1,54 @@
+[
+    {
+        "Url": "Imágenes/foto.jpg",
+
+        "Nombre": "Margarita Cruz Lozano",
+        "Cargo": "Rectora"
+    },
+    {
+        "Url": "Imágenes/foto.jpg",
+        "Nombre": "Dexy Pinto Rangel",
+        "Cargo": "Profesora sede A"
+    },
+    {
+        "Url": "Imágenes/foto.jpg",
+        "Nombre": "Carmen Matilde Prada Martínez",
+        "Cargo": "Profesora sede B"
+
+    },
+    {
+        "Url": "Imágenes/foto.jpg",
+        "Nombre": "Random4",
+        "Cargo": "Padre 1"
+    },
+    {
+        "Url": "Imágenes/foto.jpg",
+        "Nombre": "Random5",
+        "Cargo": "Padre 2"
+    },
+    {
+        "Url": "Imágenes/foto.jpg",
+        "Nombre": "Julian",
+        "Cargo": "Egresado"
+    },
+    {
+        "Url": "Imágenes/foto.jpg",
+        "Nombre": "Luis Fernando",
+        "Cargo": "Estudiante"
+    },
+    {
+        "Url": "Imágenes/foto.jpg",
+        "Nombre": "Random6",
+        "Cargo": "Ni idea que hace"
+    },
+    {
+        "Url": "Imágenes/foto.jpg",
+        "Nombre": "Random7",
+        "Cargo": "Ni idea que hace"
+    },
+    {
+        "Url": "Imágenes/foto.jpg",
+        "Nombre": "Random8",
+        "Cargo": "Ni idea que hace"
+    }
+]

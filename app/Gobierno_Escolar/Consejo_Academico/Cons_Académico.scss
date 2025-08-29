@@ -1,0 +1,208 @@
+.Hhheader{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        font-weight: bold;
+        font-size: 5vw;
+    }
+
+    h2{
+        color: #F1CC77;
+        font-weight: bold;
+        font-size: 1.5vw;
+    }
+
+    .Container-Personas{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1vw;
+        row-gap: 1rem;
+
+        h2{
+            text-align: center;
+        }
+
+        .container-tarjeta{
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2{
+                display: flex;
+                justify-content: center;
+
+                
+                text-align: center;
+            }
+
+            .nombre{
+                color: #034684;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .fotopersona{
+                width: 15vw;
+                display: flex;
+                justify-content: center;
+                border-radius: 50%;
+
+                border: 2px #034684 solid;
+                padding: 2px;
+            }
+        }
+    }
+
+    .hidden{
+        display: none;
+    }
+
+}
+
+article{
+    margin: 1rem;
+    font-weight: 600;
+    font-size: 2vw;
+    text-align: justify;
+
+    h2{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: #F1CC77;
+        font-weight: bold;
+        font-size: 2vw;
+    }
+    .para{
+        .paragraph{
+            display: flex;
+            gap: 1rem;
+        }
+
+        .spaaan{
+            color: #F1CC77;
+        }
+    }
+
+    p{
+        .paragraph{
+            display: flex;
+            gap: 1rem;
+        }
+
+        .spaaan{
+            color: #F1CC77;
+        }
+    }
+}
+
+.container-art-imagen{
+    display: flex;
+    width: 100%;
+
+
+  .container-libro{
+
+    width: 40%;
+    max-width: 100%;
+    display: flex;
+    align-items: flex-start;
+
+    .libro{
+        position: relative;
+        margin-top: 2rem;
+        min-width: 70%;
+        height: 12%;
+        border-radius: 50%;
+        background-color: #fff;
+        max-width: 100%;
+
+        .libroimagen{
+            z-index: 1;
+            width: 7vw;
+        }
+    }
+
+    .container-imagen{
+        position: absolute;
+        background-image: linear-gradient(to right bottom, #9a7a54, #a88558, #b6905c, #c49b5f, #d2a663, #d2a663, #d2a663, #d2a663, #c49b5f, #b6905c, #a88558, #9a7a54);
+        z-index: -1; 
+        border-radius: inherit; 
+        top: -10px; 
+        bottom: -10px; 
+        right: -10px; 
+        left: -10px;
+        content: '';
+    }
+  }
+
+   
+}
+
+
+@media (max-width: 600px){
+
+
+    .container-art-imagen{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+
+        .container-libro{
+            height: 10vw;
+            width: 10vw;
+            margin-top: 1rem;
+            
+            .libro{
+                display: flex;
+                min-width: 100%;
+                min-height: 100%;
+                margin-top: 0;
+                
+            
+                .libroimagen{
+                    width: 7vw;
+                }
+            }
+
+        }
+
+    }
+
+    .Hhheader{
+
+        h1{
+            font-size: 8vw;
+        }
+
+        h2{
+            font-size: 3vw;
+        }
+    }
+
+    h2{
+        font-size: 3vw;
+    }
+
+    article{
+        h2{
+            font-size: 5vw;
+        }
+
+        .para{
+            font-size: 5vw;
+        }
+
+        p{
+            font-size: 5vw;
+        }
+    }
+
+}
+

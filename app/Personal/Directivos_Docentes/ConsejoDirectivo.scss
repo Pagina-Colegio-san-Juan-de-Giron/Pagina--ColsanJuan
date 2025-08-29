@@ -1,0 +1,279 @@
+.Hhheader{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        font-weight: bold;
+        font-size: 5vw;
+    }
+
+    h2{
+        color: #060422;
+        font-weight: bold;
+        font-size: 1.5vw;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    section{
+
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1vw;
+        row-gap: 5vw;
+        margin-top: 5vw;
+
+        h2{
+            color: black;
+        }
+
+        .container-tarjeta{
+            width: 20%;
+            height: auto;
+            background-color: #02213f;
+            display: flex;
+            border-radius: 1vw;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 3vw;
+
+            h2{
+                display: flex;
+                justify-content: center;
+
+                
+                text-align: center;
+                color: #ffffff;
+            }
+
+            .nombre{
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .fotopersona{
+                margin-top: -10%;
+                width: 15vw;
+                display: flex;
+                justify-content: center;
+                border-radius: 50%;
+
+                padding: 2px;
+            }
+        }
+
+       
+    }
+
+    .container-sliderD{
+        position: relative;
+        height: 40vw;
+        background-color: #084480;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+            overflow: hidden ;
+
+
+        .btn-der{
+            position: absolute;
+            width: 5vw;
+            height: auto;
+            top: 50%;
+            left: 93%; 
+            transform: translate(0, -50%) scaleX(-1);
+            z-index: 2;
+        }
+
+        
+        .btn-izq{
+            position: absolute;
+            width: 5vw;
+            height: auto;
+            top: 50%;
+            right: 93%; 
+            transform: translate(0%, -50%);
+            z-index: 2;
+        }
+
+        .Container-cardds{
+            width: auto;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            //gap: 10vw;
+            position: relative;
+            
+            .card{
+                //margin-left: 3.5vw;
+                //margin-right: 3.5vw;
+                height: 100%;
+                width: 25vw;
+                //outline: 1.5vw solid #eaf366;
+                //border-radius: .5vw;
+                z-index: 1;
+                padding-right: 17vw;
+                padding-left: 17vw;
+
+                .imgen{
+                
+                outline: 1.5vw solid #eaf366;
+                content: "";
+                position: absolute;
+                background-color: white;
+                top: -.2vw;
+                height: 100%;
+                width: 100%;
+                border-radius: 1.5vw;
+                z-index: 200;
+                padding: 2vw;
+            }
+            }
+
+            .imgen{
+                content: "";
+                position: absolute;
+                background-color: white;
+                top: -.2vw;
+                border-radius: 1.5vw;
+                z-index: 200;
+            }
+
+            .opene{
+                height: 100%;
+                width: 24.5vw;
+            }
+
+            .cerradoo{
+                height: 80%;
+                width: 22vw;
+            }
+
+            .sspan{
+                display: block;
+                background-color: #eaf366;
+                height: 105%;
+                width: 5vw;
+                //border: 1.5vw sol0d #eaf366;
+                border-radius: .5vw;
+            }
+
+
+        }
+    }
+
+    .Container-cardds .transition{
+        transition: all 300ms ease;      
+    }
+
+    .Container-cardds.transition{
+        transition: all 300ms ease;      
+    }
+
+    .transition{
+        transition: all 300ms ease;      
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    article{
+
+        margin: 1rem;
+
+        h2{
+            font-weight: bold;
+            font-size: 3vw;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        p{
+            font-weight: 600;
+            font-size: 2vw;
+            text-align: justify;
+
+            .paragraph{
+                display: flex;
+                gap: 1rem;
+            }
+        }
+
+        .para{
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            height: auto;
+            padding: 2vw;
+            gap: 20vw;
+            .cardPara{
+                display: flex;
+                justify-content: center;
+                width: 30vw;
+                height: 35vw;
+                background-color: #FFFFFF;
+                border-radius: 3vw;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 15);
+
+                .svg-container{
+                    width: 20vw;
+                    height: 20vw;
+                    margin-top: 2vw;
+                    background-color: #02213f;
+                    padding: 3vw;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+
+        .spaaan{
+            color: #F1CC77;
+        }
+    }
+}
+
+@media (max-width: 600px){
+    
+    .Hhheader{
+
+        margin: 1rem;
+
+        h1{
+            font-size: 8vw;
+        }
+
+        h2{
+            font-size: 3vw;
+        }
+
+        section{
+            h2{
+                font-size: 3vw;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        article{
+            h2{
+                font-size: 5vw;
+            }
+
+            p{
+                font-size: 5vw;
+            }
+            .para{
+                font-size: 5vw;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+.grid-container{
+    display: grid;
+    grid-template:
+    "header header" 15vh
+    "section section"  auto
+    "footer footer" 65vh/
+    50%    50%;
+}
+
+.Header{
+    position: fixed;
+    z-index: 10;
+    grid-area: header;
+    width: 100%;
+    min-height: 7rem;
+    height: 15vh;
+    background-color: #023E87;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.Nav{
+    position: fixed;
+    z-index: 5;
+}
+
+.Section{
+    grid-area: section;
+}
+
+.Footer{
+    grid-area: footer;
+    background-color: rgba(255, 255, 255, 0);
+    min-height: 500px;
+    z-index: 4;
+}
+
+.containerRedes{
+    padding: .3vw;
+    position: fixed;
+    top: 1%;
+    right: 0;
+    width: auto;
+    height: auto;
+    border-top-left-radius: .5vw;
+    border-bottom-left-radius: .5vw;
+    z-index: 11;
+    margin-right: 1vw;
+}
+
+.containerRedes .redes svg{
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.redes{
+    display: flex;
+    gap: .5vw;
+}
+
+@media (max-width: 1024px){
+    
+
+    .Footer{
+        min-height: 0px;
+
+    }
+    .Nav{
+        z-index: 11;
+        padding-top: 0;
+        
+    }
+
+    .grid-container{
+        display: grid;
+        grid-template:
+        "header header" 7rem
+        "section section"  auto
+        "footer footer" auto/
+        50%     50%;
+    }
+
+    .containerRedes{
+        width: auto;
+        height: auto;
+        border-top-left-radius: 2vw;
+        border-bottom-left-radius: 2vw;
+        margin-right: 2.5vw;
+    }
+
+
+
+    .redes{
+        display: flex;
+        gap: 3vw;
+        padding: 1vw;
+    }
+
+    .containerRedes .redes svg{
+        width: 3vw;
+        height: 3vw;
+    }
+}
