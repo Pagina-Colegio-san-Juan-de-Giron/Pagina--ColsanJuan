@@ -1,180 +1,142 @@
 'use client'
 
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Contratacion.scss"
 import Overlay from "./Componentes/modal"
 
-const Page = () => {
-  interface Licitaciones {
-    name: string
-    id: number
-    items: Licitaciones[]
-    EsCarpeta: boolean
-    path: string
-  }
-
-
-
-  interface RegistrosFechas {
-    id: number,
-    Fecha: string,
-    Nombre: string
-  }
-
-  const [Finished, setFinished] = useState<boolean>(false)
-  const [Estadocerrados, setCerrados] = useState<boolean[]>([])
-  const [Closed, setClosed] = useState<string[]>([""])
-  const [FechasCierre, setFechasCierre] = useState<Record<string, Date>>({})
-
-  const isClosed = (Foldername: string) => {
-    if(Closed?.includes(Foldername)){
-        return true
-    }
-    else{
-        return false
-    }
-
+// Moví las interfaces fuera del componente para mejor legibilidad
+interface LicitacionItem {
+  name: string
+  id: number
+  items: LicitacionItem[]
+  EsCarpeta: boolean
+  path: string
 }
 
-const HandleCloseds = (Foldername: string) => {
+interface RegistroFecha {
+  id: number
+  Fecha: string
+  Nombre: string
+}
+
+const Page = () => {
+  const [finished, setFinished] = useState<boolean>(false)
+  const [estadoCerrados, setCerrados] = useState<boolean[]>([])
+  const [closed, setClosed] = useState<string[]>([])
+  const [fechasCierre, setFechasCierre] = useState<Record<string, Date>>({})
+  const [licitaciones, setLic] = useState<LicitacionItem[]>([])
+
+  const isClosed = (folderName: string) => {
+    return closed.includes(folderName)
+  }
+
+  const handleCloseds = (folderName: string) => {
     setClosed((prev) => {
-        const newarray = [...prev, Foldername]
-        return newarray
-    });
-}    
-  
-  const HandleClick = (índice: number) => {
-      setCerrados(prevState => {
-        const Nuevosestados = [...prevState]
-        Nuevosestados[índice] = !Nuevosestados[índice]
-        return Nuevosestados
-      });
-  }
-
-  const [Licitaciones, setLic] = useState<Licitaciones[]>([])
-
-
-  
-
-
-  useEffect(() => {
-
-    
-
-    async function ObtenerLic(){
-      const response = await fetch('/api/Secretaria');
-        const data = await response.json();
-        console.log(data);
-        if(data) {
-         
-
-          
-          
-          setLic(data);
-
-          const FullFalse = Array(data.length).fill(false)
-          setCerrados(FullFalse)
-          console.log("Arreglo nuevo ", Estadocerrados, "Estado buscado ", FullFalse)
-          setFinished(true)
-      
-          
-          
-          
-          
-        } 
-        
-    }
-
-    ObtenerLic()
-    
-  }, [])
-
-  useEffect(() => {
-    ObtenerFechaCierre()
-  }, [])
-
-  useEffect(() => {
-    Licitaciones.map((lic) => {
-      const FechaCierreLic = FechasCierre[lic.name]
-      const FechaActual = new Date()
-      if(FechaActual > FechaCierreLic){
-        HandleCloseds(lic.name)
-      }
+      if (prev.includes(folderName)) return prev
+      return [...prev, folderName]
     })
-  }, [Licitaciones, FechasCierre])
-
-  const ObtenerFechaCierre = async() => {
-    
-      let data
-      try{
-        const response = await fetch('/api/Secretaria/Fechas/Consultar');
-        data = await response.json();
-      }
-      catch(err){
-        console.log("error en la llamada a la api", err)
-        return null;
-      }
-
-      if(data){
-        console.log("LA fecha essss: ", data.registro)
-        const fechaMap: Record<string, Date> = {} 
-        await Promise.all(data.registro.map((registro: RegistrosFechas) => {
-          fechaMap[registro.Nombre] = new Date(registro.Fecha)
-        }))
-        setFechasCierre(fechaMap)
-        console.log("pureba registros: ", FechasCierre)
-      }else{
-        console.log("No hay registro esperado")
-        return null
-      }
-
   }
 
+  const handleClick = (indice: number) => {
+    setCerrados(prevState => {
+      const nuevosEstados = [...prevState]
+      nuevosEstados[indice] = !nuevosEstados[indice]
+      return nuevosEstados
+    })
+  }
 
-  const ObtenerValoresIniciales = (lic: Licitaciones) => {
-      let Downloads: Licitaciones[] = [] 
-      lic.items.forEach((element: Licitaciones) => {
-        if(!element.EsCarpeta)
-        {
-          Downloads = [...Downloads, element]
+  // Carga de Licitaciones
+  useEffect(() => {
+    async function obtenerLic() {
+      try {
+        const response = await fetch('/api/Secretaria')
+        const data = await response.json()
+        
+        if (Array.isArray(data)) {
+          setLic(data)
+          setCerrados(new Array(data.length).fill(false))
+          setFinished(true)
+        }
+      } catch (err) {
+        console.error("Error cargando licitaciones:", err)
+      }
+    }
+    obtenerLic()
+  }, [])
+
+  // Carga de Fechas
+  useEffect(() => {
+    const obtenerFechaCierre = async () => {
+      try {
+        const response = await fetch('/api/Secretaria/Fechas/Consultar')
+        const data = await response.json()
+
+        // VALIDACIÓN CRÍTICA: Verificamos que data y data.registro existan antes del map
+        if (data && Array.isArray(data.registro)) {
+          const fechaMap: Record<string, Date> = {}
+          data.registro.forEach((reg: RegistroFecha) => {
+            fechaMap[reg.Nombre] = new Date(reg.Fecha)
+          })
+          setFechasCierre(fechaMap)
+        } else {
+          console.warn("La API no devolvió el formato esperado en 'registro':", data)
+        }
+      } catch (err) {
+        console.error("Error en la llamada a la API de fechas:", err)
+      }
+    }
+    obtenerFechaCierre()
+  }, [])
+
+  // Comparación de fechas para cerrar automáticamente
+  useEffect(() => {
+    if (licitaciones.length > 0 && Object.keys(fechasCierre).length > 0) {
+      licitaciones.forEach((lic) => {
+        const fechaCierreLic = fechasCierre[lic.name]
+        const fechaActual = new Date()
+        
+        if (fechaCierreLic && fechaActual > fechaCierreLic) {
+          handleCloseds(lic.name)
         }
       })
+    }
+  }, [licitaciones, fechasCierre])
 
-      return {Downloads}
+  const obtenerValoresIniciales = (lic: LicitacionItem) => {
+    const downloads = lic.items.filter(item => !item.EsCarpeta)
+    return { downloads }
   }
 
-
-
   return (
-   <main> 
-    <section className='contenedor-contratacion'>{
+    <main>
+      <section className='contenedor-contratacion'>
+        {licitaciones.map((lic, i) => {
+          const initialPath = lic.path
+          const { downloads } = obtenerValoresIniciales(lic)
 
-    Licitaciones.map((lic) => {
+          return (
+            <React.Fragment key={lic.id}>
+              <span 
+                className='boton-contratacion' 
+                onClick={() => handleClick(i)} // Usamos el índice real del array
+              >
+                {lic.name}
+              </span>
 
-      
-      const index = lic.id
-      const InitialPath = lic.path
-      const {Downloads} = ObtenerValoresIniciales(lic) 
-
-      
-
-      return (<React.Fragment key={lic.id}>
-        <span className='boton-contratacion' onClick={() => {HandleClick(index);}}>
-          {lic.name}
-        </span>
-
-        <Overlay isClosed={isClosed} FolderPath={InitialPath} InitFilename={Downloads} Name={lic.name} Finished={Finished}  cerrado={Estadocerrados[index]} HandleClick={() => HandleClick(index)}/>
-
-      </React.Fragment>
-      )
-    })
-      
-
-    }   
-    </section>
-
-    
-   </main> 
+              <Overlay 
+                isClosed={isClosed} 
+                FolderPath={initialPath} 
+                InitFilename={downloads} 
+                Name={lic.name} 
+                Finished={finished} 
+                cerrado={estadoCerrados[i]} 
+                HandleClick={() => handleClick(i)}
+              />
+            </React.Fragment>
+          )
+        })}
+      </section>
+    </main>
   )
 }
 
