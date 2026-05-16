@@ -1,3 +1,12 @@
-export { default } from "next-auth/middleware"
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
-export const config = { matcher: ["/Contratacion/ADMIN/Secretaria"] }
+
+export function proxy(request: NextRequest) {
+  return NextResponse.next()
+}
+
+
+export const config = {
+  matcher: '/about/:path*',
+}
