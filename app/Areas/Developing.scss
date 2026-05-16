@@ -1,18 +1,24 @@
-.image{
-    width: 70vw;
-    display: flex;
-    justify-content: center;
+.main-container {
+  padding: 2rem;
+  background: #f5f7fb;
+  min-height: 100vh;
 }
 
-main{
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 
-div{
-    font-size: 3rem;
+  h1 {
+    font-size: 2rem;
+    color: #0a2a66;
     font-weight: bold;
+  }
+
 }
+
+
+
+

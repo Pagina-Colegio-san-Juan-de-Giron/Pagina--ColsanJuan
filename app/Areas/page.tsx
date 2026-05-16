@@ -1,17 +1,42 @@
-import React from 'react'
-import Image from 'next/image'
+"use client"
+import React, { useState } from "react"
+import Image from "next/image"
 import imagen from "@/app/Componentes/Imágenes/images.jpg"
 import "./Developing.scss"
+import { px } from "framer-motion"
+import Link from "next/link"
 
-const page = () => {
+const materias = [
+  "Inglés",
+  "Español",
+  "Ética",
+  "Religión",
+  "Biología",
+  "Educación Física",
+  "Matemáticas",
+  "Sociales",
+  "Informática",
+  "Artística",
+  "Comportamiento"
+]
+
+const Page = () => {
+  
   return (
-   <main> 
-    <div>
-      En desarrollo
-    </div>
-    <Image className="image" src={imagen} alt='developing'/>
-   </main> 
+    <main className="main-container">
+      <div className="header">
+        <Image src={imagen} alt="En construccion" width={80} height={80} className="logo" />
+        <h1 id="elh1">Áreas Académicas</h1>
+      </div>
+   
+     <Link href="/Areas/Informatica" >
+          Informática
+        </Link>
+      
+     
+            
+    </main>
   )
 }
 
-export default page
+export default Page
