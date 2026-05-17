@@ -39,7 +39,7 @@ const [ImagenesCargadas, setCargadas] = useState<string[]>([""])
               className='card' key={i} ref={(el) => {Iref.current[i] = el}}>
                            <h1>{i}</h1>
                            <div className='sspan'></div>
-                           <Image className="imgen" src={Img} alt={`imagen-slider ${Img}`} width={100} height={100} />
+                           <Image className='imgen' src={Img} alt={`imagen-slider ${Img}`} width={100} height={100} />
                  </motion.span>
       )}
      )}
