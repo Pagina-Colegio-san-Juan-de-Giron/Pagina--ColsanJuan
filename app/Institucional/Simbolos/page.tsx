@@ -2,7 +2,7 @@ import React from 'react'
 import "./simbolos.scss"
 import Image from 'next/image'
 import Escudo from '@/app/Componentes/Imágenes/Escudo.svg'
-import Bandera from './Imágenes/bandera.svg'
+import Bandera from './imagenes/bandera.svg'
 import { Alice } from 'next/font/google'
 
 const alice = Alice({ 
